@@ -1,110 +1,79 @@
-# Example: a preference that does not stick
+# Example: reliable, understandable digest control
 
-This fictional example follows **the same issue, #142**, from a rough report to a verified live change. Local Markdown is working material; the issue carries the accepted account. The amount of exploration here fits a behavior change with a real UX choice. A simpler fix could use much less.
+This fictional example starts with one broad problem, then creates two linked functioning delivery issues after mapping and prototyping. The issue numbers and observations are illustrative. The first slice reaches a live test and becomes available to customers; the second remains open. No customer response is assumed.
 
-## Rough problem → local draft
+## Frame → a local draft and a parent
 
-Request: “People keep getting weekly digest emails after turning them off. Add an unsubscribe button.”
+Request: “People keep getting weekly digests after turning them off. Add an unsubscribe button.”
 
-The request already says what happens and proposes a fix, so the agent asks only for missing evidence: “What have you seen about when people turned it off and when the digest arrived?” The user cites three support reports this week, all involving a switch in Settings before the next delivery. That makes the timing matter. The agent reflects that the setting might fail to save or the send path might use an older value, and invites correction. The user confirms that stopping later sends matters more than the exact control used to turn them off. The agent stops interviewing and writes `work/digest-preferences.md` as an inspectable draft:
+The agent asks one question at a time, starting with what has been seen. The user cites three support reports this week, each after someone turned the digest off in Settings. The agent reflects two possible causes: the setting may fail to save, or a queued send may ignore it. The user confirms that preventing later sends matters more than the exact control. The agent stops interviewing and writes a local Markdown draft:
 
-```markdown
-# Weekly digest preference
+> **Problem:** People report receiving a weekly digest after disabling it in Settings. Three support reports are known; the cause is not.
+>
+> **Desired outcome:** People can reliably stop future digests and understand when their choice takes effect.
+>
+> **Proposal to test:** An unsubscribe button may make the choice easier to reach, but it might not stop a queued send.
+>
+> **Open questions:** Does the setting persist? When is the recipient list frozen? Can the mail provider recall an accepted message?
 
-Support has three reports this week of digests arriving after people switched
-the digest off in Settings. We do not yet know whether the setting fails to
-save, the sender ignores it, or scheduled mail is already queued.
+After reviewing the draft, the team chooses GitHub Issues as its shared destination and creates parent **#142, Reliable digest control**. It holds the broader problem, evidence, desired outcome, and open exploration. No delivery breakdown is fixed yet. The local draft and later prototype notes remain working material.
 
-Affected: people receiving the weekly digest; support handling repeat reports.
-Desired outcome: switching it off prevents future digests, and the interface
-accurately explains when that takes effect.
-Proposed solution: add an unsubscribe button. It may help people reach the
-preference, but we do not yet know whether it stops a queued send.
-Open for exploration: Should the experience use a one-click button or a link
-to Settings, and where must the preference be enforced? Observe whether either
-approach stops a later digest after someone turns the setting off.
-Questions: Where is the preference stored? When is the recipient list frozen?
-```
+## Map → the system boundary
 
-The draft keeps the suggested button as a proposal. After reviewing it, the user chooses GitHub Issues as the shared destination. Issue **#142, first state**, carries the problem, evidence, desired outcome, proposal, and open exploration question in the same concise form. The local draft remains available for working notes.
+The agent reproduces the report and inspects the running product and code. Settings saves the digest preference to the profile. The weekly job snapshots eligible recipients on Sunday. The worker sends the batch on Monday without checking the latest preference. The setting persists correctly; the send path is the gap. The mail provider's behavior after accepting a message remains unknown.
 
-## Map → revised issue
+The local map links the Settings control and save handler, profile data, batch builder, mail worker, and email template. Parent #142 gains the verified finding and the unresolved provider question. Mapping shows that a functioning stop action must connect the preference, worker, and customer-facing explanation. A worker-only or UI-only issue would leave the experience incomplete.
 
-The agent reproduces the report and maps the current path in `work/digest-preferences.md`: Settings writes `digest_enabled` to the profile; the weekly job builds a recipient batch on Sunday; the mail worker sends that batch on Monday without rechecking the preference. The setting saves correctly. The map links the settings handler, batch builder, and mail worker and marks the mail provider's queued-message behavior as unknown.
+## Explore → choose a direction and two slices
 
-Issue **#142, second state** now says:
+The agent tries three reversible variants with test accounts after the Sunday batch has been created:
 
-```markdown
-The setting persists, but the weekly job snapshots recipients before delivery.
-The worker sends from that snapshot without checking the current preference.
-An unsubscribe control could help access, but changing the stored preference
-alone would not stop mail from an already-created batch. The one-click button
-is still a proposal. Open for exploration: test the button alone, then both
-controls with a send-time check. Observe what stops a send after batch creation
-and what each interface can promise. The
-provider's handling of accepted messages is still unknown.
-```
-
-## Explore → decision
-
-The deciding questions are what stops a send from an existing batch and which control makes the preference's state clear. Three lightweight variants run against test accounts in the product after the Sunday batch is created:
-
-| Option | Observed result |
+| Variant | Observed in the test product |
 | --- | --- |
-| One-click unsubscribe button updates the preference; the worker uses the Sunday batch | The setting changes, but the account still receives Monday's mail. |
-| One-click button plus a worker recheck before each send | The later send stops, but the email action gives no view of the current setting or when it takes effect. |
-| Direct link to Settings plus the same worker recheck | The later send stops, and Settings shows the current state and its effect. The worker uses the existing profile lookup. |
+| A one-click email button updates the preference; the worker uses the Sunday batch | The preference changes, but Monday's mail still sends. |
+| The existing Settings control saves the preference; the worker rechecks it before sending | The queued send is skipped. Settings needs clear timing copy. |
+| A direct email link opens the specific Settings control, with the same send-time check | The queued send is skipped, and the test account can see the current state before changing it. |
 
-The agent records the test setup, observations, and tradeoff in the local file. The team chooses the send-time check and a direct Settings link, revising the original button proposal. Issue **#142, third state** summarizes the variants, observed differences, and decision: the link shows the setting and its effect, while the recheck prevents the late send. It retains the question of whether messages already accepted by the provider can be recalled, and links the local findings rather than copying them.
+These are test-account observations, not customer feedback. The team chooses a send-time check with accurate Settings copy first, then a direct email path to that control. The provider recall question remains open. The parent records the decision and links to the curated exploration note.
 
-## Build → implemented
+The team now links two delivery issues to parent #142:
 
-The worker rechecks `digest_enabled` before sending, and the email links directly to the preference control. Settings copy says that disabling the digest stops future sends; it does not promise to recall mail already accepted by the provider. A test covers a preference change between batch creation and sending. The agent observes the change in a test account and updates issue #142 with the implementation and verification. Its status is **implemented**, not yet shipped.
+| Delivery issue | Functioning outcome | Evaluation and remaining question |
+| --- | --- | --- |
+| **#143, Turning the digest off stops future sends** | A person turns the digest off in Settings; the saved preference is rechecked before each send, and Settings explains the effect. This crosses the UI, profile, batch/worker, and copy boundaries. | Release independently to an appropriate audience. Verify the batch-to-send boundary with a live test account, then watch send/skip counts and support reports. Will real use confirm the reports stop? |
+| **#144, Open the digest setting from an email** | A person follows a link in the email, signs in if needed, lands on the exact preference, sees its current state, and can change it. This crosses email, routing/authentication, Settings, and profile update behavior. | Release after #143 so the linked control has trustworthy timing. Test the full journey, then observe whether people find and complete the choice. Does direct access reduce confusion? |
 
-## Integrate → PR → shipped issue
+Each issue has an experience someone can evaluate. #144 has a named dependency on the verified behavior of #143, yet it can be deployed as its own release. Neither issue is a frontend or backend task disguised as a slice. Parent #142 keeps the broader aim; each delivery issue owns its own lifecycle and links back to #142 without repeating it.
 
-The review checks that the setting, link, worker, and copy tell the same story. After merge and deployment, a live test account is added to a batch, switches the digest off, and receives no digest. Issue **#142, final state** reads:
+## Build → #143 implemented
 
-```markdown
-# Turning off the weekly digest now prevents queued sends
+The worker now reads the current preference before each send. Settings copy says disabling the digest stops future sends; it does not promise recall after provider acceptance. The team tests a preference change between batch creation and sending and walks through the experience with a test account. Issue #143 records the behavior, verification, code links, and remaining provider boundary as **implemented**. It does not claim a release or feedback yet. Issue #144 remains open with its intended experience and test plan.
 
-Three support reports showed that people received a digest after disabling it.
-The setting saved correctly, but recipients were selected on Sunday and the
-Monday worker did not recheck the preference.
+## Integrate → #143 live, #144 open
 
-We tried a one-click button alone, then paired both the button and a Settings
-link with a send-time check in test accounts. The button alone still allowed
-mail from Sunday's batch; either recheck stopped the send. The link also showed
-the current state and its effect, so we chose it with the send-time check. The
-interface describes future sends without
-promising recall of mail already accepted by the provider.
-
-The worker now checks the latest preference before sending. The change was
-tested across the batch/send boundary, reviewed in the running product, merged,
-deployed, and verified live with a test account. See [the PR](PR_URL) for the
-[worker change](CODE_URL) and checks, [the curated exploration note](EXPLORATION_URL)
-for detailed observations, and [the mail delivery diagram](DIAGRAM_URL) for the current flow. The release is recorded at
-[the deployment](RELEASE_URL). Watch support reports and send/skip counts in
-the next weekly cycle; the provider recall question remains open.
-```
-
-The PR stays short:
+The review checks the Settings control, saved state, worker decision, and copy together in the running product. The PR advances #143 and stays concise:
 
 ```markdown
 ## Summary
 
-The weekly digest worker now checks the current preference before sending, and
-the email links directly to that setting. A batch/send boundary test and a
-test-account walkthrough verified the behavior.
+Turning off the weekly digest now prevents future sends, including sends from
+an existing batch. A batch-to-send test and a product walkthrough verified the
+integrated behavior.
 
 ## Callouts
 
-- **Provider boundary:** The new check prevents sends before provider acceptance;
-  it cannot recall a message the provider already accepted.
+- **Provider boundary:** The worker can stop a send before provider acceptance;
+  it cannot recall mail already accepted by the provider.
 
 ## Context
 
-[Source issue](ISSUE_URL) — problem, exploration, decisions, and full outcome.
+[Delivery issue #143](ISSUE_URL) — problem, exploration, decisions, and outcome.
 ```
 
-The curated exploration note is a durable artifact made from the accepted findings in `work/digest-preferences.md`; the local scratch file is not assumed to be accessible from GitHub. For GitHub, the PR's `ISSUE_URL` would be replaced with #142's URL. Because this deployment and live check happen after merge, the PR does not close the issue on merge. The issue's live outcome is added only after live verification.
+After merge and deployment, a live test account in a batch disables the digest and receives no digest. The team confirms the worker skipped that send. Issue #143 is marked **verified live** and links the PR, release, and durable exploration note. The change is available to customers, so feedback can now arrive. The issue distinguishes the verified test from **planned feedback**: watching the next weekly cycle's send/skip counts and support reports. It records **observed feedback: none yet** and avoids inferring that the broader problem is solved from one test.
+
+The completed #143 issue gives a newcomer the account in one place:
+
+> **#143 — Verified live.** Three reports of unwanted digests led us to inspect the save and send paths. The preference saved, but the worker used a Sunday recipient snapshot without rechecking it. In test accounts, changing the preference alone did not stop the queued send; rechecking it did. We added that check and clear Settings copy, tested the batch-to-send boundary, and verified a skipped send with a live test account after deployment. The change is available to customers. See the linked PR, release, and curated exploration note. Planned feedback: review send/skip counts and support reports after the next weekly cycle. Observed customer feedback: none yet. We still do not know whether the provider can recall accepted mail.
+
+Parent #142 notes that the first slice is live and #144 remains open. Issue #144 still needs its email-to-Settings journey built and evaluated. What customers experience in the next cycle can change its details or priority. The completed #143 issue remains the useful record for that slice, while the parent connects it to the broader problem.

@@ -1,6 +1,6 @@
 ## Summary
 
-Describe what changed and how it was verified in two or three plain-language sentences.
+Describe the functioning change and how its integrated behavior was verified in two or three plain-language sentences.
 
 ## Callouts
 
@@ -10,4 +10,4 @@ Describe what changed and how it was verified in two or three plain-language sen
 
 ## Context
 
-[Source issue](ISSUE_URL) — problem, exploration, decisions, and full outcome.
+[Delivery issue](ISSUE_URL) — problem, exploration, decisions, release, and full outcome. Link the parent there when one exists.

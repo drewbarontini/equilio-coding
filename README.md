@@ -4,6 +4,8 @@
 
 Equilio Coding helps a person and an agent move from a problem to coherent, shipped software while retaining what they learn. Get to reality early by trying meaningful options in the running product. Carry context forward in an issue that explains the work clearly to the next person or agent.
 
+**Shared problem, functioning slices, connected memory.** Break delivery work into the smallest software changes that someone can experience and evaluate. Build each slice through the product and technical layers its behavior needs. Prefer independent release to an appropriate audience when feasible: it is a way to reach reality, observe what happens, and let feedback guide the next slice. A slice can teach something useful before the broader vision is complete. Some foundational work needs its own issue; name the capability, verification, and functioning slice it supports rather than claiming product feedback it cannot produce.
+
 The five steps are a practical application of [Equilio](https://equilio.dev), whose engine is **Intuition → Integration → Iteration** and whose Models are **Value Creation, Quality Refinement, and Strategic Momentum**. The steps are a coding method, not additional Equilio Models. Use as much of each step as the work warrants; a small fix may need only a few lines of context.
 
 ## The skills
@@ -20,7 +22,7 @@ Each skill stands alone. Start with a rough request, an issue, a local Markdown 
 
 ## Install
 
-After this repository is published, run the interactive command and choose all five skills:
+Run the interactive command and choose all five skills:
 
 ```sh
 npx skills add drewbarontini/equilio-coding
@@ -32,15 +34,17 @@ For a non-interactive install of the set, use `npx skills add drewbarontini/equi
 npx skills add drewbarontini/equilio-coding --skill equilio-explore
 ```
 
-The CLI can list the repository's skills with `npx skills add drewbarontini/equilio-coding --list`. Your agent's invocation syntax may vary; ask it to use a skill by name or describe the job in ordinary language. These commands describe the intended install path; they require the published repository.
+The CLI can list the repository's skills with `npx skills add drewbarontini/equilio-coding --list`. Your agent's invocation syntax may vary; ask it to use a skill by name or describe the job in ordinary language.
 
 ## Local work and the issue
 
 Use local Markdown at any step for drafts, maps, experiments, observations, decisions, and reviews. It is inspectable working material. The **shared issue** is the current readable account of the work, in GitHub Issues, Linear, or a local Markdown issue according to the project. Move accepted conclusions into it in clear prose; link to detailed artifacts instead of pasting scratch files or transcripts. When the team works entirely in Markdown, that local issue file can be the shared account.
 
-The issue gains fidelity as the work progresses. Frame can leave a proposed solution open; Map can settle system facts while naming what a prototype must reveal; Explore can choose a direction from observed behavior. At the start, the issue may contain only a problem and questions. When the change is live, it should explain why it mattered, what was learned and tried, what was decided and changed, how it was verified, whether it is live, and where the durable artifacts are. [The issue reference](references/issue.md) gives a compact starting shape and a shipped-state check. [The example](examples/notification-preferences.md) follows one issue through successive states.
+The issue gains fidelity as the work progresses. Frame can leave a proposed solution open; Map can settle system facts while naming what a prototype must reveal; Explore can choose a direction from observed behavior. At the start, the issue may contain only a problem and questions. When the change is live, its completed account should explain why it mattered, what was learned and tried, what was decided and changed, how it was verified, who could use it, what feedback is available, and where the durable artifacts are.
 
-Do not create or update a remote issue just because a skill was invoked. Draft framing in local Markdown for review before creating or materially updating a shared issue. Establish the project's destination and review consequential framing or decisions with the user when appropriate. Record meaningful changes as they occur, then edit for clarity at the end. Use [the PR template](.github/pull_request_template.md) to guide a human reviewer; the issue holds the full story.
+An ordinary change can use one issue. A broader problem may use an optional parent issue for shared intent, exploration, and overall outcome, with linked delivery issues for functioning changes. Each delivery issue owns its lifecycle and links to the parent without repeating it. A PR normally advances one delivery issue and links to that issue for full context. [The issue reference](references/issue.md) gives practical slice questions and a completed-state check. [The example](examples/notification-preferences.md) shows a broader problem becoming two linked delivery slices after mapping and prototyping, with one live and one still open.
+
+Do not create or update a remote issue just because a skill was invoked. Draft framing in local Markdown for review before creating or materially updating a shared issue. Establish the project's destination and review consequential framing or decisions with the user when appropriate. Record meaningful changes as they occur, then edit for clarity at the end. Keep planned feedback, observed feedback, and inference distinct. Use [the PR template](.github/pull_request_template.md) to guide a human reviewer; the delivery issue holds the full story.
 
 ## Contribute
 
