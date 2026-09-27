@@ -34,20 +34,20 @@ The agent tries three reversible variants with test accounts after the Sunday ba
 | The existing Settings control saves the preference; the worker rechecks it before sending | The queued send is skipped. Settings needs clear timing copy. |
 | A direct email link opens the specific Settings control, with the same send-time check | The queued send is skipped, and the test account can see the current state before changing it. |
 
-These are test-account observations, not customer feedback. The team chooses a send-time check with accurate Settings copy first, then a direct email path to that control. The provider recall question remains open. The parent records the decision and links to the curated exploration note.
+These are test-account observations, not customer feedback. The team chooses a send-time check with accurate Settings copy first. The direct email path is a candidate follow-up whose need still requires feedback from real use. The provider recall question remains open. The parent records the decision and links to the curated exploration note.
 
 The team now links two delivery issues to parent #142:
 
 | Delivery issue | Functioning outcome | Evaluation and remaining question |
 | --- | --- | --- |
 | **#143, Turning the digest off stops future sends** | A person turns the digest off in Settings; the saved preference is rechecked before each send, and Settings explains the effect. This crosses the UI, profile, batch/worker, and copy boundaries. | Release independently to an appropriate audience. Verify the batch-to-send boundary with a live test account, then watch send/skip counts and support reports. Will real use confirm the reports stop? |
-| **#144, Open the digest setting from an email** | A person follows a link in the email, signs in if needed, lands on the exact preference, sees its current state, and can change it. This crosses email, routing/authentication, Settings, and profile update behavior. | Release after #143 so the linked control has trustworthy timing. Test the full journey, then observe whether people find and complete the choice. Does direct access reduce confusion? |
+| **#144, Open the digest setting from an email** | A person follows a link in the email, signs in if needed, lands on the exact preference, sees its current state, and can change it. This crosses email, routing/authentication, Settings, and profile update behavior. | Keep this proposed slice open while #143 gathers feedback. If access remains a problem, release it after #143 and test the full journey. Does direct access reduce confusion? |
 
-Each issue has an experience someone can evaluate. #144 has a named dependency on the verified behavior of #143, yet it can be deployed as its own release. Neither issue is a frontend or backend task disguised as a slice. Parent #142 keeps the broader aim; each delivery issue owns its own lifecycle and links back to #142 without repeating it.
+Each issue has an experience someone can evaluate. #144 has a named dependency on the verified behavior of #143, yet it can be deployed as its own release if feedback warrants it. Neither issue is a frontend or backend task disguised as a slice. Parent #142 keeps the broader aim; each delivery issue owns its own lifecycle and links back to #142 without repeating it.
 
 ## Build → #143 implemented
 
-The worker now reads the current preference before each send. Settings copy says disabling the digest stops future sends; it does not promise recall after provider acceptance. The team tests a preference change between batch creation and sending and walks through the experience with a test account. Issue #143 records the behavior, verification, code links, and remaining provider boundary as **implemented**. It does not claim a release or feedback yet. Issue #144 remains open with its intended experience and test plan.
+The worker now reads the current preference before each send. Settings copy says disabling the digest stops future sends; it does not promise recall after provider acceptance. The team tests a preference change between batch creation and sending and walks through the experience with a test account. Issue #143 records the behavior, verification, code links, and remaining provider boundary as **implemented**. It does not claim a release or feedback yet. Issue #144 remains open as a proposed slice with an intended experience and test plan.
 
 ## Integrate → #143 live, #144 open
 
@@ -76,4 +76,4 @@ The completed #143 issue gives a newcomer the account in one place:
 
 > **#143 — Verified live.** Three reports of unwanted digests led us to inspect the save and send paths. The preference saved, but the worker used a Sunday recipient snapshot without rechecking it. In test accounts, changing the preference alone did not stop the queued send; rechecking it did. We added that check and clear Settings copy, tested the batch-to-send boundary, and verified a skipped send with a live test account after deployment. The change is available to customers. See the linked PR, release, and curated exploration note. Planned feedback: review send/skip counts and support reports after the next weekly cycle. Observed customer feedback: none yet. We still do not know whether the provider can recall accepted mail.
 
-Parent #142 notes that the first slice is live and #144 remains open. Issue #144 still needs its email-to-Settings journey built and evaluated. What customers experience in the next cycle can change its details or priority. The completed #143 issue remains the useful record for that slice, while the parent connects it to the broader problem.
+Parent #142 notes that the first slice is live and #144 remains open. If the next cycle shows people still struggle to find or change the setting, the team can build and evaluate #144's email-to-Settings journey. If it does not, the team can reshape or close #144. The completed #143 issue remains the useful record for that slice, while the parent connects it to the broader problem.
