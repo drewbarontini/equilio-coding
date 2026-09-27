@@ -10,9 +10,9 @@ The five steps are a practical application of [Equilio](https://equilio.dev), wh
 
 | Skill | When to use it | Useful result |
 | --- | --- | --- |
-| [`equilio-frame`](skills/equilio-frame/) | A problem or proposed solution needs clearer definition. | An issue-ready problem account. |
-| [`equilio-map`](skills/equilio-map/) | Existing behavior and code need to be understood before choosing a change. | A navigable map with open questions. |
-| [`equilio-explore`](skills/equilio-explore/) | Product or implementation options need contact with reality. | Prototype observations and a reasoned direction. |
+| [`equilio-frame`](skills/equilio-frame/) | A problem or proposed solution needs clearer definition. | A conversationally framed problem and local issue draft. |
+| [`equilio-map`](skills/equilio-map/) | Existing behavior and code need to be understood before choosing a change. | Verified system facts and choices to test. |
+| [`equilio-explore`](skills/equilio-explore/) | Product or implementation options need contact with reality. | Prototype observations and a reasoned direction, when evidence supports one. |
 | [`equilio-build`](skills/equilio-build/) | A direction is ready to implement. | Working, understandable software and updated decisions. |
 | [`equilio-integrate`](skills/equilio-integrate/) | A change needs coherent review, verification, and handoff. | A reviewable PR and, when live, a complete issue. |
 
@@ -38,9 +38,9 @@ The CLI can list the repository's skills with `npx skills add drewbarontini/equi
 
 Use local Markdown at any step for drafts, maps, experiments, observations, decisions, and reviews. It is inspectable working material. The **shared issue** is the current readable account of the work, in GitHub Issues, Linear, or a local Markdown issue according to the project. Move accepted conclusions into it in clear prose; link to detailed artifacts instead of pasting scratch files or transcripts. When the team works entirely in Markdown, that local issue file can be the shared account.
 
-The issue gains fidelity as the work progresses. At the start, it may contain only a problem and questions. When the change is live, it should explain why it mattered, what was learned and tried, what was decided and changed, how it was verified, whether it is live, and where the durable artifacts are. [The issue reference](references/issue.md) gives a compact starting shape and a shipped-state check. [The example](examples/notification-preferences.md) follows one issue through successive states.
+The issue gains fidelity as the work progresses. Frame can leave a proposed solution open; Map can settle system facts while naming what a prototype must reveal; Explore can choose a direction from observed behavior. At the start, the issue may contain only a problem and questions. When the change is live, it should explain why it mattered, what was learned and tried, what was decided and changed, how it was verified, whether it is live, and where the durable artifacts are. [The issue reference](references/issue.md) gives a compact starting shape and a shipped-state check. [The example](examples/notification-preferences.md) follows one issue through successive states.
 
-Do not create or update a remote issue just because a skill was invoked. Establish the project's destination and review consequential framing or decisions with the user when appropriate. Record meaningful changes as they occur, then edit for clarity at the end. Use [the PR template](.github/pull_request_template.md) to guide a human reviewer; the issue holds the full story.
+Do not create or update a remote issue just because a skill was invoked. Draft framing in local Markdown for review before creating or materially updating a shared issue. Establish the project's destination and review consequential framing or decisions with the user when appropriate. Record meaningful changes as they occur, then edit for clarity at the end. Use [the PR template](.github/pull_request_template.md) to guide a human reviewer; the issue holds the full story.
 
 ## Contribute
 
