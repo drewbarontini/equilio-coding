@@ -15,4 +15,4 @@ Find the project's shared issue in GitHub, Linear, or local Markdown and carry t
 
 An ordinary change may use one issue. For a larger problem, an optional parent can retain overall intent while each linked delivery issue owns its own lifecycle. Do not turn a tentative map into a fixed issue breakdown before the relevant behavior has been tested.
 
-Before finishing, re-read the shared issue and write all material system learning back into its current account. Update stale assumptions, preserve meaningful decisions and open choices, and leave enough context for Explore or Build to continue from the issue. Follow the [issue write-back contract](https://github.com/drewbarontini/equilio-coding/blob/main/references/issue.md#issue-write-back-contract).
+Before finishing, re-read and rewrite the shared issue body to reflect all material system learning. Update stale assumptions, preserve meaningful decisions and open choices, and leave enough context for Explore or Build to continue from the issue. Follow the [issue write-back contract](https://github.com/drewbarontini/equilio-coding/blob/main/references/issue.md#issue-write-back-contract).
