@@ -4,6 +4,14 @@
 
 The issue is the current shared account of a change, whether it lives in GitHub Issues, Linear, or a local Markdown file. Start with what is known; add and edit as evidence grows. Use the project's conventions where they exist. A small fix can use one issue with little ceremony.
 
+## Issue write-back contract
+
+For work tracked in GitHub, the GitHub issue is the canonical, evolving account of the work. The same contract applies to the project's shared issue in Linear or local Markdown. Every skill must write its latest understanding back to that issue before it finishes, even when its work began in conversation, code, a prototype, or local notes.
+
+Before completing a skill, re-read the current issue and reconcile all material learning from conversation, inspection, prototyping, testing, implementation, and review into its current narrative. Replace or update stale assumptions instead of appending contradictory history. Preserve meaningful decisions, their reasons, and deferred questions; link to detailed artifacts without copying working notes wholesale. Check that the issue now gives the next skill enough context to continue without reconstructing the work elsewhere. No material understanding should remain only in a conversation or working artifact.
+
+Establish the project's issue destination before a remote update. If no shared issue exists yet, use a local Markdown issue while preparing one; for GitHub-tracked work, local notes alone do not satisfy the write-back once a GitHub issue exists. If a required write-back is blocked, preserve the issue-ready update and report that the skill remains incomplete.
+
 ## One issue or linked issues
 
 Use one issue when a change has one coherent functioning outcome. For a larger problem, an optional parent issue can hold overall intent, exploration, and outcome. Link delivery issues for the changes that address it. The parent helps people see the shared problem; it is not a required hierarchy or a substitute for delivery issues. Each delivery issue remains the source of truth for its own decisions, implementation, verification, release, and feedback. Link to the parent without copying its entire narrative.
