@@ -22,7 +22,7 @@ After reviewing the draft, the team chooses GitHub Issues as its shared destinat
 
 The agent reproduces the report and inspects the running product and code. Settings saves the digest preference to the profile. The weekly job snapshots eligible recipients on Sunday. The worker sends the batch on Monday without checking the latest preference. The setting persists correctly; the send path is the gap. The mail provider's behavior after accepting a message remains unknown.
 
-The local map links the Settings control and save handler, profile data, batch builder, mail worker, and email template. Parent #142 gains the verified finding and the unresolved provider question. Mapping shows that a functioning stop action must connect the preference, worker, and customer-facing explanation. A worker-only or UI-only issue would leave the experience incomplete.
+The local map links the Settings control and save handler, profile data, batch builder, mail worker, and email template. Parent #142 is rewritten around the verified finding and unresolved provider question, without copying the file map. Mapping shows that a functioning stop action must connect the preference, worker, and customer-facing explanation. A worker-only or UI-only issue would leave the experience incomplete.
 
 ## Explore → choose a direction and two slices
 
@@ -34,7 +34,7 @@ The agent tries three reversible variants with test accounts after the Sunday ba
 | The existing Settings control saves the preference; the worker rechecks it before sending | The queued send is skipped. Settings needs clear timing copy. |
 | A direct email link opens the specific Settings control, with the same send-time check | The queued send is skipped, and the test account can see the current state before changing it. |
 
-These are test-account observations, not customer feedback. The team chooses a send-time check with accurate Settings copy first. The direct email path is a candidate follow-up whose need still requires feedback from real use. The provider recall question remains open. The parent records the decision and links to the curated exploration note.
+These are test-account observations, not customer feedback. The team chooses a send-time check with accurate Settings copy first. The direct email path is a candidate follow-up whose need still requires feedback from real use. The provider recall question remains open. The parent replaces its earlier open cause question with these findings and the decision, linking to the curated exploration note for prototype detail.
 
 The team now links two delivery issues to parent #142:
 
@@ -47,7 +47,7 @@ Each issue has an experience someone can evaluate. #144 has a named dependency o
 
 ## Build → #143 implemented
 
-The worker now reads the current preference before each send. Settings copy says disabling the digest stops future sends; it does not promise recall after provider acceptance. The team tests a preference change between batch creation and sending and walks through the experience with a test account. Issue #143 records the behavior, verification, code links, and remaining provider boundary as **implemented**. It does not claim a release or feedback yet. Issue #144 remains open as a proposed slice with an intended experience and test plan.
+The worker now reads the current preference before each send. Settings copy says disabling the digest stops future sends; it does not promise recall after provider acceptance. The team tests a preference change between batch creation and sending and walks through the experience with a test account. Issue #143 is rewritten around the current behavior, decision, verification, and remaining provider boundary as **implemented**. Patch mechanics and changed-file detail stay with the PR. It does not claim a release or feedback yet. Issue #144 remains open as a proposed slice with an intended experience and test plan.
 
 ## Integrate → #143 live, #144 open
 
@@ -57,8 +57,17 @@ The review checks the Settings control, saved state, worker decision, and copy t
 ## Summary
 
 Turning off the weekly digest now prevents future sends, including sends from
-an existing batch. A batch-to-send test and a product walkthrough verified the
-integrated behavior.
+an existing batch. Settings explains when the choice takes effect.
+
+## Implementation
+
+The worker checks the saved preference immediately before sending rather than
+relying only on the recipient snapshot. Settings copy describes that boundary.
+
+## Verification
+
+A batch-to-send test changed the preference after batch creation. A test-account
+walkthrough checked the setting, saved state, worker decision, and copy together.
 
 ## Callouts
 
@@ -67,13 +76,41 @@ integrated behavior.
 
 ## Context
 
-[Delivery issue #143](ISSUE_URL) — problem, exploration, decisions, and outcome.
+[Delivery issue #143](ISSUE_URL) — current understanding and delivery state.
 ```
 
 After merge and deployment, a live test account in a batch disables the digest and receives no digest. The team confirms the worker skipped that send. Issue #143 is marked **verified live** and links the PR, release, and durable exploration note. The change is available to customers, so feedback can now arrive. The issue distinguishes the verified test from **planned feedback**: watching the next weekly cycle's send/skip counts and support reports. It records **observed feedback: none yet** and avoids inferring that the broader problem is solved from one test.
 
-The completed #143 issue gives a newcomer the account in one place:
+The completed #143 issue gives a newcomer the current understanding in one place, without relying on the prior conversation or copying the PR:
 
-> **#143 — Verified live.** Three reports of unwanted digests led us to inspect the save and send paths. The preference saved, but the worker used a Sunday recipient snapshot without rechecking it. In test accounts, changing the preference alone did not stop the queued send; rechecking it did. We added that check and clear Settings copy, tested the batch-to-send boundary, and verified a skipped send with a live test account after deployment. The change is available to customers. See the linked PR, release, and curated exploration note. Planned feedback: review send/skip counts and support reports after the next weekly cycle. Observed customer feedback: none yet. We still do not know whether the provider can recall accepted mail.
+```markdown
+#143 — Turning the digest off stops future sends
+
+## Problem and outcome
+Three support reports described unwanted digests after people disabled them in
+Settings. People need a reliable way to stop future sends and understand when
+their choice takes effect.
+
+## Current understanding and decision
+The setting persists, but the worker previously used a Sunday recipient snapshot
+without rechecking the preference before Monday's send. Test accounts showed
+that a setting change alone did not stop an already queued send. Rechecking the
+saved preference before each send did. We chose that check with accurate Settings
+copy. A direct email-to-Settings path remains a separate proposed slice (#144);
+its value needs feedback from real use.
+
+## Result and verification
+The worker now skips sends when the current preference is off, and Settings
+explains the effect. A batch-to-send test and product walkthrough checked the
+integrated behavior. After deployment, a live test account in a batch disabled
+the digest; the worker skipped that send. Status: verified live and available
+to customers. The linked PR and release contain implementation and rollout detail.
+
+## Risks and next learning
+We do not know whether the provider can recall mail it already accepted, so the
+product does not promise that. Planned feedback: review send/skip counts and
+support reports after the next weekly cycle. Observed customer feedback: none
+yet. See the linked exploration note for detailed test variants.
+```
 
 Parent #142 notes that the first slice is live and #144 remains open. If the next cycle shows people still struggle to find or change the setting, the team can build and evaluate #144's email-to-Settings journey. If it does not, the team can reshape or close #144. The completed #143 issue remains the useful record for that slice, while the parent connects it to the broader problem.
