@@ -26,7 +26,9 @@ Look selectively for shifts that affect future reasoning:
 - **Meaningful dependencies or coupling:** Relationships that constrain future changes; explain the consequence rather than listing imports.
 - **Extension points:** Where future work should extend the behavior and which boundaries or constraints it must preserve, when useful.
 
-Use these as inspection lenses, not a mandatory output checklist. **Explain the change in the maintainer's model of the system, not the diff.** Exclude variable renames, straightforward test additions, formatting, obvious helper extraction, simple movement, and mechanical refactors unless they actually change that model. Do not produce a file-by-file walkthrough, function inventory, generated code documentation, generic code review, verbose architecture document, or tutorial on obvious mechanics.
+Use these as inspection lenses, not a mandatory output checklist. **Explain the change in the maintainer's model of the system, not the diff.** Exclude variable renames, formatting, obvious helper extraction, simple movement, and mechanical refactors unless they actually change that model. Do not produce a file-by-file walkthrough, function inventory, generated code documentation, generic code review, verbose architecture document, or tutorial on obvious mechanics.
+
+Do not teach routine comment or test mechanics or summarize ordinary test additions. Call out a comment's subtle constraint, an invariant encoded in code and tests, a test representing an important system contract, or a changed behavioral guarantee only when it materially affects the maintainer's mental model.
 
 ## Teach the updated model
 

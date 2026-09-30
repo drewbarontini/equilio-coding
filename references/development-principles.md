@@ -2,7 +2,7 @@
 
 **Understand First → Fewest Changes → Optimize for the Reader → Better Than Before → Close the Loop**
 
-These principles guide judgment throughout the five Core Skills: **Frame → Map → Explore → Build → Integrate**. Supporting Skills also apply them in proportion to their job: Loop orchestrates the core workflow; Explain helps a maintainer understand meaningful system changes. They are shared development doctrine, not additional workflow stages, Equilio Models, mandatory printed checklists, or gates.
+These principles guide judgment throughout the five Core Skills: **Frame → Map → Explore → Build → Integrate**. Supporting Skills also apply them in proportion to their job: Loop orchestrates the core workflow; Explain helps a maintainer understand meaningful system changes. They are shared development doctrine, not additional workflow stages, Equilio Models, mandatory printed checklists, or gates. Explicit repository-specific requirements take precedence.
 
 ## Understand First
 
@@ -16,7 +16,13 @@ Avoid unrelated cleanup, speculative features, premature abstractions, and “wh
 
 ## Optimize for the Reader
 
-Make code's intent easy for the next human or AI to understand. Prefer clear names, straightforward control flow, focused responsibilities, and local conventions. Use abstractions when they meaningfully reduce complexity. Explain why when the code alone cannot. Prefer explicit code over clever code and reduce cognitive load. Do not impose rigid rules for line counts, function sizes, class structures, or programming paradigms.
+Make code's intent easy for the next human or AI to understand. **Prefer self-explanatory code over explanatory comments.** Clear names, straightforward control flow, focused responsibilities, and local conventions should communicate what the code does, how it is structured, and its important concepts. Use abstractions when they meaningfully reduce complexity. Prefer explicit code over clever code and reduce cognitive load. Do not impose rigid rules for line counts, function sizes, class structures, or programming paradigms.
+
+Before adding a comment, ask: **Can the code itself be made clearer?** Prefer better naming, structure, or decomposition when it removes the need for explanation. **Comments explain why, not what** is a useful shorthand, not an absolute rule: explain more when comprehension genuinely requires it. Preserve non-obvious reasoning, important invariants, constraints a maintainer could accidentally violate, why an obvious implementation is intentionally avoided, or subtle external behavior, compatibility requirements, and system limitations. Keep context near the code when it would otherwise be lost.
+
+Do not add comments by default merely because code changed. Avoid comments above every function or obvious branch, restatements of names or types, narration of straightforward steps, repetition of clearly expressed tests, verbose documentation of already-clear private details, and temporary implementation notes left after completion. **Comments should add understanding, not narration.**
+
+Treat comments as maintained code. Inspect relevant comments when changing nearby behavior; correct stale claims and remove context that is no longer useful. A stale comment is worse than no comment because it creates false understanding; treat it as a correctness problem.
 
 ## Better Than Before
 
@@ -24,4 +30,14 @@ Leave the affected system at least as understandable and maintainable as before,
 
 ## Close the Loop
 
-Verify the change as an integrated piece of software rather than stopping at generated code. Run appropriate automated checks; add or update tests when they meaningfully protect behavior. Verify integrated behavior in the running product when feasible, and inspect important failure and edge cases in proportion to the change. Distinguish implementation, verification, deployment, and live validation. Incorporate meaningful learning into the current understanding of the work.
+Verify the change as an integrated piece of software rather than stopping at generated code. **Tests should increase confidence, not merely increase coverage.** Run appropriate existing checks and inspect existing coverage before adding or updating tests. Add or update tests when they provide trustworthy evidence for observable behavior, important contracts, regression-prone logic, boundaries, meaningful edge cases, failure behavior, invariants, or integration points where confidence is weak. Code changing does not automatically require another test. **Tests should add confidence, not count.** Do not optimize for test count or mechanically pursue coverage percentages unless the repository explicitly requires them.
+
+**A misleading test can be worse than no test because it creates false confidence.** Avoid tests based on uncertain or incorrect interpretations of intended behavior, unnecessary coupling to private implementation, brittleness under reasonable refactoring, redundancy with stronger coverage, exercising mocks more than real behavior, or incidental details rather than the contract. Do not preserve stale behavior because an old test expects it, or add tests so broad or indirect that failures offer little useful information.
+
+Ask: **What behavior must remain true?** Prefer tests that survive reasonable internal refactoring while external behavior and contracts stay unchanged. Unit and implementation-level tests remain useful when justified; avoid coupling to incidental structure. In keeping with **Fewest Changes**, ask: **What is the smallest useful evidence that this behavior is correct?** Choose focused tests for isolated behavior, integration tests for risks between components, or higher-level tests for an end-to-end contract. Avoid overlapping tests at several layers without a reason.
+
+When an existing test fails, reconcile both implementation and test with the issue and current understanding of intended behavior. Determine whether the implementation violated the contract, requirements changed, the test reflects an outdated assumption, or the test is brittle or incorrectly specified. Do not blindly change tests until they pass, preserve them solely because they exist, or delete failures to make the suite green. Both should converge on the intended behavior.
+
+Verify integrated behavior in the running product when feasible, inspecting failure and edge cases in proportion to the change. Automated tests are one form of verification. When automation is impractical or adds little confidence, use manual verification or another appropriate method; record what was checked and what remains unverified. Prefer honest evidence over artificial tests. Distinguish implementation, verification, deployment, and live validation, and incorporate meaningful learning into the current understanding of the work.
+
+Keep artifact responsibilities distinct: code communicates intent; comments preserve reasoning, constraints, and invariants that belong nearby; tests provide evidence for behavior and contracts; the issue preserves the best current understanding of the work; the PR explains the implementation under review. Comments and tests do not replace issue-level decision documentation, and the PR need not duplicate all comments or tests.
