@@ -44,7 +44,7 @@ Use sections only when they help, and omit empty ones:
 
 If the change does not materially alter maintainer understanding, say so plainly and briefly. Do not manufacture insights to fill the structure.
 
-Use the PR and diff as evidence without repeating them. **PR: How did the code change? Explain: What should I understand differently because it changed?** Keep the PR as the implementation-review artifact.
+Use the PR and diff as evidence without repeating them. **PR: What changed and what deserves review attention? Explain: What should I understand differently because it changed?** Keep the PR as a quick review synopsis under the shared [PR guidance](https://github.com/drewbarontini/equilio-coding/blob/main/references/pull-request.md); code explains implementation.
 
 Keep [Integrate](../equilio-integrate/SKILL.md) responsible for checking coherence of the current change before review. **Integrate: Is this change coherent? Explain: What should a human understand about the coherent system that now exists?** Call out surprising or contradictory findings and their evidence without claiming the system is coherent merely because it was explained. Leave implementation and review to the appropriate Core Skill; do not turn Explain into another implementation or review stage.
 

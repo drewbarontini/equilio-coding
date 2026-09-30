@@ -47,7 +47,7 @@ Each issue has an experience someone can evaluate. #144 has a named dependency o
 
 ## Build → #143 implemented
 
-The worker now reads the current preference before each send. Settings copy says disabling the digest stops future sends; it does not promise recall after provider acceptance. The team tests a preference change between batch creation and sending and walks through the experience with a test account. Issue #143 is rewritten around the current behavior, decision, verification, and remaining provider boundary as **implemented**. Patch mechanics and changed-file detail stay with the PR. It does not claim a release or feedback yet. Issue #144 remains open as a proposed slice with an intended experience and test plan.
+The worker now reads the current preference before each send. Settings copy says disabling the digest stops future sends; it does not promise recall after provider acceptance. The team tests a preference change between batch creation and sending and walks through the experience with a test account. Issue #143 is rewritten around the current behavior, decision, verification, and remaining provider boundary as **implemented**. The code explains patch mechanics; the PR gives a quick review synopsis. It does not claim a release or feedback yet. Issue #144 remains open as a proposed slice with an intended experience and test plan.
 
 ## Integrate → #143 live, #144 open
 
@@ -59,16 +59,6 @@ The review checks the Settings control, saved state, worker decision, and copy t
 Turning off the weekly digest now prevents future sends, including sends from
 an existing batch. Settings explains when the choice takes effect.
 
-## Implementation
-
-The worker checks the saved preference immediately before sending rather than
-relying only on the recipient snapshot. Settings copy describes that boundary.
-
-## Verification
-
-A batch-to-send test changed the preference after batch creation. A test-account
-walkthrough checked the setting, saved state, worker decision, and copy together.
-
 ## Callouts
 
 - **Provider boundary:** The worker can stop a send before provider acceptance;
@@ -76,8 +66,10 @@ walkthrough checked the setting, saved state, worker decision, and copy together
 
 ## Context
 
-[Delivery issue #143](ISSUE_URL) — current understanding and delivery state.
+[Delivery issue #143](ISSUE_URL)
 ```
+
+The Context uses a plain issue link because #143 remains open until live verification; verification evidence stays in the issue. The description follows the shared [PR guidance](../references/pull-request.md).
 
 After merge and deployment, a live test account in a batch disables the digest and receives no digest. The team confirms the worker skipped that send. Issue #143 is marked **verified live** and links the PR, release, and durable exploration note. The change is available to customers, so feedback can now arrive. The issue distinguishes the verified test from **planned feedback**: watching the next weekly cycle's send/skip counts and support reports. It records **observed feedback: none yet** and avoids inferring that the broader problem is solved from one test.
 
@@ -104,7 +96,8 @@ The worker now skips sends when the current preference is off, and Settings
 explains the effect. A batch-to-send test and product walkthrough checked the
 integrated behavior. After deployment, a live test account in a batch disabled
 the digest; the worker skipped that send. Status: verified live and available
-to customers. The linked PR and release contain implementation and rollout detail.
+to customers. The linked code explains implementation; the PR summarizes the
+change, and the release records rollout detail.
 
 ## Risks and next learning
 We do not know whether the provider can recall mail it already accepted, so the

@@ -60,13 +60,14 @@ Keep facts, assumptions, decisions, verification, and open questions distinct wh
 
 - **Working notes** hold exhaustive exploration and temporary detail: raw investigation, detailed code maps, debugging notes, discarded hypotheses, prototype mechanics, and scratch analysis.
 - **Issue** holds the best current synthesis of understanding. It is canonical memory for the work.
-- **Pull request** holds the implementation detail needed to review a concrete code change.
+- **Pull request** gives a quick review synopsis: the outcome, meaningful reviewer callouts, and the issue link.
+- **Code** explains the implementation.
 
-Transform information between these layers instead of copying it blindly. Technical detail belongs in the issue when it materially affects understanding, a decision, a constraint, a risk, system behavior, or future work. Ask: **Will this detail still matter after the PR is merged?** If it only helps review the current patch, put it in the PR. The issue explains **why, what, and current state**; the PR explains **how, the diff, and what needs review**.
+Transform information between these layers instead of copying it blindly. Technical detail belongs in the issue when it materially affects understanding, a decision, a constraint, a risk, system behavior, or future work. Let the code explain how the solution works; do not move incidental implementation detail into PR prose.
 
-The PR can describe implementation approach, important code paths, architecture or data changes, migrations, meaningful refactors, test coverage, reviewer callouts, compatibility concerns, performance or security implications, and screenshots or demonstrations. Favor **Summary** (two or three plain-language sentences on the implemented outcome), **Implementation** (how the code realizes the direction), **Verification** (what was checked), optional **Callouts** (only useful review concerns), and **Context** (a link to the issue). Link the issue rather than retelling its lifecycle.
+Read the canonical [PR guidance](pull-request.md) when preparing a description. The issue explains the understanding; the code explains the implementation; the PR explains the change. Keep deeper framing, evidence, decisions, and verification in the reconciled issue before PR creation.
 
-Explain uses the issue, PR, and diff as evidence for human comprehension, without duplicating them: **PR: How did the code change? Explain: What should I understand differently because it changed?** Keep the issue canonical and the PR focused on implementation review.
+Explain uses the issue, PR, and code as evidence for human comprehension, without duplicating them: **PR: What changed and what deserves review attention? Explain: What should I understand differently because it changed?** Keep the issue canonical and the PR a quick review synopsis.
 
 ## One issue or linked issues
 

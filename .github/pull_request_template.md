@@ -1,21 +1,13 @@
 ## Summary
 
-Describe the implemented outcome in two or three plain-language sentences.
-
-## Implementation
-
-Explain how the code realizes the chosen direction. Include the code paths, data changes, or tradeoffs a reviewer needs to understand the diff.
-
-## Verification
-
-State what was tested or checked and any relevant limits.
+1–3 sentences explaining what changed and what that accomplishes.
 
 ## Callouts
 
-<!-- Remove this section when there are no meaningful callouts. -->
+<!-- Include only meaningful reviewer attention; usually 3–5 bullets maximum, fewer when useful. Omit this section when unnecessary. -->
 
-- **[What to examine]:** Note only useful reviewer focus, unusual choices, compatibility concerns, or known follow-ups.
+- Short, meaningful reviewer callout.
 
 ## Context
 
-[Delivery issue](ISSUE_URL) — current understanding and state of the work. Do not duplicate it here.
+Closes #<issue>
