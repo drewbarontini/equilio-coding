@@ -1,0 +1,4 @@
+interface:
+  display_name: "Equilio Explain"
+  short_description: "Understand meaningful changes to the system model"
+  default_prompt: "Use $equilio-explain to teach me what I should understand differently about the system after this change."

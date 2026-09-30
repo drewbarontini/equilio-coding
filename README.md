@@ -1,8 +1,8 @@
 # Equilio Coding
 
-**Workflow:** Frame → Map → Explore → Build → Integrate
+**Core:** Frame → Map → Explore → Build → Integrate
 
-**Orchestration:** Loop: Goal → workflow → Review-ready
+**Supporting:** Loop — orchestrate · Explain — understand
 
 Equilio Coding helps a person and an agent move from a problem to coherent software while retaining what they learn. Get to reality early by trying meaningful options in the running product. Carry context forward in an issue that explains the work clearly to the next person or agent.
 
@@ -12,7 +12,11 @@ The five steps are a practical application of [Equilio](https://equilio.dev), wh
 
 The shared [Development Principles](references/development-principles.md) guide how those skills operate: **Understand First → Fewest Changes → Optimize for the Reader → Better Than Before → Close the Loop**. They are judgment guides beneath the workflow, not new stages or Equilio Models. “Fewest Changes” means the smallest coherent functioning slice, including every layer it needs, rather than the smallest diff.
 
-## Workflow skills
+## Core Skills
+
+**Frame → Map → Explore → Build → Integrate**
+
+These are the only five Core Skills: the canonical stages and normal progression of software development within Equilio Coding.
 
 | Skill | When to use it | Useful result |
 | --- | --- | --- |
@@ -22,39 +26,53 @@ The shared [Development Principles](references/development-principles.md) guide 
 | [`equilio-build`](skills/equilio-build/) | A direction is ready to implement. | Working, understandable software and updated decisions. |
 | [`equilio-integrate`](skills/equilio-integrate/) | A change needs coherent review, verification, and handoff. | A fully formed issue before PR creation, then a reviewable PR and later live updates. |
 
-Each workflow skill stands alone. Start with a rough request, an issue, a local Markdown file, a prototype, or working code. Invoke one skill for a focused job or run several manually in sequence; earlier skills need not have run.
+Each Core Skill stands alone. Start with a rough request, an issue, a local Markdown file, a prototype, or working code. Invoke one skill for a focused job or run several manually in sequence; earlier skills need not have run.
 
-## Optional orchestration
+## Supporting Skills
 
-[`equilio-loop`](skills/equilio-loop/) takes a goal through the five workflow skills to a coherent, verified, review-ready implementation. Loop owns orchestration; the workflow skills own their respective judgment and methods. It reuses their current instructions and the issue as shared memory, revisiting an earlier skill when new evidence changes the direction. It makes evidence-based decisions without routine approval gates and asks for human judgment when a consequential choice cannot be resolved from the goal and available evidence. Install Loop with all five workflow skills; it is not a sixth workflow stage.
+**Core skills define the workflow. Supporting skills compose, inspect, or extend the workflow without redefining it.**
+
+Supporting Skills are optional and independently invokable for a distinct atomic job. They do not add workflow stages or change the core skills' responsibilities, order, or conceptual model. Create another only when a recurring, independently invokable job emerges that is not already owned by a Core Skill.
+
+**[Loop — orchestrate](skills/equilio-loop/)**
+
+Run the core workflow autonomously from a goal to coherent, verified, review-ready work. Loop reuses the core skills' current instructions and the issue as shared memory, revisiting an earlier skill when new evidence changes the direction. It makes evidence-based decisions without routine approval gates and asks for human judgment when a consequential choice cannot be resolved from the goal and available evidence. Install Loop with all five Core Skills. After they converge, Loop may invoke Explain for a meaningful implementation before human review; skip it for trivial changes where it adds no value.
+
+**[Explain — understand](skills/equilio-explain/)**
+
+Surface the meaningful changes a human should understand to maintain a coherent mental model of the software. Explain teaches what concepts, boundaries, invariants, flows, or assumptions changed, filtering routine implementation detail. Use it independently for an AI-generated change, a human-written branch, a PR, completed work, or an unfamiliar implementation; the core workflow need not have produced the code. Ask “Explain what changed,” “Teach me what changed in this PR,” or “What do I need to know to maintain this?” when the intent is maintainer understanding rather than an ordinary code summary.
+
+**Integrate:** Is this change coherent? **Explain:** What should a human understand about the coherent system that now exists? Integrate retains coherence review; Explain is a teaching skill, not another review or implementation stage.
 
 ## Install
 
-Run the interactive command and choose the five workflow skills, plus Loop if you want autonomous orchestration:
+Run the interactive command and choose the Core Skills and optional Supporting Skills you need:
 
 ```sh
 npx skills add drewbarontini/equilio-coding
 ```
 
-For a non-interactive install of all six, use `npx skills add drewbarontini/equilio-coding --skill '*' --yes`. Select one workflow skill with the CLI's skill filter:
+For a non-interactive install of all skills, use `npx skills add drewbarontini/equilio-coding --skill '*' --yes`. Select any Core or Supporting Skill with the CLI's skill filter:
 
 ```sh
 npx skills add drewbarontini/equilio-coding --skill equilio-explore
 ```
 
-The CLI can list the repository's skills with `npx skills add drewbarontini/equilio-coding --list`. Your agent's invocation syntax may vary; ask it to use a skill by name or describe the job in ordinary language. Invoke `equilio-loop` with a goal when you want the agent to run the full workflow.
+The CLI can list the repository's skills with `npx skills add drewbarontini/equilio-coding --list`. Your agent's invocation syntax may vary; ask it to use a skill by name or describe the job in ordinary language. Invoke `equilio-loop` with a goal when you want the agent to run the full workflow, or select `equilio-explain` on its own for maintainer understanding.
 
 ## Local work and the issue
 
 Use local Markdown at any step for drafts, maps, experiments, observations, decisions, and reviews. **Working Notes → Issue → PR:** working notes hold exhaustive, temporary detail; the shared issue holds the canonical current understanding; the PR holds implementation detail for code review. Transform information between these layers instead of copying it. The shared issue is the GitHub issue for GitHub-tracked work, or the issue in Linear or local Markdown according to the project.
 
-Each skill re-reads and rewrites the issue body before finishing, leaving it as the best current summary of understanding for humans and AI. Write-back means synthesizing material learning: replace stale assumptions, consolidate duplicates, preserve decisions and deferred questions, and remove incidental code detail. A comment, stage note, or appended work log is insufficient. A new reader should understand the current state without prior conversation or working notes. When the team works entirely in Markdown, the local issue file can be that shared account.
+Each Core Skill and Loop re-reads and rewrites the issue body before finishing, leaving it as the best current summary of understanding for humans and AI. Explain reconciles only durable new understanding into an existing issue; otherwise it leaves the issue unchanged and does not create a competing permanent artifact. **Explain output = teaching. Issue = durable understanding.** Write-back means synthesizing material learning: replace stale assumptions, consolidate duplicates, preserve decisions and deferred questions, and remove incidental code detail. A comment, stage note, or appended work log is insufficient. A new reader should understand the current state without prior conversation or working notes. When the team works entirely in Markdown, the local issue file can be that shared account.
+
+**PR:** How did the code change? **Explain:** What should I understand differently because it changed? Explain uses the PR and diff as evidence without duplicating them or copying its entire teaching output into the issue.
 
 The issue gains fidelity as the work progresses. Frame can leave a proposed solution open; Map can settle system facts while naming what a prototype must reveal; Explore can choose a direction from observed behavior. At the start, the issue may contain only a problem and questions. When the change is live, its completed account should explain why it mattered, what was learned and tried, what was decided and changed, how it was verified, who could use it, what feedback is available, and where the durable artifacts are.
 
 An ordinary change can use one issue. A broader problem may use an optional parent issue for shared intent, exploration, and overall outcome, with linked delivery issues for functioning changes. Each delivery issue owns its lifecycle and links to the parent without repeating it. A PR normally advances one delivery issue and links to that issue for full context. [The issue reference](references/issue.md) gives practical slice questions and a completed-state check. [The example](examples/notification-preferences.md) shows a broader problem becoming two linked delivery slices after mapping and prototyping, with one live and one still open.
 
-Do not create a remote issue just because a workflow skill was invoked. Draft framing in local Markdown for review before creating or materially updating a shared issue. Loop checks for an existing owner and establishes a delivery issue when needed; it requests human judgment for consequential framing or decisions. Once work proceeds, complete the [issue write-back contract](references/issue.md#issue-write-back-contract) before each skill finishes. Before PR creation, the delivery issue should reflect the implemented and verified work; the PR explains how the code implements that understanding and links to the issue. Keep planned feedback, observed feedback, and inference distinct. Use [the PR template](.github/pull_request_template.md) to guide a human reviewer.
+Do not create a remote issue just because a skill was invoked. Draft framing in local Markdown for review before creating or materially updating a shared issue. Loop checks for an existing owner and establishes a delivery issue when needed; it requests human judgment for consequential framing or decisions. Once work proceeds, follow the [issue write-back contract](references/issue.md#issue-write-back-contract), including Explain's conditional reconciliation. Before PR creation, the delivery issue should reflect the implemented and verified work; the PR explains how the code implements that understanding and links to the issue. Keep planned feedback, observed feedback, and inference distinct. Use [the PR template](.github/pull_request_template.md) to guide a human reviewer.
 
 ## Contribute
 

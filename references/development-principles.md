@@ -2,7 +2,7 @@
 
 **Understand First → Fewest Changes → Optimize for the Reader → Better Than Before → Close the Loop**
 
-These principles guide judgment throughout **Frame → Map → Explore → Build → Integrate**. They are shared development doctrine, not additional workflow stages, Equilio Models, mandatory printed checklists, or gates. Apply them in proportion to the work.
+These principles guide judgment throughout the five Core Skills: **Frame → Map → Explore → Build → Integrate**. Supporting Skills also apply them in proportion to their job: Loop orchestrates the core workflow; Explain helps a maintainer understand meaningful system changes. They are shared development doctrine, not additional workflow stages, Equilio Models, mandatory printed checklists, or gates.
 
 ## Understand First
 
