@@ -16,6 +16,34 @@ The target is **completeness of understanding, not completeness of implementatio
 
 Establish the project's issue destination before a remote update. If no shared issue exists yet, use a local Markdown issue while preparing one; for GitHub-tracked work, local notes alone do not satisfy the write-back once a GitHub issue exists. If a required write-back is blocked, preserve the issue-ready update and report that the skill remains incomplete.
 
+## Choose the next useful operation
+
+**Follow the understanding, not the sequence.** **Frame → Map → Explore → Build → Integrate** is the canonical progression of concerns, not a mandatory pipeline. Work may enter at any appropriate skill, skip work whose purpose is already satisfied, or revisit an earlier concern when material evidence requires it. Do not repeat work merely because a skill exists or has not run.
+
+Each Core Skill performs its job, reconciles the shared issue, then re-reads the resulting issue before recommending what is useful next. Base that judgment primarily on the reconciled issue, relevant repository evidence, current implementation, verification results, and the Development Principles. The issue is both shared memory and the state from which the next operation can be selected: a future human or AI should reach approximately the same recommendation without hidden chat context. Put material reasons, unresolved questions, and evidence in its current narrative, without adding a routing report or required fields.
+
+Use these as judgment guides, not gates:
+
+| Next operation | When it is useful |
+| --- | --- |
+| `equilio-frame` | The actual problem, desired outcome, scope, boundaries, intent, or important constraints are unclear; a proposed solution lacks enough problem understanding. Skip it when the issue already expresses a strong problem, outcome, evidence, and boundaries. |
+| `equilio-map` | The problem is understood, but relevant behavior, code paths, data flow, state, boundaries, dependencies, or conventions remain assumptions that affect implementation decisions. Do not repeat mapping already sufficient for this change. |
+| `equilio-explore` | Meaningful approaches remain, interaction or behavior is uncertain, or a cheap test or prototype could resolve an important assumption and change the decision. **Do not explore merely because Explore exists.** Skip it when evidence and conventions sufficiently support one direction. |
+| `equilio-build` | The problem, relevant system, and implementation direction are understood enough for a responsible, coherent change; more framing, mapping, or prototyping is unlikely to materially improve the decision. Build requires sufficient understanding, not certainty. |
+| `equilio-integrate` | Functioning implementation exists and intended behavior has been built; coherence review, verification, issue reconciliation, and preparation for review are the primary remaining needs. Return to an earlier skill if review reveals material problems. |
+| `equilio-explain` | The implementation is coherent and review-ready, and the change meaningfully alters the maintainer's mental model. This Supporting Skill is optional; skip trivial changes where explanation adds no useful understanding. |
+| Human review or stop / complete | Implementation is coherent, verification is sufficient, the issue reflects reality, and no further Core Skill is needed. Recommend human judgment sooner when a consequential unresolved choice needs it; state that choice without claiming review readiness. |
+
+Movement may go backward: Map can expose the wrong problem and recommend Frame; Explore can discover an unknown system constraint and recommend Map; Build can invalidate a decision and recommend Explore; Integrate can discover a missed outcome and recommend whichever earlier skill addresses the gap. Re-enter only when current understanding materially requires it, and converge through evidence rather than creating loops for their own sake.
+
+Finish with one useful skill or action and a brief reason, for example:
+
+**Recommended next:** `equilio-build`
+
+**Why:** The problem and relevant system behavior are understood, and prototyping is unlikely to change the supported direction.
+
+Keep this recommendation concise; do not introduce completion scores, maturity levels, routing percentages, mandatory checklists, formal gates, or a requirement to pass every skill. If the user explicitly invokes a particular skill, perform its job and reconcile the issue before recommending continuation; routing must not override deliberate use. Recommending a skill does not require it to be installed or invoke it automatically. Loop owns orchestration; individual Core Skills own their specific judgment.
+
 ## What the issue should explain
 
 Use clear headings, concise prose, meaningful bullets, explicit decisions, and links to durable artifacts. Include only what is relevant at the current stage:

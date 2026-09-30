@@ -1,6 +1,6 @@
 # Example: reliable, understandable digest control
 
-This fictional example starts with one broad problem, then creates two linked functioning delivery issues after mapping and prototyping. The issue numbers and observations are illustrative. The first slice reaches a live test and becomes available to customers; the second remains open. No customer response is assumed.
+This fictional example starts with one broad problem, then creates two linked functioning delivery issues after mapping and prototyping. Each concern needs attention here; the route illustrates the canonical progression rather than prescribing it for every issue. The issue numbers and observations are illustrative. The first slice reaches a live test and becomes available to customers; the second remains open. No customer response is assumed.
 
 ## Frame → a local draft and a parent
 
