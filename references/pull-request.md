@@ -1,65 +1,42 @@
 # Pull Request Guidance
 
-**A PR is a review synopsis, not documentation.** A reviewer should be able to read it in under a minute and understand what changed, what deserves attention, and where to find full context.
+**Summary → Changes → Callouts**
 
-**Issue → full current understanding. PR → quick review synopsis. Code → implementation.** Before preparing the PR, reconcile the issue with the actual outcome, evidence, decisions, verification, and relevant history. The issue is the canonical source of deeper understanding; the PR should not duplicate it.
+The work artifact preserves understanding; the PR orients a human reviewing the implementation. Reconcile the [work artifact](work-artifact.md) before preparing a PR. Use [the template](../.github/pull_request_template.md), omitting Callouts when unnecessary and Changes for a genuinely tiny change.
 
-Use [the PR template](../.github/pull_request_template.md): **Summary → Callouts → Context**, with Callouts omitted when unnecessary. Do not add other default sections such as Implementation, Testing, Verification, Changes, Files Changed, Technical Details, Screenshots, Checklist, Decision Log, or Background. Include a topic briefly in Callouts only if it deserves specific reviewer attention.
+Target **75–150 words** for a normal description. At roughly **200 words**, reconsider what belongs in code, the work artifact, or a durable linked artifact. Do not repeat the full Problem, Decisions, Impact, or Reality, narrate development, or add default sections.
+
+Do not add generated-by footers, agent signatures, model names, or tool branding to the editable PR body. Leave platform-generated metadata alone.
 
 ## Summary
 
-The elevator pitch: **What changed, and what does that accomplish?** Write approximately 1–3 sentences describing the high-level outcome or resulting behavior. Prefer outcome-oriented language.
-
-Do not walk through implementation, list files or components, repeat the issue framing, explain every decision, narrate development, summarize every test, or mechanically describe the diff.
-
-## Callouts
-
-**Call out what matters, not what changed line by line.** Include only specific, high-signal information deserving reviewer attention: an important decision, meaningful tradeoff, non-obvious constraint, compatibility concern, intentional limitation, risk, unusual verification, surprise, or area needing focused review.
-
-Keep bullets short; usually 3–5 bullets maximum. Use one or two when that is all that matters. Omit the section entirely when there are no meaningful callouts; never manufacture content to fill the template.
-
-Do not include file-by-file summaries, function descriptions, class or component inventories, obvious implementation detail, mechanical diff summaries, or generic statements such as “added tests.”
-
-Verification still matters. Ordinary automated checks visible through the repository's normal tooling do not need PR prose. Do not add routine “Tests pass,” “Lint passes,” or “Typecheck passes” bullets unless the repository explicitly requires them. Include verification only when it is noteworthy, for example:
-
-> Keyboard focus behavior was also verified manually because browser focus handling is not fully represented by the automated suite.
-
-## Context
-
-Use only the issue link by default:
-
-```markdown
-## Context
-
-Closes #<issue>
-```
-
-Use issue-closing syntax when merge should close the issue. If delivery or live verification must still occur after merge, or the issue lives outside GitHub, use a plain issue link instead. Do not imply a later delivery state without evidence.
-
-Do not repeat the problem statement, requirements, exploration history, design reasoning, previous implementation attempts, or full acceptance criteria. Maintain that understanding in the linked issue.
-
-## Keep implementation in the code
-
-**The PR is not implementation documentation.** The code should explain how the solution works. As with comments, **prefer the artifact itself over prose that merely narrates the artifact**.
-
-Do not generate prose that mirrors the diff: “Updated `foo.ts` to…,” “Added a new helper called…,” “Modified the handler to…,” “Changed three components…,” or “Added two tests for….” Include such detail only when it represents a meaningful reviewer callout that cannot be understood from the code itself.
-
-## Small changes can have small descriptions
-
-Brevity is desirable when nothing else deserves attention. This is a complete description for a simple change:
+**What does this change accomplish?** Use approximately 1–3 sentences about resulting behavior or outcome. Put the issue link directly after the prose:
 
 ```markdown
 ## Summary
 
-Fixes keyboard navigation in the command menu so focus follows the highlighted result.
-
-## Context
+Fixes keyboard navigation so focus follows the highlighted command-menu result.
 
 Closes #123
 ```
 
-## No attribution or signatures
+This is a complete PR for a tiny change. Use closing syntax only when merge should close the issue; otherwise use a plain issue link, including when release or live verification must still occur. A PR normally advances one delivery issue.
 
-**No generated-by footers, agent signatures, or tool branding.** Do not add AI/tool attribution anywhere in the PR body: “Generated with Claude Code,” “Created by Codex,” “Generated by ChatGPT,” “Co-authored by AI,” model or agent names, tool/version signatures, decorative automation footers, emoji signatures, or “This PR was automatically generated…” and similar text. Include only information useful to the reviewer. This applies to content Equilio Coding generates; leave automatically added platform metadata outside the editable body alone.
+## Changes
 
-**The issue explains the understanding. The code explains the implementation. The PR explains the change.**
+**What meaningfully changed in the implementation or code system?** Usually use **2–5 bullets**, one sentence each, orienting reviewers around behavior, responsibility, flow, boundary, contract, or meaningful implementation changes:
+
+```markdown
+## Changes
+
+- **Send eligibility:** The worker now uses current preference state rather than treating the earlier batch snapshot as final eligibility.
+- **Settings:** Preference copy now reflects the actual send-time boundary.
+```
+
+Omit this section for a genuinely tiny change. Avoid file, function, class, or component inventories, mechanical diff summaries, “added tests,” “updated component,” and narration of obvious code. The diff already shows mechanics.
+
+## Callouts
+
+Optional; usually **0–3 bullets**. Include only something deserving disproportionate reviewer attention: risk, an important trade-off, compatibility concern, intentional limitation, unusual verification, surprising behavior, or an area for focused review. Never manufacture callouts.
+
+Ordinary checks need no prose unless the repository requires it. Mention verification when noteworthy, for example manual keyboard-focus verification that covers behavior the automated suite cannot represent. Keep broader evidence and limitations in Reality.

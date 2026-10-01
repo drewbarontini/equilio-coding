@@ -1,0 +1,117 @@
+# Work as current understanding
+
+**Problem → Solution → Decisions → Impact → Reality**
+
+The shared work artifact preserves the **current understanding of the work** for humans and AI agents. Use the same shape for delivery issues, broader projects, and local Markdown work artifacts, whether the destination is GitHub, Linear, or the project's Markdown files.
+
+> After any Equilio operation, a fresh human or AI agent should be able to read the shared work artifact and responsibly continue without needing prior conversation or hidden agent context.
+
+## The shared shape
+
+```markdown
+# [Work title]
+
+## Problem
+
+**Current:** What is happening now?
+
+**Expected:** What should happen instead?
+
+## Solution
+
+How are we addressing the gap?
+
+## Decisions
+
+What consequential choices shaped the approach, and why?
+
+## Impact
+
+What responsibilities, relationships, boundaries, flows, behaviors, or assumptions change because of this work?
+
+## Reality
+
+What remains uncertain? What has actually been verified or observed? What errors, feedback, trade-offs, limitations, or new opportunities should shape what happens next?
+```
+
+These are stable coordinates, not fields to fill mechanically. Keep the headings throughout the lifecycle; use brief provisional language where understanding is missing, such as “Direction not chosen,” “System impact is not yet understood,” or “Not yet verified.” Do not manufacture information or pad sections.
+
+| Coordinate | What belongs here |
+| --- | --- |
+| **Problem** | The actual gap: what happens, what should happen, and why it matters. Use Current and Expected when helpful. Rewrite the framing when evidence corrects it. |
+| **Solution** | The high-level approach and resulting behavior. Distinguish a proposal from a chosen direction; describe the mechanism rather than the patch. |
+| **Decisions** | Consequential choices and their reasons that could matter to a future change. Combine choice and reason, for example: **Check preference at send time:** This is the last boundary we control before provider acceptance. |
+| **Impact** | System meaning: changed responsibilities, relationships, boundaries, flows, contracts, behaviors, invariants, or assumptions. Before implementation, it can explain the relevant current system model. Preserve what a maintainer should understand differently, without file, function, class, or component inventories. |
+| **Reality** | The gap between what we believe and what the world has demonstrated: verification, observations, errors, feedback, unknowns, accepted trade-offs, limitations, and opportunities that affect judgment. |
+
+Reality acknowledges that implementation is not completion. Distinguish planned testing or observation, verified behavior, observed use, inference, unknowns, and accepted trade-offs when material. Record implementation, merge, deployment, live verification, and observed feedback as separate facts only when they occur. Reality is not a backlog, and it need not imply more work always exists.
+
+## Information budget
+
+Target **300–500 words** for a normal artifact. At roughly **600 words**, reconsider before adding prose; exceeding that should be unusual and justified by genuine complexity. Small or early work may need much less.
+
+Use these defaults, not validation rules:
+
+- **Problem:** Current and Expected usually take 1–3 sentences each.
+- **Solution:** One short paragraph, roughly 100 words or less.
+- **Decisions:** Usually 1–3 bullets; rarely more than 5.
+- **Impact:** One short paragraph or up to roughly 3 high-signal bullets.
+- **Reality:** Usually at most 5 high-signal bullets or a similarly short paragraph.
+
+Before keeping a sentence, ask: **If I remove this sentence, would a fresh human or agent make a materially worse decision about the work?** If not, remove it. Prefer meaning over activity.
+
+When oversized, compress first, remove information that does not affect understanding or judgment, then link durable detail. Split only when the size reveals multiple coherent problems or outcomes. Moving prose between sections does not solve verbosity. Exclude chronological logs, transcripts, raw exploration history, exhaustive alternatives or tests, commands, code inventories, generic “implemented / updated / tested” narration, and prose that restates code or diffs.
+
+## Reconcile current understanding
+
+Read this reference and the existing artifact before modifying it. Establish the destination and preserve records, relationships, and useful links; prefer updating over creating a duplicate. Use a local Markdown artifact while preparing a remote one. Do not create a remote issue merely because a skill ran; use the user's existing authorization and request human judgment only for consequential unresolved choices.
+
+Every Core Skill can rewrite every section. Each must re-read and reconcile the same artifact before finishing: replace stale guesses with current truth, retain consequential reasoning, synthesize material learning, and remove contradictions and duplication. Re-read the result to ensure the invariant holds. Comments, appended stage notes, and working notes alone do not satisfy reconciliation. Once a remote artifact owns the work, a local draft cannot replace its update; if blocked, preserve a destination-ready synthesis and report the incomplete reconciliation.
+
+**Frame → Map → Explore → Build → Integrate** is a progression of concerns, not a mandatory pipeline or a set of artifact sections. Fidelity increases within the same five coordinates:
+
+| Skill | Natural emphasis, without exclusive ownership |
+| --- | --- |
+| Frame | Strengthen Problem; leave unknown direction, impact, or verification provisional. |
+| Map | Strengthen Problem and Impact through actual product and system understanding; mapping may correct the gap. |
+| Explore | Strengthen Solution, Decisions, and Reality through discriminating evidence; separate observations from hypotheses. |
+| Build | Turn prospective Solution and Impact into implemented behavior; preserve consequential decisions, verification, and remaining uncertainty. |
+| Integrate | Reconcile all five coordinates against actual code and verified behavior, compressing them for handoff. |
+
+Loop uses the same reconciliation contract for orchestration learning. Explain conditionally reconciles durable insight into an existing artifact: mental-model changes generally belong in Impact, reasoning in Decisions, and unresolved invariants, trade-offs, limits, or observation needs in Reality. Leave it unchanged if nothing durable is missing; do not copy the teaching response or require a new artifact for standalone Explain. **Explain teaches the model. Impact preserves the model change.**
+
+## Issues and projects
+
+**Same questions. Different resolution.** A delivery issue preserves understanding of its own functioning slice. A broader project or optional parent issue preserves the coordinated effort at project resolution; link delivery issues without aggregating their detailed decisions or implementation information. An ordinary change can use one artifact without a hierarchy.
+
+Keep delivery slices small, atomic, and functioning across every product and technical layer needed for someone to experience and evaluate them. Prefer independent release to an appropriate audience when feasible; observations can shape the next slice before the broader vision is complete. Ask what someone can experience, what must connect, who can evaluate it, and what an independent release would teach. A technical-layer boundary alone is not a useful slice. When foundational work needs its own issue, name the enabled capability, verification, and functioning slice it supports without claiming user feedback it cannot produce.
+
+## Artifact responsibilities
+
+| Artifact | Responsibility |
+| --- | --- |
+| **Working Notes** | Exhaustive temporary investigation and exploration, including detailed code maps and raw trials. |
+| **Work Artifact** | Problem → Solution → Decisions → Impact → Reality: canonical current understanding for humans and AI. |
+| **PR** | [Summary → Changes → Callouts](pull-request.md): fast orientation for implementation review. |
+| **Code + tests** | Implementation, behavior, contracts, and executable evidence. |
+| **Explain** | Teaching that updates the human maintainer's mental model. |
+
+Transform information between these artifacts instead of copying it blindly. Link durable detail when it matters; temporary notes must not be the only home of understanding needed to continue.
+
+## Choose the next useful operation
+
+**Follow the understanding, not the sequence.** Read the reconciled artifact with relevant repository, implementation, verification evidence, and the [Development Principles](development-principles.md). Honor an explicitly requested skill first. Skip satisfied concerns and revisit only when new evidence materially requires it.
+
+Use the five coordinates as judgment lenses: Is the **Problem** understood enough? Is there a supported **Solution**? Are consequential **Decisions** resolved enough? Is the relevant system **Impact** understood? What uncertainty or evidence in **Reality** should determine the next move? These are not gates, scores, maturity levels, or required checklists.
+
+| Useful operation | Reason to choose it |
+| --- | --- |
+| Frame | The actual gap, outcome, or important boundaries remain unclear. |
+| Map | Relevant behavior, flow, contracts, or dependencies remain assumptions that affect the change. |
+| Explore | A focused test or prototype could resolve meaningful uncertainty and change the decision. |
+| Build | The problem, system, and direction are understood enough for a responsible change; certainty is unnecessary. |
+| Integrate | Functioning implementation needs coherence review, verification, and handoff. Return to earlier concerns if material problems emerge. |
+| Explain | Coherent work meaningfully changes the maintainer's mental model; skip it for trivial changes. |
+| Human judgment or stop / complete | A consequential unresolved choice needs a human, or no further operation is useful given the requested scope and actual state. |
+
+After reconciliation, each Core Skill and Loop finishes with one concise **Recommended next:** `<skill or action>` and **Why:** `<reason>`. Keep material reasons and evidence in the artifact, so routing does not depend on hidden conversation state. A recommendation neither requires an installed skill nor invokes it automatically; Loop owns adaptive orchestration.
