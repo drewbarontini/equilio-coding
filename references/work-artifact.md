@@ -38,7 +38,7 @@ These are stable coordinates, not fields to fill mechanically. Keep the headings
 
 | Coordinate | What belongs here |
 | --- | --- |
-| **Problem** | The actual gap: what happens, what should happen, and why it matters. Use Current and Expected when helpful. Rewrite the framing when evidence corrects it. |
+| **Problem** | The actual gap: what happens, what should happen, and why it matters. State Current and Expected in one sentence each. Rewrite the framing when evidence corrects it. |
 | **Solution** | The high-level approach and resulting behavior. Distinguish a proposal from a chosen direction; describe the mechanism rather than the patch. |
 | **Decisions** | Consequential choices and their reasons that could matter to a future change. Combine choice and reason, for example: **Check preference at send time:** This is the last boundary we control before provider acceptance. |
 | **Impact** | System meaning: changed responsibilities, relationships, boundaries, flows, contracts, behaviors, invariants, or assumptions. Before implementation, it can explain the relevant current system model. Preserve what a maintainer should understand differently, without file, function, class, or component inventories. |
@@ -48,25 +48,29 @@ Reality acknowledges that implementation is not completion. Distinguish planned 
 
 ## Information budget
 
-Target **300–500 words** for a normal artifact. At roughly **600 words**, reconsider before adding prose; exceeding that should be unusual and justified by genuine complexity. Small or early work may need much less.
+The body of an issue, project, or local work artifact must be **250 words or fewer**. There is no minimum. These are hard limits, not targets:
 
-Use these defaults, not validation rules:
+| Section | Maximum shape |
+| --- | --- |
+| **Problem** | Two sentences: one **Current**, one **Expected**. |
+| **Solution** | One paragraph of two sentences. |
+| **Decisions** | Three bullets, one sentence each; or one short sentence. |
+| **Impact** | One paragraph of two sentences. |
+| **Reality** | Three bullets, one sentence each; or one short sentence. |
 
-- **Problem:** Current and Expected usually take 1–3 sentences each.
-- **Solution:** One short paragraph, roughly 100 words or less.
-- **Decisions:** Usually 1–3 bullets; rarely more than 5.
-- **Impact:** One short paragraph or up to roughly 3 high-signal bullets.
-- **Reality:** Usually at most 5 high-signal bullets or a similarly short paragraph.
+Keep only the five headings. No nested bullets, subheadings, tables, code blocks, appendices, or collapsed detail. Give each fact one home: Solution describes behavior, Decisions explains consequential choices, Impact preserves the changed system model, and Reality records evidence and limits.
+
+Count rendered body text, including headings and link labels; exclude the separate title, link destinations, and template comments. Before writing or updating the destination, count words and check the section limits; revise until both pass. Only an explicit user instruction or a mandatory destination requirement can override these limits; complexity alone cannot.
 
 Before keeping a sentence, ask: **If I remove this sentence, would a fresh human or agent make a materially worse decision about the work?** If not, remove it. Prefer meaning over activity.
 
-When oversized, compress first, remove information that does not affect understanding or judgment, then link durable detail. Split only when the size reveals multiple coherent problems or outcomes. Moving prose between sections does not solve verbosity. Exclude chronological logs, transcripts, raw exploration history, exhaustive alternatives or tests, commands, code inventories, generic “implemented / updated / tested” narration, and prose that restates code or diffs.
+When oversized, remove duplication and compress first, then link necessary durable detail with a label that explains its relevance. Keep the gap, chosen direction, consequential reasoning, changed system model, and material evidence or uncertainty understandable in the body. Do not hide overflow in comments or move it into the PR. Split only when the work contains multiple coherent problems or outcomes, never just to meet a word limit. Exclude chronological logs, transcripts, raw exploration history, exhaustive alternatives or tests, commands, code inventories, generic “implemented / updated / tested” narration, and prose that restates code or diffs.
 
 ## Reconcile current understanding
 
 Read this reference and the existing artifact before modifying it. Establish the destination and preserve records, relationships, and useful links; prefer updating over creating a duplicate. Use a local Markdown artifact while preparing a remote one. Do not create a remote issue merely because a skill ran; use the user's existing authorization and request human judgment only for consequential unresolved choices.
 
-Every Core Skill can rewrite every section. Each must re-read and reconcile the same artifact before finishing: replace stale guesses with current truth, retain consequential reasoning, synthesize material learning, and remove contradictions and duplication. Re-read the result to ensure the invariant holds. Comments, appended stage notes, and working notes alone do not satisfy reconciliation. Once a remote artifact owns the work, a local draft cannot replace its update; if blocked, preserve a destination-ready synthesis and report the incomplete reconciliation.
+Every Core Skill can rewrite every section. Each must re-read and reconcile the same artifact before finishing: replace stale guesses with current truth, retain consequential reasoning, synthesize material learning, and remove contradictions and duplication. Enforce the [information budget](#information-budget) before writing the update, then re-read the result to ensure the invariant holds. Comments, appended stage notes, and working notes alone do not satisfy reconciliation. Once a remote artifact owns the work, a local draft cannot replace its update; if blocked, preserve a destination-ready synthesis and report the incomplete reconciliation.
 
 **Frame → Map → Explore → Build → Integrate** is a progression of concerns, not a mandatory pipeline or a set of artifact sections. Fidelity increases within the same five coordinates:
 

@@ -42,13 +42,13 @@ Supporting Skills compose, inspect, or extend the workflow without adding stages
 
 Use **Problem → Solution → Decisions → Impact → Reality** for delivery issues, broader projects, and local Markdown work artifacts. **Same questions. Different resolution.** Projects preserve understanding of the coordinated effort; delivery issues preserve their own functioning slice. Link them without copying delivery-level detail into the parent. No hierarchy is required for ordinary work.
 
-The same artifact gains fidelity throughout the lifecycle; replace provisional understanding with current truth rather than adding stage sections. Target **300–500 words** for normal work, reconsider at roughly **600**, and keep small work smaller. Use natural language, preserve consequential reasoning and system meaning, and never invent validation, feedback, or delivery state. Reality records what the world has demonstrated and what remains uncertain; it is not a backlog.
+The same artifact gains fidelity throughout the lifecycle; replace provisional understanding with current truth rather than adding stage sections. Enforce a **250-word maximum** and the [section limits](references/work-artifact.md#information-budget), with no minimum. Use natural language, preserve consequential reasoning and system meaning, and never invent validation, feedback, or delivery state. Reality records what the world has demonstrated and what remains uncertain; it is not a backlog.
 
 | Artifact | Purpose |
 | --- | --- |
 | Working Notes | Exhaustive temporary investigation and exploration. |
 | Work Artifact | Canonical current understanding for humans and AI. |
-| PR | Fast orientation for reviewing implementation; target 75–150 words, reconsider at 200. |
+| PR | Fast orientation for reviewing implementation; **100 words maximum**. |
 | Code + tests | Implementation, behavior, contracts, and executable evidence. |
 | Explain | Teaching that updates the human maintainer's mental model. |
 

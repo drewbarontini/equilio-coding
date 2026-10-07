@@ -1,20 +1,20 @@
-<!-- Target 75–150 words; reconsider at roughly 200. Keep deeper understanding in the work artifact and mechanics in code. -->
+<!-- Hard maximum: 100 rendered words, including headings and link labels. Count before submission. No extra sections or nested detail. Keep deeper understanding in the work artifact. -->
 
 ## Summary
 
-1–3 sentences describing what the change accomplishes.
+<!-- At most two sentences describing the resulting behavior or outcome. -->
 
 Closes #<issue>
 <!-- Use a plain issue link when merge should not close the work item. -->
 
 ## Changes
 
-<!-- Usually 2–5 bullets, one sentence each, about meaningful behavior, responsibility, flow, boundary, contract, or implementation changes. Omit for a genuinely tiny change. -->
+<!-- At most three bullets, one sentence each, adding meaningful implementation information beyond Summary. Omit for a genuinely tiny change. -->
 
 - Meaningful change that orients the reviewer.
 
 ## Callouts
 
-<!-- Optional; usually 0–3 bullets for disproportionate reviewer attention: risk, important trade-off, compatibility, intentional limitation, unusual verification, surprising behavior, or focused review. Omit when unnecessary. -->
+<!-- Optional; at most one bullet of one sentence for a material risk, trade-off, limitation, unusual verification, or focused review. Link necessary detail. Omit when unnecessary. -->
 
 - Specific reviewer callout.

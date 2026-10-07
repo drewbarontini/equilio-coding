@@ -4,13 +4,15 @@
 
 The work artifact preserves understanding; the PR orients a human reviewing the implementation. Reconcile the [work artifact](work-artifact.md) before preparing a PR. Use [the template](../.github/pull_request_template.md), omitting Callouts when unnecessary and Changes for a genuinely tiny change.
 
-Target **75–150 words** for a normal description. At roughly **200 words**, reconsider what belongs in code, the work artifact, or a durable linked artifact. Do not repeat the full Problem, Decisions, Impact, or Reality, narrate development, or add default sections.
+The description must be **100 words or fewer**, with no minimum. Use only Summary, Changes, and optional Callouts, subject to the limits below. No nested bullets, subheadings, tables, code blocks, appendices, or collapsed detail. Do not repeat the full Problem, Decisions, Impact, or Reality, narrate development, or move issue overflow into the PR.
+
+Count rendered body text, including headings and link labels; exclude link destinations and template comments. Before creating or updating a PR, count words and check section limits; revise until both pass. Only an explicit user instruction or a mandatory repository requirement can override these limits; complexity alone cannot. Link deeper understanding from the work artifact instead of expanding the PR.
 
 Do not add generated-by footers, agent signatures, model names, or tool branding to the editable PR body. Leave platform-generated metadata alone.
 
 ## Summary
 
-**What does this change accomplish?** Use approximately 1–3 sentences about resulting behavior or outcome. Put the issue link directly after the prose:
+**What does this change accomplish?** Use at most **two sentences** about resulting behavior or outcome. Put the issue link directly after the prose:
 
 ```markdown
 ## Summary
@@ -24,7 +26,7 @@ This is a complete PR for a tiny change. Use closing syntax only when merge shou
 
 ## Changes
 
-**What meaningfully changed in the implementation or code system?** Usually use **2–5 bullets**, one sentence each, orienting reviewers around behavior, responsibility, flow, boundary, contract, or meaningful implementation changes:
+**What meaningfully changed in the implementation or code system?** Use at most **three bullets**, one sentence each, orienting reviewers around behavior, responsibility, flow, boundary, contract, or meaningful implementation changes. Each bullet must add information beyond Summary:
 
 ```markdown
 ## Changes
@@ -37,6 +39,6 @@ Omit this section for a genuinely tiny change. Avoid file, function, class, or c
 
 ## Callouts
 
-Optional; usually **0–3 bullets**. Include only something deserving disproportionate reviewer attention: risk, an important trade-off, compatibility concern, intentional limitation, unusual verification, surprising behavior, or an area for focused review. Never manufacture callouts.
+Optional; at most **one bullet of one sentence**. Include only something deserving disproportionate reviewer attention: risk, an important trade-off, compatibility concern, intentional limitation, unusual verification, surprising behavior, or an area for focused review. Combine related concerns or link necessary detail; never omit a material risk to fit the limit or manufacture a callout.
 
 Ordinary checks need no prose unless the repository requires it. Mention verification when noteworthy, for example manual keyboard-focus verification that covers behavior the automated suite cannot represent. Keep broader evidence and limitations in Reality.

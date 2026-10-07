@@ -29,7 +29,8 @@ The relationship between the saved preference and queued sends is not yet unders
 
 ## Reality
 
-Support reports establish the symptom. Preference persistence, send eligibility, and the provider's recall boundary remain unverified.
+- **Evidence:** Support reports establish the symptom.
+- **Unknown:** Preference persistence, send eligibility, and the provider's recall boundary remain unverified.
 ```
 
 ## Map
@@ -41,7 +42,7 @@ Inspection and reproduction show that Settings saves correctly. The batch snapsh
 
 ## Problem
 
-**Current:** The worker sends from a Sunday recipient snapshot even when someone disables the digest before Monday's send. Reproduction confirms the reported gap; saving the preference works.
+**Current:** Reproduction confirms the worker sends from a Sunday recipient snapshot despite later opt-outs; saving the preference works.
 
 **Expected:** Disabling the digest should prevent sends we still control, with understandable timing.
 
@@ -59,7 +60,8 @@ The batch currently determines final send eligibility; Settings changes cannot a
 
 ## Reality
 
-Persistence and the stale batch behavior are verified in the test product. Provider behavior after message acceptance remains unknown; no customer outcome is established.
+- **Verified:** Preference persistence and stale batch behavior were reproduced in the test product.
+- **Unknown:** Provider behavior after acceptance and customer outcomes remain unverified.
 ```
 
 ## Explore
@@ -90,7 +92,9 @@ Final eligibility would move from the batch snapshot to the worker. The snapshot
 
 ## Reality
 
-Test-account prototypes skipped queued sends with the check. Provider recall remains unverified. Customer feedback is unavailable. Project #142 coordinates this slice and proposed #144.
+- **Observed:** Test-account prototypes skipped queued sends with the check.
+- **Unknown:** Provider recall remains unverified and customer feedback is unavailable.
+- **Related work:** Project #142 coordinates this slice and proposed #144.
 ```
 
 The team links #143 to [project #142](#project-142) and [proposed delivery #144](#proposed-delivery-144). Each slice crosses the layers needed for a functioning experience. #144 depends on #143's reliable send behavior but can release separately if evidence supports it; neither is merely a frontend or backend task.
@@ -123,7 +127,9 @@ The batch selects candidates; the worker owns final eligibility. Settings promis
 
 ## Reality
 
-The batch-to-send regression test and integrated walkthrough passed. Implemented; not merged, deployed, or verified live. Provider recall remains unknown and is not promised. No customer feedback yet; #142 retains the broader effort.
+- **Verified:** The batch-to-send regression test and integrated walkthrough passed.
+- **State:** Implemented; not merged, deployed, or verified live.
+- **Limit:** Provider recall remains unknown and customer feedback is unavailable; #142 retains the broader effort.
 ```
 
 ## Integrate
@@ -149,37 +155,35 @@ Turning off the weekly digest now prevents future sends, including sends from an
 
 The plain link in Summary keeps #143 open for delivery and live verification. It points to this illustrative record rather than a fictional remote issue. Review-ready does not mean deployed.
 
-Later, the team explicitly authorizes merge and deployment. A live test account opts out after entering the batch, receives no digest, and has a confirmed worker skip. Only then is Reality updated and #143 closed. The final artifact is about 330 words:
+Later, the team explicitly authorizes merge and deployment. A live test account opts out after entering the batch, receives no digest, and has a confirmed worker skip. Only then is Reality updated and #143 closed. The final artifact stays within the 250-word maximum and section limits:
 
 ```markdown
 # #143 — Turning the digest off stops future sends
 
 ## Problem
 
-**Current:** Three support reports described unwanted digests after people disabled them in Settings. The preference saved correctly, but queued sends used an earlier recipient snapshot and ignored subsequent opt-outs. This made the control unreliable at the moment people expected it to stop mail.
+**Current:** Three support reports described unwanted digests after opt-out because queued sends used an earlier recipient snapshot despite correctly saved preferences.
 
-**Expected:** Disabling the digest should prevent future sends while they remain under our control, and Settings should explain when the choice takes effect.
+**Expected:** Disabling the digest should prevent sends before provider acceptance, with clear timing in Settings.
 
 ## Solution
 
-The worker reads the current saved preference immediately before each send and skips recipients who have disabled the digest, including those already in the batch. Settings explains that disabling stops future sends without promising recall of messages already accepted by the provider. The slice is deployed and available to customers.
+The worker checks the current preference before each send and skips disabled recipients, including those already batched. Settings explains the prevention boundary.
 
 ## Decisions
 
-- **Check preference at send time:** This is the last boundary we control before provider acceptance; changing the control alone left queued sends intact in prototypes.
-- **Keep direct access separate:** #144's email-to-Settings journey addresses discoverability and can be released independently if real-use feedback supports it.
+- **Check preference at send time:** Changing the control alone left queued sends intact in prototypes.
+- **Keep direct access separate:** #144's email-to-Settings journey can be evaluated independently if customer feedback supports it.
 
 ## Impact
 
-The batch now selects candidates rather than granting final send eligibility. The worker owns that decision using current preference state. Future changes to batching or Settings must preserve this boundary: an earlier eligibility snapshot cannot override a later saved opt-out. Settings copy must match what the send path can actually prevent.
+The batch selects candidates; the worker owns final eligibility using current intent. Future batching changes must preserve that boundary, and Settings copy must match it.
 
 ## Reality
 
-- **Verified:** The batch-to-send regression test and integrated Settings walkthrough passed; review checked persistence, worker eligibility, and copy together.
-- **Live:** After merge and deployment, a test account opted out from an existing batch; no digest arrived and the worker skip was confirmed.
-- **Limit:** Provider recall remains unverified and is not promised. Prevention before acceptance is the supported behavior.
-- **Planned observation:** Review send/skip counts and support reports after the next weekly cycle.
-- **Feedback:** No customer feedback yet. The live test establishes this case, not resolution of every concern in project #142.
+- **Verified:** Regression coverage and the integrated walkthrough passed; after merge and customer deployment, a live account opted out from an existing batch with a confirmed skip.
+- **Limit:** Provider recall remains unverified and is not promised.
+- **Observation:** No customer feedback yet; next-cycle send/skip counts and support reports can inform #142 and proposed #144.
 ```
 
 Explain could teach the changed eligibility model. The final Impact already preserves that durable change, so teaching it again would not require another write-back.
@@ -211,7 +215,8 @@ Digest control connects saved intent, delivery eligibility, and understandable a
 
 ## Reality
 
-#143 is verified live. Broader customer outcomes remain unknown. The next weekly cycle's operational signals and support reports can inform whether direct access warrants delivery.
+- **Verified:** #143 is verified live; broader customer outcomes remain unknown.
+- **Observation:** The next weekly cycle's operational signals and support reports can inform whether direct access warrants delivery.
 ```
 
 ## Proposed delivery #144
@@ -241,7 +246,8 @@ The email-to-Settings journey would connect authentication, navigation, and pref
 
 ## Reality
 
-A prototype reached the setting with a test account. Customer need and reduced confusion remain unverified; project #142 coordinates evaluation.
+- **Observed:** A prototype reached the setting with a test account.
+- **Unknown:** Customer need and reduced confusion remain unverified; project #142 coordinates evaluation.
 ```
 
 If feedback supports direct access, the team can build and evaluate #144 independently. Otherwise it can reshape or close the proposal with appropriate authorization. These records replace earlier understanding; they do not retain the teaching example's workflow history.
