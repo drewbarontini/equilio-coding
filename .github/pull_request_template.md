@@ -1,4 +1,5 @@
 <!-- Hard maximum: 100 rendered words, including headings and link labels. Count before submission. No extra sections or nested detail. Keep deeper understanding in the work artifact. -->
+<!-- Use American English spelling. No AI attribution callouts, generated-by footers, agent signatures, or tool branding. -->
 
 ## Summary
 

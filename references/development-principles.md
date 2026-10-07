@@ -16,6 +16,8 @@ Avoid unrelated cleanup, speculative features, premature abstractions, and “wh
 
 ## Optimize for the Reader
 
+Use American English spelling in newly written prose, including product copy, comments, documentation, work artifacts, and PRs: **favorite**, **color**, **behavior**, and **organize**. Preserve exact quotations, proper names, and existing code identifiers or external contracts.
+
 Make code's intent easy for the next human or AI to understand. **Prefer self-explanatory code over explanatory comments.** Clear names, straightforward control flow, focused responsibilities, and local conventions should communicate what the code does, how it is structured, and its important concepts. Use abstractions when they meaningfully reduce complexity. Prefer explicit code over clever code and reduce cognitive load. Do not impose rigid rules for line counts, function sizes, class structures, or programming paradigms.
 
 Before adding a comment, ask: **Can the code itself be made clearer?** Prefer better naming, structure, or decomposition when it removes the need for explanation. **Comments explain why, not what** is a useful shorthand, not an absolute rule: explain more when comprehension genuinely requires it. Preserve non-obvious reasoning, important invariants, constraints a maintainer could accidentally violate, why an obvious implementation is intentionally avoided, or subtle external behavior, compatibility requirements, and system limitations. Keep context near the code when it would otherwise be lost.
