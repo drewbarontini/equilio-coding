@@ -4,6 +4,8 @@
 
 The work artifact preserves understanding; the PR orients a human reviewing the implementation. Reconcile the [work artifact](work-artifact.md) before preparing a PR. Use [the template](../.github/pull_request_template.md), omitting Callouts when unnecessary and Changes for a genuinely tiny change.
 
+Read and apply the shared [writing style guidance](writing-style.md) when writing the title or description. Lead with resulting behavior, make changed responsibilities concrete, and state material limits plainly within the existing budget.
+
 The description must be **100 words or fewer**, with no minimum. Use only Summary, Changes, and optional Callouts, subject to the limits below. No nested bullets, subheadings, tables, code blocks, appendices, or collapsed detail. Do not repeat the full Problem, Decisions, Impact, or Reality, narrate development, or move issue overflow into the PR.
 
 Count rendered body text, including headings and link labels; exclude link destinations and template comments. Before creating or updating a PR, count words and check section limits; revise until both pass. Only an explicit user instruction or a mandatory repository requirement can override these limits; complexity alone cannot. Link deeper understanding from the work artifact instead of expanding the PR.
@@ -31,8 +33,8 @@ This is a complete PR for a tiny change. Use closing syntax only when merge shou
 ```markdown
 ## Changes
 
-- **Send eligibility:** The worker now uses current preference state rather than treating the earlier batch snapshot as final eligibility.
-- **Settings:** Preference copy now reflects the actual send-time boundary.
+- **Send eligibility:** The worker checks the saved preference before each send, including recipients already in a batch.
+- **Settings:** The copy promises to stop digests only before the email provider accepts them.
 ```
 
 Omit this section for a genuinely tiny change. Avoid file, function, class, or component inventories, mechanical diff summaries, “added tests,” “updated component,” and narration of obvious code. The diff already shows mechanics.

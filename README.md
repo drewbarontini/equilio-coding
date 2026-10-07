@@ -12,6 +12,8 @@ Equilio Coding helps a person and an agent create coherent software while retain
 
 The work artifact preserves current understanding for the next human or agent. The PR gives a reviewer fast orientation around the implementation. [The work reference](references/work-artifact.md) defines the shared contract, information budgets, and adaptive routing; [the PR reference](references/pull-request.md) defines review prose.
 
+The shared [writing style guidance](references/writing-style.md) makes both readable through technical precision in plain language: concrete behavior, clear cause and effect, and honest evidence within the existing limits.
+
 **Shared problem, functioning slices, connected memory.** Build small, atomic vertical slices through every product and technical layer their behavior needs. Each should let someone experience and evaluate functioning software. Prefer independent release to an appropriate audience when feasible, using feedback to shape the next slice. Foundational work may need its own issue; name its enabled capability, verification, and supported slice without claiming product feedback it cannot produce.
 
 The five Core Skills apply [Equilio](https://equilio.dev), whose engine is **Intuition → Integration → Iteration** and whose Models are **Value Creation, Quality Refinement, and Strategic Momentum**. The skills are a coding method, not additional Models. The shared [Development Principles](references/development-principles.md) guide judgment: **Understand First → Fewest Changes → Optimize for the Reader → Better Than Before → Close the Loop**. Fewest Changes means the smallest coherent functioning slice, including every layer it needs.

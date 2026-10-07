@@ -145,12 +145,12 @@ Turning off the weekly digest now prevents future sends, including sends from an
 
 ## Changes
 
-- **Send eligibility:** The worker uses current preference state rather than treating the batch snapshot as final authorization.
-- **Settings:** Preference copy reflects the send-time boundary and avoids promising recall.
+- **Send eligibility:** The worker checks the saved preference before each send, including recipients already in a batch.
+- **Settings:** The copy promises to stop digests only before the email provider accepts them.
 
 ## Callouts
 
-- **Provider boundary:** No recall capability has been verified after provider acceptance; review the prevention promise against that limit.
+- **Provider limit:** Recalling accepted emails remains unverified; check that Settings promises only to prevent sends before acceptance.
 ```
 
 The plain link in Summary keeps #143 open for delivery and live verification. It points to this illustrative record rather than a fictional remote issue. Review-ready does not mean deployed.
