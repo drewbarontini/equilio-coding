@@ -30,7 +30,7 @@ The five Core Skills apply [Equilio](https://equilio.dev), whose engine is **Int
 | [Build](skills/equilio-build/) | Implement a supported direction as functioning software. | Implemented Solution and Impact, consequential Decisions, and verification in Reality. |
 | [Integrate](skills/equilio-integrate/) | Review coherence, verify behavior, and prepare handoff. | All five coordinates reconciled with actual code and evidence. |
 
-Every Core Skill stands alone and can rewrite every section. Start from a rough request, issue, local Markdown, prototype, or code. Each performs its job, reconciles the same work artifact, re-reads it, and gives one **Recommended next:** `<skill or action>` · **Why:** `<reason>`. The shared artifact and evidence must support continuation without hidden chat context; human judgment or stop / complete may be appropriate.
+Every Core Skill stands alone and can rewrite all five coordinates. Start from a rough request, issue, local Markdown, prototype, or code. Each performs its job, reconciles the same work artifact, re-reads it, and gives one **Recommended next:** `<skill or action>` · **Why:** `<reason>`. The shared artifact and evidence must support continuation without hidden chat context; human judgment or stop / complete may be appropriate.
 
 ## Supporting Skills
 
@@ -44,7 +44,9 @@ Supporting Skills compose, inspect, or extend the workflow without adding stages
 
 Use **Problem → Solution → Decisions → Impact → Reality** for delivery issues, broader projects, and local Markdown work artifacts. **Same questions. Different resolution.** Projects preserve understanding of the coordinated effort; delivery issues preserve their own functioning slice. Link them without copying delivery-level detail into the parent. No hierarchy is required for ordinary work.
 
-The same artifact gains fidelity throughout the lifecycle; replace provisional understanding with current truth rather than adding stage sections. Enforce a **250-word maximum** and the [section limits](references/work-artifact.md#information-budget), with no minimum. Use natural language, preserve consequential reasoning and system meaning, and never invent validation, feedback, or delivery state. Reality records what the world has demonstrated and what remains uncertain; it is not a backlog.
+The same artifact gains fidelity throughout the lifecycle; replace provisional understanding with current truth rather than adding stage sections. Enforce a **250-word maximum** for the five coordinates and the [section limits](references/work-artifact.md#information-budget), with no minimum. Use natural language, preserve consequential reasoning and system meaning, and never invent validation, feedback, or delivery state. Reality records what the world has demonstrated and what remains uncertain; it is not a backlog.
+
+When rewriting an existing issue, preserve its initial description verbatim beneath a horizontal line and **Original Request** heading, outside the word budget. Carry it forward unchanged on later updates and respect manual removal; the [preservation rule](references/work-artifact.md#preserve-the-original-request) governs write-back.
 
 | Artifact | Purpose |
 | --- | --- |

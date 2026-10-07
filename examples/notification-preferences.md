@@ -1,10 +1,10 @@
 # Example: reliable, understandable digest control
 
-This fictional example uses illustrative issue numbers and observations. It shows successive replacements of **the same #143 artifact**, not sections appended to an issue. The stage labels belong to this teaching example only. All five concerns are useful here; other work may skip satisfied concerns.
+This fictional example uses illustrative issue numbers and observations. It shows successive rewrites of **the same #143 artifact**, with its Original Request preserved verbatim beneath the five coordinates. The stage labels belong to this teaching example only. All five concerns are useful here; other work may skip satisfied concerns.
 
 ## Frame
 
-Request: “People keep getting weekly digests after turning them off. Add an unsubscribe button.” One substantive question establishes three support reports. Preventing later sends matters more than the exact control. The local draft becomes delivery issue #143 in the team's chosen destination:
+Existing issue #143 says: “People keep getting weekly digests after turning them off. Add an unsubscribe button.” One substantive question establishes three support reports. Preventing later sends matters more than the exact control. The local draft updates #143 while preserving its existing description outside the word budget:
 
 ```markdown
 # #143 — Turning the digest off stops future sends
@@ -31,6 +31,12 @@ The relationship between the saved preference and queued sends is not yet unders
 
 - **Evidence:** Support reports establish the symptom.
 - **Unknown:** Preference persistence, send eligibility, and the provider's recall boundary remain unverified.
+
+---
+
+## Original Request
+
+People keep getting weekly digests after turning them off. Add an unsubscribe button.
 ```
 
 ## Map
@@ -62,6 +68,12 @@ The batch currently determines final send eligibility; Settings changes cannot a
 
 - **Verified:** Preference persistence and stale batch behavior were reproduced in the test product.
 - **Unknown:** Provider behavior after acceptance and customer outcomes remain unverified.
+
+---
+
+## Original Request
+
+People keep getting weekly digests after turning them off. Add an unsubscribe button.
 ```
 
 ## Explore
@@ -95,6 +107,12 @@ Final eligibility would move from the batch snapshot to the worker. The snapshot
 - **Observed:** Test-account prototypes skipped queued sends with the check.
 - **Unknown:** Provider recall remains unverified and customer feedback is unavailable.
 - **Related work:** Project #142 coordinates this slice and proposed #144.
+
+---
+
+## Original Request
+
+People keep getting weekly digests after turning them off. Add an unsubscribe button.
 ```
 
 The team links #143 to [project #142](#project-142) and [proposed delivery #144](#proposed-delivery-144). Each slice crosses the layers needed for a functioning experience. #144 depends on #143's reliable send behavior but can release separately if evidence supports it; neither is merely a frontend or backend task.
@@ -130,6 +148,12 @@ The batch selects candidates; the worker owns final eligibility. Settings promis
 - **Verified:** The batch-to-send regression test and integrated walkthrough passed.
 - **State:** Implemented; not merged, deployed, or verified live.
 - **Limit:** Provider recall remains unknown and customer feedback is unavailable; #142 retains the broader effort.
+
+---
+
+## Original Request
+
+People keep getting weekly digests after turning them off. Add an unsubscribe button.
 ```
 
 ## Integrate
@@ -155,7 +179,7 @@ Turning off the weekly digest now prevents future sends, including sends from an
 
 The plain link in Summary keeps #143 open for delivery and live verification. It points to this illustrative record rather than a fictional remote issue. Review-ready does not mean deployed.
 
-Later, the team explicitly authorizes merge and deployment. A live test account opts out after entering the batch, receives no digest, and has a confirmed worker skip. Only then is Reality updated and #143 closed. The final artifact stays within the 250-word maximum and section limits:
+Later, the team explicitly authorizes merge and deployment. A live test account opts out after entering the batch, receives no digest, and has a confirmed worker skip. Only then is Reality updated and #143 closed. The final five coordinates stay within the 250-word maximum and section limits; Original Request remains unchanged:
 
 ```markdown
 # #143 — Turning the digest off stops future sends
@@ -184,6 +208,12 @@ The batch selects candidates; the worker owns final eligibility using current in
 - **Verified:** Regression coverage and the integrated walkthrough passed; after merge and customer deployment, a live account opted out from an existing batch with a confirmed skip.
 - **Limit:** Provider recall remains unverified and is not promised.
 - **Observation:** No customer feedback yet; next-cycle send/skip counts and support reports can inform #142 and proposed #144.
+
+---
+
+## Original Request
+
+People keep getting weekly digests after turning them off. Add an unsubscribe button.
 ```
 
 Explain could teach the changed eligibility model. The final Impact already preserves that durable change, so teaching it again would not require another write-back.

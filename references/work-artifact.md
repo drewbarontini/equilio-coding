@@ -32,9 +32,17 @@ What responsibilities, relationships, boundaries, flows, behaviors, or assumptio
 ## Reality
 
 What remains uncertain? What has actually been verified or observed? What errors, feedback, trade-offs, limitations, or new opportunities should shape what happens next?
+
+---
+
+## Original Request
+
+[Existing issue description, preserved verbatim when present before the first rewrite.]
 ```
 
-These are stable coordinates, not fields to fill mechanically. Keep the headings throughout the lifecycle; use brief provisional language where understanding is missing, such as “Direction not chosen,” “System impact is not yet understood,” or “Not yet verified.” Do not manufacture information or pad sections.
+These are stable coordinates, not fields to fill mechanically. Keep the five coordinate headings throughout the lifecycle; use brief provisional language where understanding is missing, such as “Direction not chosen,” “System impact is not yet understood,” or “Not yet verified.” Do not manufacture information or pad sections.
+
+Original Request preserves source wording beneath the five coordinates; it is not a sixth coordinate. Include it only when preserving an existing issue description under the [preservation rule](#preserve-the-original-request).
 
 | Coordinate | What belongs here |
 | --- | --- |
@@ -48,7 +56,7 @@ Reality acknowledges that implementation is not completion. Distinguish planned 
 
 ## Information budget
 
-The body of an issue, project, or local work artifact must be **250 words or fewer**. There is no minimum. These are hard limits, not targets:
+The five-coordinate body of an issue, project, or local work artifact must be **250 words or fewer**. There is no minimum. These are hard limits, not targets:
 
 | Section | Maximum shape |
 | --- | --- |
@@ -58,9 +66,9 @@ The body of an issue, project, or local work artifact must be **250 words or few
 | **Impact** | One paragraph of two sentences. |
 | **Reality** | Three bullets, one sentence each; or one short sentence. |
 
-Keep only the five headings. No nested bullets, subheadings, tables, code blocks, appendices, or collapsed detail. Give each fact one home: Solution describes behavior, Decisions explains consequential choices, Impact preserves the changed system model, and Reality records evidence and limits.
+Keep only the five headings within the current understanding. No nested bullets, subheadings, tables, code blocks, appendices, or collapsed detail. The preserved Original Request section is the sole structural exception and retains its original formatting. Give each synthesized fact one home: Solution describes behavior, Decisions explains consequential choices, Impact preserves the changed system model, and Reality records evidence and limits.
 
-Count rendered body text, including headings and link labels; exclude the separate title, link destinations, and template comments. Before writing or updating the destination, count words and check the section limits; revise until both pass. Only an explicit user instruction or a mandatory destination requirement can override these limits; complexity alone cannot.
+Count rendered body text, including headings and link labels; exclude the separate title, link destinations, template comments, and the entire Original Request section. Before writing or updating the destination, count words and check the section limits; revise until both pass. Only an explicit user instruction or a mandatory destination requirement can override these limits; complexity alone cannot.
 
 Before keeping a sentence, ask: **If I remove this sentence, would a fresh human or agent make a materially worse decision about the work?** If not, remove it. Prefer meaning over activity.
 
@@ -70,7 +78,7 @@ When oversized, remove duplication and compress first, then link necessary durab
 
 Read this reference, the [writing style guidance](writing-style.md), and the existing artifact before modifying it. Apply the writing guidance within the information budget: make behavior, reasons, system meaning, and evidence easy to follow. Establish the destination and preserve records, relationships, and useful links; prefer updating over creating a duplicate. Use a local Markdown artifact while preparing a remote one. Do not create a remote issue merely because a skill ran; use the user's existing authorization and request human judgment only for consequential unresolved choices.
 
-Every Core Skill can rewrite every section. Each must re-read and reconcile the same artifact before finishing: replace stale guesses with current truth, retain consequential reasoning, synthesize material learning, and remove contradictions and duplication. Enforce the [information budget](#information-budget) before writing the update, then re-read the result to ensure the invariant holds. Comments, appended stage notes, and working notes alone do not satisfy reconciliation. Once a remote artifact owns the work, a local draft cannot replace its update; if blocked, preserve a destination-ready synthesis and report the incomplete reconciliation.
+Every Core Skill can rewrite all five coordinates while preserving the Original Request unchanged. Each must re-read and reconcile the same artifact before finishing: replace stale guesses with current truth, retain consequential reasoning, synthesize material learning, and remove contradictions and duplication. Enforce the [information budget](#information-budget) before writing the update, then re-read the result to ensure the invariant holds. Comments, appended stage notes, and working notes alone do not satisfy reconciliation. Once a remote artifact owns the work, a local draft cannot replace its update; if blocked, preserve a destination-ready synthesis and report the incomplete reconciliation.
 
 **Frame → Map → Explore → Build → Integrate** is a progression of concerns, not a mandatory pipeline or a set of artifact sections. Fidelity increases within the same five coordinates:
 
@@ -83,6 +91,12 @@ Every Core Skill can rewrite every section. Each must re-read and reconcile the 
 | Integrate | Reconcile all five coordinates against actual code and verified behavior, compressing them for handoff. |
 
 Loop uses the same reconciliation contract for orchestration learning. Explain conditionally reconciles durable insight into an existing artifact: mental-model changes generally belong in Impact, reasoning in Decisions, and unresolved invariants, trade-offs, limits, or observation needs in Reality. Leave it unchanged if nothing durable is missing; do not copy the teaching response or require a new artifact for standalone Explain. **Explain teaches the model. Impact preserves the model change.**
+
+### Preserve the original request
+
+Before first rewriting an existing issue into the shared shape, preserve its nonempty description verbatim beneath Reality, separated by `---` and headed `## Original Request`. Retain wording, links, and formatting without correcting, summarizing, or truncating them. Reflect relevant intent and constraints in the five coordinates as well; preserving the source does not replace understanding it. Omit this section for an empty description or a newly created issue with no existing source description.
+
+On later updates, carry the same Original Request forward unchanged; do not duplicate it or replace it with a previous synthesis. Read the latest issue before writing and preserve any later human additions verbatim rather than silently overwriting them. Respect manual removal of Original Request; do not restore it from past drafts or history, or treat an already structured artifact as a new original request. After writing, re-read the issue to verify both the current understanding and preserved source.
 
 ## Issues and projects
 
