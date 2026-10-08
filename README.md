@@ -80,6 +80,16 @@ npx skills add drewbarontini/equilio-coding
 
 Install all skills non-interactively with `npx skills add drewbarontini/equilio-coding --skill '*' --yes`, select one with `--skill equilio-explore`, or list them with `--list`. Your agent's invocation syntax may vary; ask it to use a skill by name or describe the job. Invoke `equilio-loop` with a goal or work artifact, or `equilio-explain` for maintainer understanding.
 
+Each skill includes a matching local copy of the shared guidance and PR template, so standalone installs can read them without fetching GitHub files. Loop requires all five Core Skills from the same source revision; Explain remains optional. Reinstall the same selection to refresh its instructions and references together.
+
+From a local checkout, check whether installed copies match that checkout:
+
+```sh
+python3 scripts/sync-references.py --installed ~/.agents/skills
+```
+
+The check reports each skill as current or stale, shows a content fingerprint, and identifies missing or changed files. Use your client's actual skills directory if different; this command does not modify installed copies.
+
 ## Contribute
 
 See [CONTRIBUTING.md](CONTRIBUTING.md). This repository contains skills and a few supporting references, with no required service or workflow engine.

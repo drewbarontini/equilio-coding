@@ -10,6 +10,7 @@ Keep Equilio Coding small and usable across projects and work systems. Consolida
 - Preserve the five [Development Principles](references/development-principles.md). Link rather than repeat their doctrine. Favor clear code, comments that preserve meaningful reasoning or constraints, and verification that adds confidence. Do not narrate straightforward code or require redundant or misleading tests for every edit; honor repository-specific checks.
 - Encode the [Equilio Models](references/development-principles.md#equilio-in-practice) in decisions across the method. Frame establishes shared problem and purpose through an adaptive interview; Map connects product experience to actual code; Explore provides working prototypes a person can test when uncertainty warrants them; Build executes the fewest coherent changes; Integrate actively seeks simpler solutions and preserves system understanding. Preserve these jobs without making every concern a mandatory stage or requiring repeated confirmation of settled intent.
 - Keep shared prose guidance in the [writing style reference](references/writing-style.md), reached through the work-artifact, PR, and Development Principles references. Use concrete examples to improve readability within the existing budgets; do not add another output schema or duplicate the guidance across skills.
+- Edit shared guidance in the root `references/` directory and the PR template in `.github/`. Run `python3 scripts/sync-references.py` to regenerate their copies inside each skill before committing. Those copies are distribution files, not separately maintained guidance. Skills use local reference links; keep Loop and its Core Skills from the same source revision.
 - Keep Continual Context, Plain Language, and Working Prototypes visible in the README and enforceable in the instructions. Prototype handoff needs a runnable entry point, an interaction that tests the uncertainty, and honest limitations; agent testing cannot be reported as human feedback. Keep issue and PR template comments consistent with the writing constraints.
 - Treat Explain's response as teaching. Reconcile missing durable insight into Impact, Decisions, or Reality as appropriate, without copying its response or creating a competing artifact by default. **Explain teaches the model. Impact preserves the model change.** Integrate retains coherence review.
 - Keep [artifact responsibilities](references/work-artifact.md#artifact-responsibilities) distinct and transform information between them. Prefer updating existing records; establish remote destinations and preserve relationships. Human judgment is appropriate for consequential unresolved choices, not routine edits. Merge, release, and deployment require explicit authorization.
@@ -19,15 +20,19 @@ Follow [PR guidance](references/pull-request.md) and [the template](.github/pull
 
 ## Validation
 
+Run `python3 scripts/sync-references.py --check` to detect missing or stale bundled guidance and reference links that leave the bundle. The command uses only Python's standard library. Use `--installed <skills-directory>` to compare installed instructions, UI metadata, and references with the checkout without changing them.
+
+Run the packaging checks with `PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s tests`. They cover standalone guidance, stale and missing files, selected installs, and checks that preserve installed content.
+
 Validate new or modified skills with the available skill validator (`quick_validate.py <skill-directory>`). Check that Explain's `agents/openai.yaml` remains consistent with its instructions.
 
 When the skills CLI is available, list the repository and confirm installation selection for a single Core Skill, Loop, and standalone Explain:
 
 ```sh
 npx skills add <local-path> --list
-npx skills add <local-path> --skill equilio-frame --yes
-npx skills add <local-path> --skill equilio-loop --yes
-npx skills add <local-path> --skill equilio-explain --yes
+npx skills add <local-path> --skill equilio-frame --agent codex --copy --yes
+npx skills add <local-path> --skill equilio-frame equilio-map equilio-explore equilio-build equilio-integrate equilio-loop --agent codex --copy --yes
+npx skills add <local-path> --skill equilio-explain --agent codex --copy --yes
 ```
 
-Run installation checks in a disposable project so they do not change personal skill installations. Confirm every skill can access canonical references, including when installed alone. Compare the README, references, template, and example against the actual skill instructions; search for superseded schemas and broken links. Review the final diff for unnecessary prose and prefer deleting obsolete guidance over preserving it alongside the new model.
+Run installation checks in a disposable project so they do not change personal skill installations. Confirm that bundled references and their local links work without the source checkout, including for standalone Core Skills and Explain. Compare the README, references, template, and example against the actual skill instructions; search for superseded schemas and broken links. Review the final diff for unnecessary prose and prefer deleting obsolete guidance over preserving it alongside the new model.

@@ -5,9 +5,9 @@ description: Establish shared understanding of a software problem, its purpose, 
 
 # Frame
 
-Read the [work-artifact contract](https://github.com/drewbarontini/equilio-coding/blob/main/references/work-artifact.md#reconcile-current-understanding) at the start; keep the owning issue current as material understanding changes, before acting on it and before handoff.
+Read the [work-artifact contract](references/work-artifact.md#reconcile-current-understanding) at the start; keep the owning issue current as material understanding changes, before acting on it and before handoff.
 
-Read the request and available work artifact, local files, prototype, or code. Apply the [Development Principles](https://github.com/drewbarontini/equilio-coding/blob/main/references/development-principles.md), especially Understand First; use what the context already answers and scale depth to the uncertainty.
+Read the request and available work artifact, local files, prototype, or code. Apply the [Development Principles](references/development-principles.md), especially Understand First; use what the context already answers and scale depth to the uncertainty.
 
 Interview thoughtfully: ask one substantive question at a time and let the answer guide the next. Clarify what happens, who is affected, why solving it matters, and what improvement would look like. Probe consequential constraints and evidence. Challenge a proposed solution when the underlying problem is unclear.
 
@@ -17,4 +17,4 @@ Draft in local Markdown when preparing shared work, using the same five-part sha
 
 Primarily strengthen **Problem**. Clearly mark proposed directions and distinguish evidence from assumptions; Solution, Decisions, Impact, or Reality may remain provisional. Leave enough understanding to continue into any appropriate concern.
 
-Before finishing, reconcile and re-read the same artifact under the [work-artifact contract](https://github.com/drewbarontini/equilio-coding/blob/main/references/work-artifact.md#reconcile-current-understanding); all five coordinates are available for revision. Apply the [next-operation guidance](https://github.com/drewbarontini/equilio-coding/blob/main/references/work-artifact.md#choose-the-next-useful-operation) and finish with **Recommended next:** `<skill or action>` · **Why:** `<reason>`. Map helps when relevant system behavior remains unknown; Build may follow when system and direction are sufficiently understood.
+Before finishing, reconcile and re-read the same artifact under the [work-artifact contract](references/work-artifact.md#reconcile-current-understanding); all five coordinates are available for revision. Apply the [next-operation guidance](references/work-artifact.md#choose-the-next-useful-operation) and finish with **Recommended next:** `<skill or action>` · **Why:** `<reason>`. Map helps when relevant system behavior remains unknown; Build may follow when system and direction are sufficiently understood.
