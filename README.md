@@ -8,7 +8,7 @@ Equilio Coding helps a person and an agent create coherent software while retain
 
 1. **Continual Context.** Each Core Skill writes material learning back to the same issue as understanding changes, so the next person or agent can continue from current truth.
 2. **Plain Language.** Issue and PR templates use strict word and section limits, concrete behavior, and clear reasons; the writing guide rules out filler, inflated claims, and patch narration.
-3. **Working Prototypes.** Explore turns meaningful uncertainty into runnable software you can test before choosing a direction; writing and using it can reveal problems a proposal misses.
+3. **Working Prototypes.** Explore turns meaningful uncertainty into runnable software you can test before choosing a direction; observations change the approach, reveal constraints, or show what can be removed, with the reasoning preserved in the issue.
 
 Two simple artifact shapes keep the work legible:
 
@@ -67,6 +67,8 @@ When rewriting an existing issue, preserve its initial description verbatim bene
 | Explain | Teaching that updates the human maintainer's mental model. |
 
 Transform information between these artifacts rather than copying it blindly. The [canonical reconciliation contract](references/work-artifact.md#reconcile-current-understanding) governs write-back, including Explain's conditional updates. Use the project's destination in GitHub, Linear, or Markdown; draft locally when preparing remote work and reuse existing records. A skill invocation alone is no reason to create a remote issue.
+
+For [agent handoffs and authorized collaboration](references/work-artifact.md#continue-across-agents), continue from the latest issue and accessible evidence. Bound assignments, agree on one active writer per shared artifact, and reconcile returned findings before verifying the combined behavior.
 
 Before PR creation, reconcile the work artifact against implemented behavior and evidence. Follow the [PR guidance](references/pull-request.md) and [template](.github/pull_request_template.md): put the issue link in Summary, use meaningful Changes, and omit unnecessary Callouts or Changes for a tiny PR. Keep implementation, merge, deployment, live verification, and observed feedback distinct.
 

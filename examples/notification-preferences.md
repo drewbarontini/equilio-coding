@@ -78,7 +78,11 @@ People keep getting weekly digests after turning them off. Add an unsubscribe bu
 
 ## Explore
 
-The agent builds reversible prototypes in the test product and exercises the Settings flow in the browser. Test-account trials show that changing the control alone leaves queued sends intact. A send-time check skips the queued send; a direct email-to-Settings route also works with that check. The person receives the runnable test product and a short trial: queue a digest, disable it in Settings, then run the worker and inspect the result. Provider recall is outside this prototype. These are agent prototype observations, not human testing or customer feedback; #143 is rewritten before proceeding on the supported direction:
+The uncertainty is whether a different control is needed to stop queued sends. The working belief is that a send-time preference check can make existing Settings reliable; if the trial still sends after opt-out, that belief needs revision. If the check skips the send through existing Settings, an additional control is unnecessary for this outcome.
+
+The agent builds reversible prototypes in the test product and exercises the Settings flow in the browser. Each test-account trial queues a digest, saves an opt-out, and runs the worker. Changing the control alone leaves the send intact; a send-time check skips it, and a direct email-to-Settings route also works with that check. The observed skip supports the check and retaining the existing control; the working email route establishes feasibility while leaving its customer need unresolved.
+
+The person receives the runnable test product and the same short trial, with the worker's send or skip as the result to inspect. Provider recall is outside this prototype. These are agent prototype observations, not human testing or customer feedback; #143 is rewritten before proceeding on the supported direction:
 
 ```markdown
 # #143 — Turning the digest off stops future sends
@@ -96,6 +100,7 @@ Chosen direction: check the current preference before each send and update Setti
 ## Decisions
 
 - **Check at send time:** This is the last boundary we control before provider acceptance; changing the control alone did not stop queued sends.
+- **Keep the existing control:** The check stopped queued sends through Settings, so an additional control is unnecessary for reliable stopping.
 - **Separate direct access:** An email-to-Settings route is a candidate slice whose need depends on real-use feedback.
 
 ## Impact
@@ -104,7 +109,7 @@ Final eligibility would move from the batch snapshot to the worker. The snapshot
 
 ## Reality
 
-- **Observed:** Test-account prototypes skipped queued sends with the check.
+- **Observed:** The check skipped queued sends through existing Settings; the email route also worked with a test account.
 - **Unknown:** Provider recall remains unverified and customer feedback is unavailable.
 - **Related work:** Project #142 coordinates this slice and proposed #144.
 
@@ -124,6 +129,14 @@ The team shapes the work using [Surface → Structure → Slice → Simplify →
 - **Sequence:** Release reliable stopping first; evaluate direct access only if later evidence supports it.
 
 The team links #143 to [project #142](#project-142) and an illustrative [proposed delivery #144](#proposed-delivery-144). #144 would depend on #143 being released, but could then provide useful access without another future slice. Worker and copy tasks can be implemented separately within #143; deploying the worker behind a disabled flag would be preparation, with no change to the experience yet.
+
+## Agent handoff
+
+If the team authorizes two build agents, one can implement the worker check and regression test while the other refines Settings copy. Their assignments point to #143 and the relevant checkout, name the prevention boundary, and avoid overlapping edits; both are build units within #143. The coordinating agent is the only writer of #143 while they work.
+
+Suppose the copy agent proposes “stops all queued emails,” while the worker agent reports that provider-accepted emails cannot be prevented by this check. The coordinator inspects the evidence and reconciles the wording to promise prevention before acceptance, leaving recall unverified in Reality. Separate successful checks do not resolve this contract mismatch.
+
+The next agent reads the reconciled #143, inspects the assembled code, and uses linked test and prototype evidence to choose the next action. It does not need either agent's full conversation or a new handoff artifact; the integrated walkthrough still needs to establish that behavior and copy agree.
 
 ## Build
 
@@ -145,6 +158,7 @@ The worker now reads the current preference before each send and skips disabled 
 ## Decisions
 
 - **Check at send time:** Eligibility must reflect current intent at the last boundary we control.
+- **Keep the existing control:** Prototype opt-outs through Settings stopped queued sends with the check.
 - **Keep direct access separate:** #144's email-to-Settings journey can be evaluated independently after reliability improves.
 
 ## Impact
@@ -205,6 +219,7 @@ The worker checks the current preference before each send and skips disabled rec
 ## Decisions
 
 - **Check preference at send time:** Changing the control alone left queued sends intact in prototypes.
+- **Keep the existing control:** Prototype opt-outs through Settings stopped queued sends with the check.
 - **Keep direct access separate:** #144's email-to-Settings journey can be evaluated independently if customer feedback supports it.
 
 ## Impact
