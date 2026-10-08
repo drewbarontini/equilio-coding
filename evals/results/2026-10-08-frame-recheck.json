@@ -1,0 +1,17 @@
+{
+  "source_commit": "d2b4ce4426cc4eecca8c29f0b3b27de69cd36c5b",
+  "source_dirty": true,
+  "skill_fingerprints": {
+    "equilio-build": "8c2ef2212b3155f88e91eaa475865aecf677a752463fb8b3d1db13831fbe5390",
+    "equilio-explain": "ce41e1ae024ab0ef7648bc486fd82e16161583ab2d4532566ec6cd5865cb0d7e",
+    "equilio-explore": "7258160cbfb47d71170406e5817c9ae90baa6c114a3b80adf6b19800cf1071c0",
+    "equilio-frame": "60dac41abb4077a4f8f8e8b9ec613cf4d0d6d6138f321fb268913b65a4631589",
+    "equilio-integrate": "3af5f0b45a7f26c40af4e75c7514ce5cb0c552d6dc29a0c3850600bc9d5d3b5b",
+    "equilio-loop": "a7c75720277e52a6770f01838eb6db40f0a6a03260f99917fe263852e8c2290e",
+    "equilio-map": "2d4cb91744057d0df54aa1cbdc735fa0f202f47e78a1c2428d613bc2979d8368"
+  },
+  "cases": [
+    "frame-ambiguity"
+  ],
+  "baseline_heads": {}
+}

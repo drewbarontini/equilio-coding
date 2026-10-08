@@ -1,0 +1,1 @@
+I review failed imports each morning. The screen mixes those with successful imports, so I miss failures. I don't need to delete history; I need to find failures quickly while keeping the record. The rest of the team still needs to see successful imports.

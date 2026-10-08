@@ -29,6 +29,8 @@ Run the packaging checks with `PYTHONDONTWRITEBYTECODE=1 python3 -m unittest dis
 
 Validate new or modified skills with the available skill validator (`quick_validate.py <skill-directory>`). Check that Explain's `agents/openai.yaml` remains consistent with its instructions.
 
+For substantial changes to skill behavior, use the [isolated behavioral cases](evals/README.md). Give fresh agents raw requests without expected answers, inspect actual artifacts and runnable evidence, and record limitations. Packaging and frontmatter checks alone do not establish good judgment.
+
 When the skills CLI is available, list the repository and confirm installation selection for a single Core Skill, Loop, and standalone Explain:
 
 ```sh

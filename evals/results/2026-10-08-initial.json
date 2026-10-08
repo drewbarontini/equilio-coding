@@ -1,0 +1,28 @@
+{
+  "source_commit": "d2b4ce4426cc4eecca8c29f0b3b27de69cd36c5b",
+  "cases": [
+    "explain-model",
+    "explain-trivial",
+    "explore-retries",
+    "frame-ambiguity",
+    "loop-small-fix",
+    "map-export"
+  ],
+  "source_dirty": true,
+  "skill_fingerprints": {
+    "equilio-build": "e207a5984fc0271b48419a12cb4b88a27de999cdcae86515c61120482859aecd",
+    "equilio-explain": "70b96b836631c855ec0a93fd5af21a667d39264c703ae9d5a31da85f80cf5b7b",
+    "equilio-explore": "ec3a90bbafdcc4e86331d75f8c929f158213693aa5ca10535a9660eb4ecadab5",
+    "equilio-frame": "dac37c17510162e72e3ba17494a966ba397140cfe133a98999be720051e95f69",
+    "equilio-integrate": "6231bc868c562e18ec1769aee9784f1f1bb7f725a7d51c50ba3a55cb38d4c3eb",
+    "equilio-loop": "7a7c9fc41d2f438c38271eb3b15fc3b7053a03f0466a47e4b127ab906291dab7",
+    "equilio-map": "5467cf5295f4c2017b211251e656e70696a0d4fa4f3388bcb9eca2c37a6e4f1a"
+  },
+  "baseline_heads": {
+    "explain-model": "2d4861aa4c119f2966e4e383a714b58b20f1c3fb",
+    "explain-trivial": "993e7cf8567591ae5ce0b7773efdda368faa0ad1",
+    "explore-retries": "6407abe4e9d8576774fc380c0e0aab7e7c472a34",
+    "loop-small-fix": "253ee9863d416d28a39c4610fc9dc02c2182156f",
+    "map-export": "37094051a781356398baaeb572415bfc58424a09"
+  }
+}

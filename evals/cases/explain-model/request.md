@@ -1,0 +1,1 @@
+Use Equilio Explain to teach me the important changes between `before.py` and `after.py`. The current implementation is `after.py`; `issue.md` was written before the change. Keep any durable understanding current there, but do not change the implementation.

@@ -1,0 +1,1 @@
+Use Equilio Map before we change task exports. People use this terminal app and need due dates and completion state in their exported file. Someone proposed three delivery issues: database fields, export API, then terminal output. Map the existing behavior and boundaries and advise how this work fits together. Do not implement it.

@@ -76,7 +76,7 @@ Count rendered body text, including headings and link labels; exclude the separa
 
 Before keeping a sentence, ask: **If I remove this sentence, would a fresh human or agent make a materially worse decision about the work?** If not, remove it. Prefer meaning over activity.
 
-When oversized, remove duplication and compress first, then link necessary durable detail with a label that explains its relevance. Keep the gap, chosen direction, consequential reasoning, changed system model, and material evidence or uncertainty understandable in the body. Do not hide overflow in comments or move it into the PR. Split only when the work contains multiple coherent problems or outcomes, never just to meet a word limit. Exclude chronological logs, transcripts, raw exploration history, exhaustive alternatives or tests, commands, code inventories, generic “implemented / updated / tested” narration, and prose that restates code or diffs.
+When oversized, remove duplication and compress first, then link necessary durable detail with a label that explains its relevance. Keep the gap, chosen direction, consequential reasoning, changed system model, and material evidence or uncertainty understandable in the body. Do not hide overflow in comments or move it into the PR. Split only when the work contains multiple coherent problems or outcomes, never just to meet a word limit. Exclude chronological logs, transcripts, raw exploration history, exhaustive alternatives or tests, commands, code inventories, artifact-maintenance narration (such as preserving source text or updating the issue), generic “implemented / updated / tested” narration, and prose that restates code or diffs.
 
 ## Reconcile current understanding
 

@@ -1,0 +1,1 @@
+Use Equilio Loop to fix the file-count label described in `issue.md`, through local verification and review readiness. Keep the public function and the existing test command. Do not commit, push, publish, or create remote records.
