@@ -54,6 +54,8 @@ Use **Problem → Solution → Decisions → Impact → Reality** for delivery i
 
 When broader work needs decomposition, use [Surface → Structure → Slice → Simplify → Sequence](references/work-artifact.md#shape-delivery-slices). Each slice should let someone do something useful if work stops there; database, API, and interface tasks can be build units within that slice. Sequence releases by value and dependencies, then use evidence to refine what follows.
 
+Judge [scope and completion](references/work-artifact.md#judge-scope-and-completion) against the requested outcome, relevant constraints, and sufficient evidence. Preserve necessary work, remove optional scope, and stop refining when another pass would add little value.
+
 The same artifact gains fidelity throughout the lifecycle; replace provisional understanding with current truth rather than adding stage sections. Enforce a **250-word maximum** for the five coordinates and the [section limits](references/work-artifact.md#information-budget), with no minimum. Use natural language, preserve consequential reasoning and system meaning, and never invent validation, feedback, or delivery state. Reality records what the world has demonstrated and what remains uncertain; it is not a backlog.
 
 When rewriting an existing issue, preserve its initial description verbatim beneath a horizontal line and **Original Request** heading, outside the word budget. Carry it forward unchanged on later updates and respect manual removal; the [preservation rule](references/work-artifact.md#preserve-the-original-request) governs write-back.

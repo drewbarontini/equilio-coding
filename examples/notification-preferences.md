@@ -180,7 +180,9 @@ People keep getting weekly digests after turning them off. Add an unsubscribe bu
 
 ## Integrate
 
-Review checks the whole slice and asks whether it can solve the same problem more simply. A redundant eligibility wrapper left from the prototype is removed; the worker retains the send-time check, and the regression test still passes. Impact preserves the distinction between batch candidates and the worker's final eligibility decision. All five sections are reconciled against the refined behavior before the PR follows [the canonical guidance](../references/pull-request.md):
+Review checks the whole slice and asks whether it can solve the same problem more simply. A redundant eligibility wrapper left from the prototype is removed; the worker retains the send-time check, and the regression test still passes. Impact preserves the distinction between batch candidates and the worker's final eligibility decision.
+
+The requested outcome is reliable stopping before provider acceptance with understandable timing; it does not require the unproven email route or provider recall. The regression test and integrated walkthrough support review readiness, and no concrete gap justifies another refinement pass. Delivery and live verification remain separate work under the team's authorization. All five sections are reconciled against the refined behavior before the PR follows [the canonical guidance](../references/pull-request.md):
 
 ```markdown
 ## Summary

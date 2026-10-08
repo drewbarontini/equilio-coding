@@ -148,6 +148,16 @@ When foundational work needs its own issue, name the enabled capability, verific
 
 Transform information between these artifacts instead of copying it blindly. Link durable detail when it matters; temporary notes must not be the only home of understanding needed to continue.
 
+## Judge scope and completion
+
+Establish the useful outcome of the current operation and what evidence would be sufficient to proceed or finish. Use the requested scope, existing conventions, and any stated limits on time or effort; do not invent a budget or require a separate planning interview. Ask about a missing constraint only when it would materially change the approach.
+
+Preserve the functioning outcome and required contracts while removing optional scope. When a limit makes the intended outcome infeasible, explain the concrete trade-off and seek judgment on a smaller coherent outcome or changed constraint; elapsed effort alone cannot justify claiming completion. A required behavior or check that remains unresolved is a gap, not an optional improvement.
+
+Finish the current operation when its requested outcome is supported by appropriate evidence and the owning artifact is current. Another investigation, prototype, or refinement pass should address a concrete remaining gap or uncertainty that could change the result. Stop when further work offers little value; do not turn possible improvements into automatic follow-ups. Continue other slices when they are needed for the authorized goal.
+
+Keep the outcome in Problem and Solution, consequential scope trade-offs in Decisions, and verification, limits, or incomplete work in Reality within the existing budget. Review-ready, deployed behavior, and observed customer outcomes remain distinct; report the actual state rather than treating one as proof of another. No new completion section or checklist belongs in the artifact.
+
 ## Choose the next useful operation
 
 **Follow the understanding, not the sequence.** Read the reconciled artifact with relevant repository, implementation, verification evidence, and the [Development Principles](development-principles.md). Honor an explicitly requested skill first. Skip satisfied concerns and revisit only when new evidence materially requires it.

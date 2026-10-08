@@ -9,7 +9,7 @@ Read the [work-artifact contract](references/work-artifact.md#reconcile-current-
 
 Read the request and available work artifact, local files, prototype, or code. Apply the [Development Principles](references/development-principles.md), especially Understand First; use what the context already answers and scale depth to the uncertainty.
 
-Interview thoughtfully: ask one substantive question at a time and let the answer guide the next. Clarify what happens, who is affected, why solving it matters, and what improvement would look like. Probe consequential constraints and evidence. Challenge a proposed solution when the underlying problem is unclear.
+Interview thoughtfully: ask one substantive question at a time and let the answer guide the next. Clarify what happens, who is affected, why solving it matters, and what improvement would look like; probe the evidence behind the gap. Use the [scope and completion guidance](references/work-artifact.md#judge-scope-and-completion) to establish the useful outcome and consequential constraints from existing context, asking only where missing understanding matters. Challenge a proposed solution when the underlying problem is unclear.
 
 Reflect the problem, purpose, desired outcome, and boundaries back in plain language; use the person's answers or clear existing context to establish shared understanding. Continue the interview while material ambiguity or disagreement remains instead of treating a plausible agent summary as agreement. Update the issue as answers change the framing. Stop when both person and agent understand the problem well enough for a useful next move; a small, clearly specified fix may need no questions or repeated confirmation. Agreement on the problem does not require choosing a solution.
 
