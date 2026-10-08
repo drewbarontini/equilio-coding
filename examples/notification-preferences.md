@@ -115,7 +115,15 @@ Final eligibility would move from the batch snapshot to the worker. The snapshot
 People keep getting weekly digests after turning them off. Add an unsubscribe button.
 ```
 
-The team links #143 to [project #142](#project-142) and [proposed delivery #144](#proposed-delivery-144). Each slice crosses the layers needed for a functioning experience. #144 depends on #143's reliable send behavior but can release separately if evidence supports it; neither is merely a frontend or backend task.
+The team shapes the work using [Surface → Structure → Slice → Simplify → Sequence](../references/work-artifact.md#shape-delivery-slices), keeping the detailed map in working notes:
+
+- **Surface:** Preference persistence, queued sends, provider acceptance, timing copy, and direct access are the relevant concerns.
+- **Structure:** Reliable stopping connects the saved preference, worker eligibility, and the explanation people see.
+- **Slice:** #143 lets someone stop future digests using existing Settings even if no further work follows; worker and copy changes belong together.
+- **Simplify:** Keep the existing control and defer the email-to-Settings route; provider recall is outside the prevention boundary.
+- **Sequence:** Release reliable stopping first; evaluate direct access only if later evidence supports it.
+
+The team links #143 to [project #142](#project-142) and an illustrative [proposed delivery #144](#proposed-delivery-144). #144 would depend on #143 being released, but could then provide useful access without another future slice. Worker and copy tasks can be implemented separately within #143; deploying the worker behind a disabled flag would be preparation, with no change to the experience yet.
 
 ## Build
 

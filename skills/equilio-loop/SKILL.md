@@ -11,7 +11,7 @@ Use Loop as a **Supporting Skill** for adaptive orchestration. Preserve **Frame 
 
 Read the [work-artifact contract](references/work-artifact.md#reconcile-current-understanding) at the start; the owning issue holds current understanding throughout the work, including discoveries within a skill rather than only between skills.
 
-Inspect the goal, branch, project conventions, and existing work before creating anything. Reuse the artifact that owns the goal, or prepare a local Markdown artifact while establishing the project's shared destination. For broader work, select a functioning delivery slice linked to project-level understanding under the [issues and projects guidance](references/work-artifact.md#issues-and-projects). Avoid duplicates and speculative delivery breakdowns.
+Inspect the goal, branch, project conventions, and existing work before creating anything. Reuse the artifact that owns the goal, or prepare a local Markdown artifact while establishing the project's shared destination. For broader work, use the [delivery-slicing guidance](references/work-artifact.md#shape-delivery-slices) to select a useful outcome linked to project-level understanding. Sequence by value and release dependencies, not merely by build-task order; revisit boundaries when mapping or prototype evidence changes them. Avoid duplicates and speculative delivery breakdowns.
 
 Use **Problem → Solution → Decisions → Impact → Reality** as the orientation surface:
 

@@ -13,7 +13,7 @@ Interview thoughtfully: ask one substantive question at a time and let the answe
 
 Reflect the problem, purpose, desired outcome, and boundaries back in plain language; use the person's answers or clear existing context to establish shared understanding. Continue the interview while material ambiguity or disagreement remains instead of treating a plausible agent summary as agreement. Update the issue as answers change the framing. Stop when both person and agent understand the problem well enough for a useful next move; a small, clearly specified fix may need no questions or repeated confirmation. Agreement on the problem does not require choosing a solution.
 
-Draft in local Markdown when preparing shared work, using the same five-part shape rather than a special Frame schema. Reuse existing records and authorization; bring consequential unresolved framing to human judgment when needed. Notice possible functioning delivery slices without forcing a breakdown before the problem is understood.
+Draft in local Markdown when preparing shared work, using the same five-part shape rather than a special Frame schema. Reuse existing records and authorization; bring consequential unresolved framing to human judgment when needed. Notice possible useful outcomes without forcing a breakdown before the problem is understood; use the [delivery-slicing guidance](references/work-artifact.md#shape-delivery-slices) when decomposition would help the next move.
 
 Primarily strengthen **Problem**. Clearly mark proposed directions and distinguish evidence from assumptions; Solution, Decisions, Impact, or Reality may remain provisional. Leave enough understanding to continue into any appropriate concern.
 

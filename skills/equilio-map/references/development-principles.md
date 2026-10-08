@@ -24,7 +24,7 @@ Understand the problem and existing system before prescribing or changing a solu
 
 Make the smallest coherent change that solves the problem. This does not mean minimizing lines, files, or layers. A functioning vertical slice may cross UI, backend, persistence, infrastructure, or other boundaries. Prefer the minimum connected set of changes needed to create functioning software someone can evaluate.
 
-Avoid unrelated cleanup, speculative features, premature abstractions, and “while we’re here” expansion. Apply YAGNI where useful. Separate genuinely independent prerequisite work when it creates a useful, verifiable change. Favor changes that can be independently understood, reviewed, reverted, released, and learned from.
+Avoid unrelated cleanup, speculative features, premature abstractions, and “while we’re here” expansion. Apply YAGNI where useful. Use the [delivery-slicing guidance](work-artifact.md#shape-delivery-slices) when broader work needs decomposition; separate build tasks do not necessarily provide separate useful outcomes. Separate genuinely independent prerequisite work when it creates a useful, verifiable change. Favor changes that can be independently understood, reviewed, reverted, released, and learned from.
 
 ## Optimize for the Reader
 
