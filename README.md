@@ -52,7 +52,7 @@ Supporting Skills compose, inspect, or extend the workflow without adding stages
 
 Use **Problem → Solution → Decisions → Impact → Reality** for delivery issues, broader projects, and local Markdown work artifacts. **Same questions. Different resolution.** Projects preserve understanding of the coordinated effort; delivery issues preserve their own functioning slice. Link them without copying delivery-level detail into the parent. No hierarchy is required for ordinary work.
 
-When broader work needs decomposition, use [Surface → Structure → Slice → Simplify → Sequence](references/work-artifact.md#shape-delivery-slices). Each slice should let someone do something useful if work stops there; database, API, and interface tasks can be build units within that slice. Sequence releases by value and dependencies, then use evidence to refine what follows.
+When broader work needs decomposition, use [Surface → Structure → Slice → Simplify → Sequence](references/delivery-slices.md#shape-delivery-slices). Each slice should let someone do something useful if work stops there; database, API, and interface tasks can be build units within that slice. Sequence releases by value and dependencies, then use evidence to refine what follows.
 
 Judge [scope and completion](references/work-artifact.md#judge-scope-and-completion) against the requested outcome, relevant constraints, and sufficient evidence. Preserve necessary work, remove optional scope, and stop refining when another pass would add little value.
 
@@ -70,7 +70,7 @@ When rewriting an existing issue, preserve its initial description verbatim bene
 
 Transform information between these artifacts rather than copying it blindly. The [canonical reconciliation contract](references/work-artifact.md#reconcile-current-understanding) governs write-back, including Explain's conditional updates. Use the project's destination in GitHub, Linear, or Markdown; draft locally when preparing remote work and reuse existing records. A skill invocation alone is no reason to create a remote issue.
 
-For [agent handoffs and authorized collaboration](references/work-artifact.md#continue-across-agents), continue from the latest issue and accessible evidence. Bound assignments, agree on one active writer per shared artifact, and reconcile returned findings before verifying the combined behavior.
+For [agent handoffs and authorized collaboration](references/agent-handoffs.md), continue from the latest issue and accessible evidence. Bound assignments, agree on one active writer per shared artifact, and reconcile returned findings before verifying the combined behavior.
 
 Before PR creation, reconcile the work artifact against implemented behavior and evidence. Follow the [PR guidance](references/pull-request.md) and [template](.github/pull_request_template.md): put the issue link in Summary, use meaningful Changes, and omit unnecessary Callouts or Changes for a tiny PR. Keep implementation, merge, deployment, live verification, and observed feedback distinct.
 

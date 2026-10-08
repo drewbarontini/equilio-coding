@@ -82,35 +82,19 @@ When oversized, remove duplication and compress first, then link necessary durab
 
 ## Reconcile current understanding
 
-Read this reference, the [writing style guidance](writing-style.md), and the existing artifact before modifying it. Apply the writing guidance within the information budget: make behavior, reasons, system meaning, and evidence easy to follow. Establish the destination and preserve records, relationships, and useful links; prefer updating over creating a duplicate. Use a local Markdown artifact while preparing a remote one. Do not create a remote issue merely because a skill ran; use the user's existing authorization and request human judgment only for consequential unresolved choices.
+Use this contract and the [writing style guidance](writing-style.md) throughout. Reuse unchanged guidance already read from the same source revision; reload it if instructions change or are no longer in context. Read the latest owning artifact at the start and again before writing. Apply the writing guidance within the information budget: make behavior, reasons, system meaning, and evidence easy to follow. Establish the destination and preserve records, relationships, and useful links; prefer updating over creating a duplicate. Use a local Markdown artifact while preparing a remote one. Do not create a remote issue merely because a skill ran; use the user's existing authorization and request human judgment only for consequential unresolved choices.
 
-Every Core Skill can rewrite all five coordinates while preserving the Original Request unchanged. Read this contract at the start of the operation. Reconcile when material learning changes the problem, approach, consequential reasoning, system understanding, or evidence, before acting on that changed understanding and before handoff. Batch closely related findings into one coherent rewrite; routine tool calls and unchanged understanding need no write. Replace stale guesses with current truth, retain consequential reasoning, synthesize material learning, and remove contradictions and duplication.
+Every Core Skill can rewrite all five coordinates while preserving the Original Request unchanged. Reconcile when material learning changes the problem, approach, consequential reasoning, system understanding, or evidence, before acting on that changed understanding and before handoff. Batch closely related findings into one coherent rewrite; routine tool calls and unchanged understanding need no write. Replace stale guesses with current truth, retain consequential reasoning, synthesize material learning, and remove contradictions and duplication.
 
 Enforce the [information budget](#information-budget) before each update, then re-read the result to ensure the invariant holds. Comments, appended stage notes, and working notes alone do not satisfy reconciliation. Once a remote artifact owns the work, a local draft cannot replace its update; if blocked, preserve a destination-ready synthesis and report the incomplete reconciliation. Continue independent work where useful, but do not claim the owning issue is current until its update is verified.
 
-**Frame → Map → Explore → Build → Integrate** is a progression of concerns, not a mandatory pipeline or a set of artifact sections. Fidelity increases within the same five coordinates:
-
-| Skill | Natural emphasis, without exclusive ownership |
-| --- | --- |
-| Frame | Strengthen Problem; leave unknown direction, impact, or verification provisional. |
-| Map | Strengthen Problem and Impact through actual product and system understanding; mapping may correct the gap. |
-| Explore | Connect uncertainty and observations to the supported approach in Solution, consequential reasoning in Decisions, and evidence and limits in Reality. |
-| Build | Turn prospective Solution and Impact into implemented behavior; preserve consequential decisions, verification, and remaining uncertainty. |
-| Integrate | Reconcile all five coordinates against actual code and verified behavior, compressing them for handoff. |
+**Frame → Map → Explore → Build → Integrate** is a progression of concerns, not a mandatory pipeline or a set of artifact sections. Each skill describes its own contribution; all five coordinates remain available for revision.
 
 Loop uses the same reconciliation contract for orchestration learning. Explain conditionally reconciles durable insight into an existing artifact: mental-model changes generally belong in Impact, reasoning in Decisions, and unresolved invariants, trade-offs, limits, or observation needs in Reality. Leave it unchanged if nothing durable is missing; do not copy the teaching response or require a new artifact for standalone Explain. **Explain teaches the model. Impact preserves the model change.**
 
 ### Continue across agents
 
-Before handing work to another agent, reconcile the owning artifact and make the relevant code, prototype, and evidence accessible. Give the receiving agent the artifact location, intended outcome, scope boundaries, relevant branch or checkout, and the next useful action with its reason. Identify unresolved decisions and verification limits where they affect that action. Use existing task context and links; no separate handoff document or issue section is required.
-
-The receiving agent reads the latest artifact and inspects relevant actual state before continuing. A prior summary is an orientation aid, not proof that the issue, code, or verification still matches. Preserve the user's scope and authorization; a handoff does not grant additional permissions.
-
-When multiple agents are authorized and useful, agree on one active writer for each shared artifact. Other agents return findings and proposed revisions to that writer, who owns synthesis and verified write-back before work proceeds on changed understanding. Give each assignment a bounded outcome, relevant dependencies, and clear edit ownership; serialize overlapping edits unless the agents have explicitly coordinated them. Separate assignments need not create separate delivery issues.
-
-Returned work should identify what changed in understanding, the evidence and code state supporting it, and what remains unresolved. The coordinating agent inspects the returned artifacts and resolves contradictions against evidence. For implementation work, verify the combined behavior; passing isolated checks does not establish integration. Preserve material unresolved disagreements in Reality and seek human judgment when evidence cannot settle a consequential choice.
-
-Immediately before writing, re-read the destination and incorporate intervening human or agent edits, preserving source wording under the original-request rule. Use revision checks when available; if the destination changed or an update conflicts, reconcile against its latest version instead of overwriting from a stale draft. Keep consequential meaning in the five coordinates within their budget, with durable links for supporting evidence; do not append agent reports or a coordination log.
+For a handoff to another agent or authorized multi-agent work, read the [agent-handoff guidance](agent-handoffs.md).
 
 ### Preserve the original request
 
@@ -120,21 +104,7 @@ On later updates, carry the same Original Request forward unchanged; do not dupl
 
 ## Issues and projects
 
-**Same questions. Different resolution.** A delivery issue preserves understanding of its own functioning slice. A broader project or optional parent issue preserves the coordinated effort at project resolution; link delivery issues without aggregating their detailed decisions or implementation information. An ordinary change can use one artifact without a hierarchy.
-
-### Shape delivery slices
-
-For work that needs decomposition, use **Surface → Structure → Slice → Simplify → Sequence**. These are reasoning concerns, not required rounds, artifact sections, or another workflow; skip what is already understood and revisit when evidence changes it.
-
-- **Surface:** Make relevant actions, decisions, questions, risks, and unknowns visible in working notes.
-- **Structure:** Connect the affected experience, system responsibilities, and dependencies; group what belongs together rather than by implementation layer.
-- **Slice:** Ask **if this shipped and work stopped here, could someone complete something useful?** Include every layer needed for that outcome. A slice may rely on already available behavior or an earlier released slice, but cannot need future work for basic usefulness; combine interdependent pieces.
-- **Simplify:** Remove or defer states, controls, variants, and other scope while preserving the useful outcome. Easy implementation alone does not justify added scope.
-- **Sequence:** Order releases by value and dependencies, identifying who can evaluate each slice and what the observation could change.
-
-Database, API, and interface tasks can be separate build units within one delivery slice. Technical staging, including preparatory deployments or work behind a flag, does not establish delivery of the slice's value. Keep necessary sequencing detail in linked working notes; preserve consequential boundaries, dependencies, and evidence in the existing five coordinates without adding a planning schema or creating speculative issues.
-
-When foundational work needs its own issue, name the enabled capability, verification, and functioning slice it supports. Its evidence is capability verification; do not claim end-user value or feedback it cannot produce.
+An ordinary change can use one artifact without a hierarchy. For broader work, read the [delivery-slicing guidance](delivery-slices.md), which covers issue resolution, useful outcomes, and release dependencies.
 
 ## Artifact responsibilities
 
@@ -174,4 +144,4 @@ Use the five coordinates as judgment lenses: Is the **Problem** understood enoug
 | Explain | Coherent work meaningfully changes the maintainer's mental model; skip it for trivial changes. |
 | Human judgment or stop / complete | A consequential unresolved choice needs a human, or no further operation is useful given the requested scope and actual state. |
 
-After reconciliation, each Core Skill and Loop finishes with one concise **Recommended next:** `<skill or action>` and **Why:** `<reason>`. Keep material reasons and evidence in the artifact, so routing does not depend on hidden conversation state. A recommendation neither requires an installed skill nor invokes it automatically; Loop owns adaptive orchestration.
+Before finishing, reconcile and re-read the artifact. Each Core Skill and Loop gives one concise **Recommended next:** `<skill or action>` and **Why:** `<reason>`. Keep material reasons and evidence in the artifact, so routing does not depend on hidden conversation state. A recommendation neither requires an installed skill nor invokes it automatically; Loop owns adaptive orchestration.

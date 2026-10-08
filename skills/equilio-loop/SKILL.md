@@ -9,19 +9,11 @@ Use Loop as a **Supporting Skill** for adaptive orchestration. Preserve **Frame 
 
 ## Establish current understanding
 
-Read the [work-artifact contract](references/work-artifact.md#reconcile-current-understanding) at the start; the owning issue holds current understanding throughout the work, including discoveries within a skill rather than only between skills.
+Use the [work-artifact contract](references/work-artifact.md) throughout, reusing current guidance already in context. Read the latest owning artifact at the start; it holds discoveries within a skill as well as between skills.
 
-Inspect the goal, branch, project conventions, and existing work before creating anything. Reuse the artifact that owns the goal, or prepare a local Markdown artifact while establishing the project's shared destination. For broader work, use the [delivery-slicing guidance](references/work-artifact.md#shape-delivery-slices) to select a useful outcome linked to project-level understanding. Sequence by value and release dependencies, not merely by build-task order; revisit boundaries when mapping or prototype evidence changes them. Avoid duplicates and speculative delivery breakdowns.
+Inspect the goal, branch, project conventions, and existing work before creating anything. Reuse the artifact that owns the goal, or prepare a local Markdown artifact while establishing the project's shared destination. For broader work, use the [delivery-slicing guidance](references/delivery-slices.md#shape-delivery-slices) to select a useful outcome linked to project-level understanding. Sequence by value and release dependencies, not merely by build-task order; revisit boundaries when mapping or prototype evidence changes them. Avoid duplicates and speculative delivery breakdowns.
 
-Use **Problem → Solution → Decisions → Impact → Reality** as the orientation surface:
-
-- **Problem:** Is the gap understood enough?
-- **Solution:** Is there a supported way forward?
-- **Decisions:** Are consequential choices sufficiently resolved?
-- **Impact:** Is the relevant system understood enough to proceed?
-- **Reality:** What uncertainty or evidence should determine the next move?
-
-Treat these as judgment lenses, never gates, scores, maturity levels, or required checklists. Read the artifact and relevant evidence so a fresh human or agent can route without hidden conversation state.
+Assess the five coordinates and relevant evidence under the shared [routing guidance](references/work-artifact.md#choose-the-next-useful-operation). Treat them as judgment lenses, not gates or scores; routing must work without hidden conversation state.
 
 ## Choose, run, and reassess
 
@@ -29,9 +21,9 @@ Treat these as judgment lenses, never gates, scores, maturity levels, or require
 
 Use the [next-operation guidance](references/work-artifact.md#choose-the-next-useful-operation). Honor an explicitly requested skill first, skip satisfied concerns, and revisit only when new evidence materially requires it. Give the selected skill the goal, shared artifact, and relevant evidence; let its current instructions determine method and depth.
 
-For a handoff or authorized multi-agent work, follow the [agent-continuation guidance](references/work-artifact.md#continue-across-agents). Keep assignments bounded and artifact write-back owned by one active writer; inspect returned evidence and reconcile contradictions before routing from it. Parallel assignments do not redefine delivery boundaries; readiness depends on verifying the functioning slice.
+For a handoff to another agent or authorized multi-agent work, follow the [agent-continuation guidance](references/agent-handoffs.md). Keep assignments bounded and artifact write-back owned by one active writer; inspect returned evidence and reconcile contradictions before routing from it. Parallel assignments do not redefine delivery boundaries; readiness depends on verifying the functioning slice.
 
-Each skill owns reconciliation under the work-artifact contract as material understanding changes; in delegated work, the coordinating agent verifies that the shared writer completes it. Reconcile additional orchestration learning, then independently re-read the artifact at every transition and reassess the recommendation against actual evidence. Preserve shared problem understanding, access to meaningful working prototypes, and opportunities to simplify when choosing the next concern; a plausible proposal or passing tests alone may leave these unresolved. Keep material reasons there instead of producing a routing log; count words and enforce the artifact’s section limits before writing each update. If repetition produces no learning, identify the evidence or judgment needed rather than cycling mechanically.
+Each skill owns reconciliation as material understanding changes; in delegated work, the coordinating agent verifies that the shared writer completes it. Reconcile additional orchestration learning, then independently re-read the artifact at every transition and reassess against actual evidence. Preserve shared problem understanding, working prototypes, and opportunities to simplify; a plausible proposal or passing tests may leave these unresolved. If repetition produces no learning, identify the evidence or judgment needed rather than cycling mechanically.
 
 Continue through reasonable choices supported by evidence and conventions. Request human judgment when a consequential unresolved choice materially changes intent, scope, security or privacy expectations, compatibility, architecture, external commitments, or irreversible behavior, or when evidence gives no sound basis for choosing. Continue independent work while judgment is pending; avoid routine approval gates.
 
@@ -41,4 +33,4 @@ Use the [scope and completion guidance](references/work-artifact.md#judge-scope-
 
 Use optional [Explain](../equilio-explain/SKILL.md) when coherent work meaningfully changes the maintainer's model; skip trivial changes. Re-read the artifact after any durable insight is reconciled. Do not copy its teaching response. If explanation exposes a material contradiction, return to the appropriate Core Skill before claiming convergence; Integrate retains coherence review.
 
-Before finishing, reconcile remaining material understanding and re-read the artifact. Give **Recommended next:** `<skill or action>` · **Why:** `<brief reason>`, usually human review, stop / complete, or a specific judgment needed.
+Finish under the shared reconciliation and routing contract, usually with human review, stop / complete, or a specific judgment needed.

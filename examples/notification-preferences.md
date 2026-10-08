@@ -120,7 +120,7 @@ Final eligibility would move from the batch snapshot to the worker. The snapshot
 People keep getting weekly digests after turning them off. Add an unsubscribe button.
 ```
 
-The team shapes the work using [Surface → Structure → Slice → Simplify → Sequence](../references/work-artifact.md#shape-delivery-slices), keeping the detailed map in working notes:
+The team shapes the work using [Surface → Structure → Slice → Simplify → Sequence](../references/delivery-slices.md#shape-delivery-slices), keeping the detailed map in working notes:
 
 - **Surface:** Preference persistence, queued sends, provider acceptance, timing copy, and direct access are the relevant concerns.
 - **Structure:** Reliable stopping connects the saved preference, worker eligibility, and the explanation people see.

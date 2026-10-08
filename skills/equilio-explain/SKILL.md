@@ -1,6 +1,6 @@
 ---
 name: equilio-explain
-description: Explain the meaningful system changes a human should understand to maintain software coherence. Use this Supporting Skill for maintainer understanding and mental-model change in a branch, PR, issue and associated changes, completed work, or unfamiliar implementation, including requests like "Explain what changed", "What should I understand about this implementation?", "Teach me what changed in this PR", "What changed in the system model?", "What do I need to know to maintain this?", or "Explain the important changes in this branch". Do not use for ordinary code summaries or diff recaps.
+description: Explain meaningful system changes and the mental model a human maintainer needs for a branch, PR, completed change, or unfamiliar implementation. Use for maintainer understanding; do not use for routine diff recaps or code summaries.
 ---
 
 # Equilio Explain
@@ -9,7 +9,7 @@ Use Explain as an independently invokable **Supporting Skill** for human compreh
 
 ## Establish the model change
 
-When an associated work artifact is available, read it and the [work-artifact contract](references/work-artifact.md#reconcile-current-understanding) at the start; keep the owning issue current when explanation reveals missing durable understanding.
+When an associated work artifact is available, read its latest state and apply the [work-artifact contract](references/work-artifact.md), reusing current guidance already in context. Keep the owning issue current when explanation reveals missing durable understanding.
 
 Read the supplied branch, PR, work artifact, implementation, and relevant repository context. Establish a comparison baseline from available history; inspect actual code, callers, and tests rather than inferring behavior from the diff alone. With partial evidence, name what could not be checked. For unfamiliar code without a before-state, teach the current model and its comparison limits instead of inventing an old model.
 
@@ -21,7 +21,7 @@ Look selectively for concepts and relationships that change future reasoning: re
 
 Lead with the conceptual shift, then explain relationships, cause and effect, and responsibility boundaries. Include supported reasoning, constraints a maintainer must preserve, and a few precise references when useful. Use technical terms only with enough context to make them understandable. Match depth to the change and omit empty sections; say briefly when no material mental-model change exists.
 
-Use the PR and diff as evidence without repeating them. Keep the PR under the [PR guidance](references/pull-request.md). Integrate asks whether the change is coherent; Explain teaches what a maintainer should understand. Surface contradictory findings with evidence and recommend the relevant Core Skill rather than turning explanation into implementation or review.
+Use the PR and diff as evidence without repeating them; read the [PR guidance](references/pull-request.md) only when writing or updating one. Integrate asks whether the change is coherent; Explain teaches what a maintainer should understand. Surface contradictory findings with evidence and recommend the relevant Core Skill rather than turning explanation into implementation or review.
 
 ## Reconcile durable understanding
 
