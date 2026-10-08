@@ -4,7 +4,13 @@
 
 **Supporting:** Loop — orchestrate · Explain — understand
 
-Equilio Coding helps a person and an agent create coherent software while retaining what they learn. Two simple artifact shapes keep the work legible:
+Equilio Coding helps a person and an agent create coherent software while retaining what they learn. Three commitments distinguish the method:
+
+1. **Continual Context.** Each Core Skill writes material learning back to the same issue as understanding changes, so the next person or agent can continue from current truth.
+2. **Plain Language.** Issue and PR templates use strict word and section limits, concrete behavior, and clear reasons; the writing guide rules out filler, inflated claims, and patch narration.
+3. **Working Prototypes.** Explore turns meaningful uncertainty into runnable software you can test before choosing a direction; writing and using it can reveal problems a proposal misses.
+
+Two simple artifact shapes keep the work legible:
 
 **Work: Problem → Solution → Decisions → Impact → Reality**
 
@@ -14,9 +20,11 @@ The work artifact preserves current understanding for the next human or agent. T
 
 The shared [writing style guidance](references/writing-style.md) makes both readable through technical precision in plain language: concrete behavior, clear cause and effect, and honest evidence within the existing limits.
 
-**Shared problem, functioning slices, connected memory.** Build small, atomic vertical slices through every product and technical layer their behavior needs. Each should let someone experience and evaluate functioning software. Prefer independent release to an appropriate audience when feasible, using feedback to shape the next slice. Foundational work may need its own issue; name its enabled capability, verification, and supported slice without claiming product feedback it cannot produce.
+Build small, atomic vertical slices through every product and technical layer their behavior needs. Each should let someone experience and evaluate functioning software. Prefer independent release to an appropriate audience when feasible, using feedback to shape the next slice. Foundational work may need its own issue; name its enabled capability, verification, and supported slice without claiming product feedback it cannot produce.
 
-The five Core Skills apply [Equilio](https://equilio.dev), whose engine is **Intuition → Integration → Iteration** and whose Models are **Value Creation, Quality Refinement, and Strategic Momentum**. The skills are a coding method, not additional Models. The shared [Development Principles](references/development-principles.md) guide judgment: **Understand First → Fewest Changes → Optimize for the Reader → Better Than Before → Close the Loop**. Fewest Changes means the smallest coherent functioning slice, including every layer it needs.
+The five Core Skills apply [Equilio](https://equilio.dev), whose engine is **Intuition → Integration → Iteration** and whose Models are **Value Creation, Quality Refinement, and Strategic Momentum**. The skills are a coding method, not additional Models. Value Creation keeps the problem and purpose clear; Quality Refinement favors less but better; Strategic Momentum turns evidence into useful next steps while preserving what is learned. These concerns apply throughout the work rather than belonging to separate skills.
+
+The shared [Development Principles](references/development-principles.md) guide judgment: **Understand First → Fewest Changes → Optimize for the Reader → Better Than Before → Close the Loop**. Fewest Changes means the smallest coherent functioning slice, including every layer it needs.
 
 ## Core Skills
 
@@ -24,13 +32,13 @@ The five Core Skills apply [Equilio](https://equilio.dev), whose engine is **Int
 
 | Skill | Distinct job | Natural contribution to understanding |
 | --- | --- | --- |
-| [Frame](skills/equilio-frame/) | Clarify the actual gap and desired outcome. | Problem, with unknown direction or impact left provisional. |
-| [Map](skills/equilio-map/) | Establish relevant product behavior and system relationships. | Problem + Impact, correcting framing when needed. |
-| [Explore](skills/equilio-explore/) | Test meaningful uncertainty that could change a decision. | Solution + Decisions + Reality grounded in evidence. |
-| [Build](skills/equilio-build/) | Implement a supported direction as functioning software. | Implemented Solution and Impact, consequential Decisions, and verification in Reality. |
-| [Integrate](skills/equilio-integrate/) | Review coherence, verify behavior, and prepare handoff. | All five coordinates reconciled with actual code and evidence. |
+| [Frame](skills/equilio-frame/) | Interview until person and agent share the problem, purpose, and desired outcome. | Problem, with unknown direction or impact left provisional. |
+| [Map](skills/equilio-map/) | Connect the affected product experience to actual code and system relationships. | Problem + Impact, correcting framing when needed. |
+| [Explore](skills/equilio-explore/) | Build and test working prototypes where evidence could change the direction. | Solution + Decisions + Reality grounded in evidence. |
+| [Build](skills/equilio-build/) | Execute the fewest changes needed for a coherent functioning solution. | Implemented Solution and Impact, consequential Decisions, and verification in Reality. |
+| [Integrate](skills/equilio-integrate/) | Refine toward simpler solutions, verify coherence, and preserve system understanding. | All five coordinates reconciled with actual code and evidence. |
 
-Every Core Skill stands alone and can rewrite all five coordinates. Start from a rough request, issue, local Markdown, prototype, or code. Each performs its job, reconciles the same work artifact, re-reads it, and gives one **Recommended next:** `<skill or action>` · **Why:** `<reason>`. The shared artifact and evidence must support continuation without hidden chat context; human judgment or stop / complete may be appropriate.
+Every Core Skill stands alone and can rewrite all five coordinates. Start from a rough request, issue, local Markdown, prototype, or code. Each performs its job, reconciles the same work artifact when material understanding changes and before handoff, re-reads it, and gives one **Recommended next:** `<skill or action>` · **Why:** `<reason>`. The shared artifact and evidence must support continuation without hidden chat context; human judgment or stop / complete may be appropriate.
 
 ## Supporting Skills
 

@@ -9,6 +9,8 @@ Use Explain as an independently invokable **Supporting Skill** for human compreh
 
 ## Establish the model change
 
+When an associated work artifact is available, read it and the [work-artifact contract](https://github.com/drewbarontini/equilio-coding/blob/main/references/work-artifact.md#reconcile-current-understanding) at the start; keep the owning issue current when explanation reveals missing durable understanding.
+
 Read the supplied branch, PR, work artifact, implementation, and relevant repository context. Establish a comparison baseline from available history; inspect actual code, callers, and tests rather than inferring behavior from the diff alone. With partial evidence, name what could not be checked. For unfamiliar code without a before-state, teach the current model and its comparison limits instead of inventing an old model.
 
 Apply the [Development Principles](https://github.com/drewbarontini/equilio-coding/blob/main/references/development-principles.md) proportionately. Distinguish verified behavior, inferred intent, and documented reasoning; do not manufacture rationale or validation.
@@ -25,7 +27,7 @@ Use the PR and diff as evidence without repeating them. Keep the PR under the [P
 
 **Explain teaches the model. Impact preserves the model change.**
 
-Read an associated work artifact when available. If explanation uncovers missing or contradictory durable understanding, reconcile it under the [work-artifact contract](https://github.com/drewbarontini/equilio-coding/blob/main/references/work-artifact.md#reconcile-current-understanding):
+If explanation uncovers missing or contradictory durable understanding, reconcile it under the work-artifact contract as that understanding changes:
 
 - Put conceptual or mental-model changes generally in **Impact**.
 - Put consequential reasoning in **Decisions**.

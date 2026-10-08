@@ -19,6 +19,18 @@ The [work-artifact](work-artifact.md#information-budget) and [PR](pull-request.m
 
 Before writing back, re-read from the recipient's perspective: can they follow what happens, why it matters, and what the evidence supports without decoding the prose? Revise unclear passages within the existing budget. This is an editing lens, not an additional output section or checklist.
 
+## Remove generated filler
+
+These constraints apply to issue and PR prose as well as their templates:
+
+- Do not use promotional adjectives such as “seamless,” “robust,” or “comprehensive” in place of evidence; describe the behavior or scope they would need to establish.
+- Remove canned framing such as “It's worth noting,” “Importantly,” “This isn't about X; it's about Y,” and concluding recaps that repeat the body.
+- Use ordinary verbs instead of inflated wording such as “leverage” or “facilitate” when “use” or “help” expresses the meaning; keep necessary domain terms.
+- Avoid invented labels, noun stacks, and activity summaries such as “Implemented enhancements”; name the actor, changed behavior, and relevant reason.
+- Do not claim a change is simpler, better, complete, or validated without the concrete comparison or evidence that supports the claim.
+
+Apply these constraints to newly written prose; preserve Original Request, exact quotations, identifiers, and external contracts as required by the artifact guidance.
+
 ## Examples
 
 These fictional examples illustrate the voice, not required phrasing.

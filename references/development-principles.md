@@ -4,6 +4,16 @@
 
 These principles guide judgment throughout the five Core Skills: **Frame → Map → Explore → Build → Integrate**. Supporting Skills also apply them in proportion to their job: Loop orchestrates the core workflow; Explain helps a maintainer understand meaningful system changes. They are shared development doctrine, not additional workflow stages, Equilio Models, mandatory printed checklists, or gates. Explicit repository-specific requirements take precedence.
 
+## Equilio in practice
+
+**Intuition → Integration → Iteration** connects an initial sense of value to shared understanding, working software, and refinement through evidence. Apply all three Equilio Models throughout the work:
+
+- **Value Creation — Build the right things.** Establish whose problem matters, why it matters, and what improvement would mean; connect product experience and system behavior before choosing a solution.
+- **Quality Refinement — Elevate what exists.** Test the experience, question unnecessary complexity, and refine toward less but better while preserving the intended behavior.
+- **Strategic Momentum — Sustain forward movement.** Take the next useful step, learn from functioning software, and preserve current understanding in the owning issue so progress does not depend on one conversation.
+
+Use these to change decisions, not decorate output. Frame builds shared problem understanding; Map connects experience and implementation; Explore tests working possibilities; Build makes the fewest coherent changes; Integrate actively refines the result and preserves what changed in the system. Each concern can reveal evidence that sends the work back to an earlier question.
+
 ## Understand First
 
 Understand the problem and existing system before prescribing or changing a solution. Inspect the product's actual behavior and relevant code paths. Understand the state, data, interfaces, dependencies, tests, and conventions that matter to the change. Distinguish verified facts from assumptions. Follow existing patterns unless there is a meaningful reason to change them; do not redesign surrounding systems merely because another design appears cleaner.

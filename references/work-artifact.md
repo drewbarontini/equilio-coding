@@ -4,11 +4,15 @@
 
 The shared work artifact preserves the **current understanding of the work** for humans and AI agents. Use the same shape for delivery issues, broader projects, and local Markdown work artifacts, whether the destination is GitHub, Linear, or the project's Markdown files.
 
+For delivery work, the issue is the core artifact: continually rewrite its current understanding as material learning emerges. Use a local Markdown equivalent when no issue owns the work; the PR and chat are not substitutes for the owning artifact.
+
 > After any Equilio operation, a fresh human or AI agent should be able to read the shared work artifact and responsibly continue without needing prior conversation or hidden agent context.
 
 ## The shared shape
 
 ```markdown
+<!-- Maximum 250 rendered words across the five coordinates; Original Request is excluded. Follow the section limits and writing-style.md: concrete behavior, clear reasons, honest evidence, no filler or patch narration. -->
+
 # [Work title]
 
 ## Problem
@@ -78,7 +82,9 @@ When oversized, remove duplication and compress first, then link necessary durab
 
 Read this reference, the [writing style guidance](writing-style.md), and the existing artifact before modifying it. Apply the writing guidance within the information budget: make behavior, reasons, system meaning, and evidence easy to follow. Establish the destination and preserve records, relationships, and useful links; prefer updating over creating a duplicate. Use a local Markdown artifact while preparing a remote one. Do not create a remote issue merely because a skill ran; use the user's existing authorization and request human judgment only for consequential unresolved choices.
 
-Every Core Skill can rewrite all five coordinates while preserving the Original Request unchanged. Each must re-read and reconcile the same artifact before finishing: replace stale guesses with current truth, retain consequential reasoning, synthesize material learning, and remove contradictions and duplication. Enforce the [information budget](#information-budget) before writing the update, then re-read the result to ensure the invariant holds. Comments, appended stage notes, and working notes alone do not satisfy reconciliation. Once a remote artifact owns the work, a local draft cannot replace its update; if blocked, preserve a destination-ready synthesis and report the incomplete reconciliation.
+Every Core Skill can rewrite all five coordinates while preserving the Original Request unchanged. Read this contract at the start of the operation. Reconcile when material learning changes the problem, approach, consequential reasoning, system understanding, or evidence, before acting on that changed understanding and before handoff. Batch closely related findings into one coherent rewrite; routine tool calls and unchanged understanding need no write. Replace stale guesses with current truth, retain consequential reasoning, synthesize material learning, and remove contradictions and duplication.
+
+Enforce the [information budget](#information-budget) before each update, then re-read the result to ensure the invariant holds. Comments, appended stage notes, and working notes alone do not satisfy reconciliation. Once a remote artifact owns the work, a local draft cannot replace its update; if blocked, preserve a destination-ready synthesis and report the incomplete reconciliation. Continue independent work where useful, but do not claim the owning issue is current until its update is verified.
 
 **Frame → Map → Explore → Build → Integrate** is a progression of concerns, not a mandatory pipeline or a set of artifact sections. Fidelity increases within the same five coordinates:
 

@@ -4,7 +4,7 @@ This fictional example uses illustrative issue numbers and observations. It show
 
 ## Frame
 
-Existing issue #143 says: “People keep getting weekly digests after turning them off. Add an unsubscribe button.” One substantive question establishes three support reports. Preventing later sends matters more than the exact control. The local draft updates #143 while preserving its existing description outside the word budget:
+Existing issue #143 says: “People keep getting weekly digests after turning them off. Add an unsubscribe button.” One substantive question establishes three support reports. The agent reflects that preventing later sends matters more than the exact control, and the person agrees; the shared problem is reliable stopping, while the solution remains open. The local draft updates #143 while preserving its existing description outside the word budget:
 
 ```markdown
 # #143 — Turning the digest off stops future sends
@@ -78,7 +78,7 @@ People keep getting weekly digests after turning them off. Add an unsubscribe bu
 
 ## Explore
 
-Reversible test-account trials show that changing the control alone leaves queued sends intact. A send-time check skips the queued send; a direct email-to-Settings route also works with that check. These are prototype observations, not customer feedback. #143 is rewritten:
+The agent builds reversible prototypes in the test product and exercises the Settings flow in the browser. Test-account trials show that changing the control alone leaves queued sends intact. A send-time check skips the queued send; a direct email-to-Settings route also works with that check. The person receives the runnable test product and a short trial: queue a digest, disable it in Settings, then run the worker and inspect the result. Provider recall is outside this prototype. These are agent prototype observations, not human testing or customer feedback; #143 is rewritten before proceeding on the supported direction:
 
 ```markdown
 # #143 — Turning the digest off stops future sends
@@ -158,7 +158,7 @@ People keep getting weekly digests after turning them off. Add an unsubscribe bu
 
 ## Integrate
 
-Review reconciles all five sections against actual behavior and checks the whole slice. The PR follows [the canonical guidance](../references/pull-request.md):
+Review checks the whole slice and asks whether it can solve the same problem more simply. A redundant eligibility wrapper left from the prototype is removed; the worker retains the send-time check, and the regression test still passes. Impact preserves the distinction between batch candidates and the worker's final eligibility decision. All five sections are reconciled against the refined behavior before the PR follows [the canonical guidance](../references/pull-request.md):
 
 ```markdown
 ## Summary

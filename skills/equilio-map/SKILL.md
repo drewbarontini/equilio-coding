@@ -5,7 +5,11 @@ description: Map existing product behavior and code paths for a software change;
 
 # Map
 
+Read the [work-artifact contract](https://github.com/drewbarontini/equilio-coding/blob/main/references/work-artifact.md#reconcile-current-understanding) at the start; keep the owning issue current as material understanding changes, before acting on it and before handoff.
+
 Start from the request, work artifact, local Markdown, prototype, or code. Apply the [Development Principles](https://github.com/drewbarontini/equilio-coding/blob/main/references/development-principles.md): observe relevant product behavior and inspect the actual code before describing it. Trace entry points, state, data flow, interfaces, dependencies, tests, conventions, and affected surfaces only as deeply as the change requires. Do not repeat sufficient investigation.
+
+Connect the affected person's journey to the surfaces, actions, and state changes they encounter, then trace how actual code and system boundaries produce that behavior. Explain where the problem enters this path, what a solution must connect, and which constraints could change the direction. Use the browser for relevant UI behavior when available; code inspection alone cannot establish the experience. For work without a UI, trace the corresponding caller or operational flow.
 
 Keep a local Markdown map as working notes, with precise references for revisiting relevant code and relationships. Separate verified facts from inference and unresolved choices. Trace the product and technical paths a functioning change must connect, including dependencies that affect independent release or evaluation. Technical-layer boundaries alone do not justify splitting delivery issues.
 

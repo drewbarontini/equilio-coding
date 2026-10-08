@@ -1,13 +1,17 @@
 ---
 name: equilio-explore
-description: Test meaningful software product or implementation options in a running product; use when behavior, design, UX, or technical tradeoffs need evidence before choosing a direction.
+description: Build and test working software prototypes; use when behavior, design, UX, or technical tradeoffs need evidence before choosing a product or implementation direction.
 ---
 
 # Explore
 
+Read the [work-artifact contract](https://github.com/drewbarontini/equilio-coding/blob/main/references/work-artifact.md#reconcile-current-understanding) at the start; keep the owning issue current as material understanding changes, before acting on it and before handoff.
+
 Establish the current problem from the work artifact, local Markdown, prototype, or code. Name uncertainty whose resolution could change the decision. If evidence and conventions already support a direction, reconcile that judgment without manufacturing alternatives or a prototype. Otherwise choose a few meaningfully different options or one focused discriminating test.
 
-Apply the [Development Principles](https://github.com/drewbarontini/equilio-coding/blob/main/references/development-principles.md): use lightweight, reversible prototypes in the running product when feasible. Observe behavior, design, UX, and technical consequences rather than inferring them. If a running prototype is impractical, state the constraint and use the closest useful evidence. Keep raw trials in working notes and name shortcuts that need refinement before production.
+Apply the [Development Principles](https://github.com/drewbarontini/equilio-coding/blob/main/references/development-principles.md): build lightweight, reversible working prototypes in the actual product when feasible. Run them and exercise the uncertain behavior; for UI work, use the browser to experience the flow, state changes, and relevant failure cases. Writing and running code can expose constraints the proposal missed; reconcile discoveries before choosing the direction. Screenshots and static mockups can supplement a working prototype but cannot establish its behavior.
+
+Make the prototype available for the person to test: provide a working preview or runnable entry point, the short interaction that tests the uncertainty, and material shortcuts or limitations. Invite their observations when experience or preference could determine the choice; leave that choice open when their judgment is needed. Do not claim human testing occurred because the agent exercised the prototype. For work without a UI, provide the equivalent runnable operation and observable result. If a running prototype is impractical, state the constraint and use the closest useful evidence. Keep raw trials in working notes and name shortcuts that need refinement before production.
 
 Choose a direction when evidence supports one; otherwise leave the choice open and identify the next useful evidence. Use observations to shape small functioning delivery slices that people can experience and evaluate. Prefer independent release where feasible and name dependencies that constrain it, without fixing speculative follow-ups.
 

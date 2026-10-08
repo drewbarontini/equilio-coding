@@ -1,13 +1,17 @@
 ---
 name: equilio-integrate
-description: Review, verify, and hand off a software change; use when implementation needs product, code, and strategy coherence or a PR and work artifact need reconciliation.
+description: Refine, review, verify, and hand off a software change; use when implementation needs product, code, and strategy coherence or a PR and work artifact need reconciliation.
 ---
 
 # Integrate
 
+Read the [work-artifact contract](https://github.com/drewbarontini/equilio-coding/blob/main/references/work-artifact.md#reconcile-current-understanding) at the start; keep the owning issue current as material understanding changes, before acting on it and before handoff.
+
 Start from the work artifact, local Markdown, code, PR, or deployed result; earlier skills need not have run. Review the entire functioning slice through the [Development Principles](https://github.com/drewbarontini/equilio-coding/blob/main/references/development-principles.md): does it solve the actual gap, use the smallest coherent change, read clearly, leave touched areas healthy, and have sufficient integrated verification? Use judgment proportionate to the change. Check useful comments and meaningful tests without producing a separate audit or requiring artificial coverage.
 
-Run appropriate checks and verify integrated product behavior when feasible. Update diagrams or durable documentation only when the system changed and they will help future work. If review exposes a material problem in framing, system understanding, direction, or behavior, reconcile it and return to the appropriate earlier concern before claiming readiness.
+Make an active refinement pass: can existing behavior replace added machinery, can a responsibility be clearer, or can the experience solve the same problem with fewer moving parts? Within the authorized scope, remove unnecessary branches, abstractions, and prototype shortcuts, and improve unclear interactions or code. Preserve required behavior and contracts, avoid unrelated cleanup, and recheck behavior affected by refinements. If no useful simplification exists, keep the implementation; less but better is a judgment, not a deletion quota. For review-only requests, recommend concrete refinements without editing.
+
+Run appropriate checks and verify integrated product behavior when feasible. Establish what a maintainer must now understand about responsibilities, relationships, and invariants, and preserve that meaning in Impact; use Explain when it needs fuller teaching. Update diagrams or durable documentation only when the system changed and they will help future work. If review exposes a material problem in framing, system understanding, direction, or behavior, reconcile it and return to the appropriate earlier concern before claiming readiness.
 
 Reconcile **all five sections** against actual code and verified behavior under the [work-artifact contract](https://github.com/drewbarontini/equilio-coding/blob/main/references/work-artifact.md#reconcile-current-understanding). Compress for handoff: current Problem, supported Solution, consequential Decisions, system-level Impact, and honest Reality. Replace disproven claims rather than retaining a workflow history; count words and enforce the contract’s section limits before writing the artifact.
 

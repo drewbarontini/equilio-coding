@@ -4,7 +4,7 @@
 
 The work artifact preserves understanding; the PR orients a human reviewing the implementation. Reconcile the [work artifact](work-artifact.md) before preparing a PR. Use [the template](../.github/pull_request_template.md), omitting Callouts when unnecessary and Changes for a genuinely tiny change.
 
-Read and apply the shared [writing style guidance](writing-style.md) when writing the title or description. Lead with resulting behavior, make changed responsibilities concrete, and state material limits plainly within the existing budget.
+Read and apply the shared [writing style guidance](writing-style.md) when writing the title or description, including its constraints on generated filler. Lead with resulting behavior, make changed responsibilities concrete, and state material limits plainly within the existing budget.
 
 The description must be **100 words or fewer**, with no minimum. Use only Summary, Changes, and optional Callouts, subject to the limits below. No nested bullets, subheadings, tables, code blocks, appendices, or collapsed detail. Do not repeat the full Problem, Decisions, Impact, or Reality, narrate development, or move issue overflow into the PR.
 

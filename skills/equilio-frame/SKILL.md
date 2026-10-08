@@ -1,13 +1,17 @@
 ---
 name: equilio-frame
-description: Define a software problem and its desired outcome before committing to a solution; use for a rough request, proposed feature, bug, or unclear issue.
+description: Establish shared understanding of a software problem, its purpose, and desired outcome before committing to a solution; use for a rough request, proposed feature, bug, or unclear issue.
 ---
 
 # Frame
 
+Read the [work-artifact contract](https://github.com/drewbarontini/equilio-coding/blob/main/references/work-artifact.md#reconcile-current-understanding) at the start; keep the owning issue current as material understanding changes, before acting on it and before handoff.
+
 Read the request and available work artifact, local files, prototype, or code. Apply the [Development Principles](https://github.com/drewbarontini/equilio-coding/blob/main/references/development-principles.md), especially Understand First; use what the context already answers and scale depth to the uncertainty.
 
-Interview thoughtfully: ask one substantive question at a time and let the answer guide the next. Clarify what happens, who is affected, why the gap matters, and what improvement would look like. Probe consequential constraints and evidence. Challenge a proposed solution when the underlying problem is unclear, reflect material changes in understanding, and stop when the gap is clear enough for a useful next move. A small fix may need no questions.
+Interview thoughtfully: ask one substantive question at a time and let the answer guide the next. Clarify what happens, who is affected, why solving it matters, and what improvement would look like. Probe consequential constraints and evidence. Challenge a proposed solution when the underlying problem is unclear.
+
+Reflect the problem, purpose, desired outcome, and boundaries back in plain language; use the person's answers or clear existing context to establish shared understanding. Continue the interview while material ambiguity or disagreement remains instead of treating a plausible agent summary as agreement. Update the issue as answers change the framing. Stop when both person and agent understand the problem well enough for a useful next move; a small, clearly specified fix may need no questions or repeated confirmation. Agreement on the problem does not require choosing a solution.
 
 Draft in local Markdown when preparing shared work, using the same five-part shape rather than a special Frame schema. Reuse existing records and authorization; bring consequential unresolved framing to human judgment when needed. Notice possible functioning delivery slices without forcing a breakdown before the problem is understood.
 

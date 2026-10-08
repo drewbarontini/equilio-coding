@@ -9,6 +9,8 @@ Use Loop as a **Supporting Skill** for adaptive orchestration. Preserve **Frame 
 
 ## Establish current understanding
 
+Read the [work-artifact contract](https://github.com/drewbarontini/equilio-coding/blob/main/references/work-artifact.md#reconcile-current-understanding) at the start; the owning issue holds current understanding throughout the work, including discoveries within a skill rather than only between skills.
+
 Inspect the goal, branch, project conventions, and existing work before creating anything. Reuse the artifact that owns the goal, or prepare a local Markdown artifact while establishing the project's shared destination. For broader work, select a functioning delivery slice linked to project-level understanding under the [issues and projects guidance](https://github.com/drewbarontini/equilio-coding/blob/main/references/work-artifact.md#issues-and-projects). Avoid duplicates and speculative delivery breakdowns.
 
 Use **Problem → Solution → Decisions → Impact → Reality** as the orientation surface:
@@ -27,7 +29,7 @@ Treat these as judgment lenses, never gates, scores, maturity levels, or require
 
 Use the [next-operation guidance](https://github.com/drewbarontini/equilio-coding/blob/main/references/work-artifact.md#choose-the-next-useful-operation). Honor an explicitly requested skill first, skip satisfied concerns, and revisit only when new evidence materially requires it. Give the selected skill the goal, shared artifact, and relevant evidence; let its current instructions determine method and depth.
 
-Each skill owns reconciliation under the [work-artifact contract](https://github.com/drewbarontini/equilio-coding/blob/main/references/work-artifact.md#reconcile-current-understanding). Reconcile additional orchestration learning, then independently re-read the artifact at every transition and reassess the recommendation against actual evidence. Keep material reasons there instead of producing a routing log; count words and enforce the artifact’s section limits before writing each update. If repetition produces no learning, identify the evidence or judgment needed rather than cycling mechanically.
+Each skill owns reconciliation under the work-artifact contract as material understanding changes. Reconcile additional orchestration learning, then independently re-read the artifact at every transition and reassess the recommendation against actual evidence. Preserve shared problem understanding, access to meaningful working prototypes, and opportunities to simplify when choosing the next concern; a plausible proposal or passing tests alone may leave these unresolved. Keep material reasons there instead of producing a routing log; count words and enforce the artifact’s section limits before writing each update. If repetition produces no learning, identify the evidence or judgment needed rather than cycling mechanically.
 
 Continue through reasonable choices supported by evidence and conventions. Request human judgment when a consequential unresolved choice materially changes intent, scope, security or privacy expectations, compatibility, architecture, external commitments, or irreversible behavior, or when evidence gives no sound basis for choosing. Continue independent work while judgment is pending; avoid routine approval gates.
 
