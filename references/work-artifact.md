@@ -52,7 +52,7 @@ Original Request preserves source wording beneath the five coordinates; it is no
 | --- | --- |
 | **Problem** | The actual gap: what happens, what should happen, and why it matters. State Current and Expected in one sentence each. Rewrite the framing when evidence corrects it. |
 | **Solution** | The high-level approach and resulting behavior. Distinguish a proposal from a chosen direction; describe the mechanism rather than the patch. |
-| **Decisions** | Consequential choices and their reasons that could matter to a future change. Combine choice and reason, for example: **Check preference at send time:** This is the last boundary we control before provider acceptance. |
+| **Decisions** | Consequential choices and their reasons that could matter to a future change, distinguishing proposed directions from settled choices. Include a meaningful trade-off or rejected alternative when it explains the choice; when a decision changes, preserve what changed and why. For example: **Check preference at send time:** Changing the control alone did not stop queued sends. |
 | **Impact** | System meaning: changed responsibilities, relationships, boundaries, flows, contracts, behaviors, invariants, or assumptions. Before implementation, it can explain the relevant current system model. Preserve what a maintainer should understand differently, without file, function, class, or component inventories. |
 | **Reality** | The gap between what we believe and what the world has demonstrated: verification, observations, errors, feedback, unknowns, accepted trade-offs, limitations, and opportunities that affect judgment. |
 
@@ -84,6 +84,8 @@ Use this contract and the [writing style guidance](writing-style.md) throughout.
 
 Every Core Skill can rewrite all five coordinates while preserving the Original Request unchanged. Reconcile when material learning changes the problem, approach, consequential reasoning, system understanding, or evidence, before acting on that changed understanding and before handoff. Batch closely related findings into one coherent rewrite; routine tool calls and unchanged understanding need no write. Replace stale guesses with current truth, retain consequential reasoning, synthesize material learning, and remove contradictions and duplication.
 
+Make key decisions explicit in the owning issue as they happen, including choices that change product behavior, system boundaries, compatibility, or delivery scope. Briefly call out consequential changes in direction to the person as well; chat alone does not preserve the decision. An agent recommendation is a proposal until chosen through the task's existing authority. Keep the current choice and material reasoning in Decisions within its limits, linking durable detail when needed rather than retaining a chronological log.
+
 Enforce the [information budget](#information-budget) before each update, then re-read the result to ensure the invariant holds. Comments, appended stage notes, and working notes alone do not satisfy reconciliation. Once a remote artifact owns the work, a local draft cannot replace its update; if blocked, preserve a destination-ready synthesis and report the incomplete reconciliation. Continue independent work where useful, but do not claim the owning issue is current until its update is verified.
 
 **Frame → Map → Explore → Build → Integrate** is a progression of concerns, not a mandatory pipeline or a set of artifact sections. Each skill describes its own contribution; all five coordinates remain available for revision.
@@ -110,11 +112,18 @@ An ordinary change can use one artifact without a hierarchy. For broader work, r
 | --- | --- |
 | **Working Notes** | Exhaustive temporary investigation and exploration, including detailed code maps and raw trials. |
 | **Work Artifact** | Problem → Solution → Decisions → Impact → Reality: canonical current understanding for humans and AI. |
+| **System Model, when present** | Shared system-wide understanding of conceptual components, relationships, and governing principles. Impact preserves the particular work's consequences and links relevant entries. |
 | **PR** | [Summary → Changes → Callouts](pull-request.md): fast orientation for implementation review. |
 | **Code + tests** | Implementation, behavior, contracts, and executable evidence. |
 | **Explain** | Teaching that updates the human maintainer's mental model. |
 
 Transform information between these artifacts instead of copying it blindly. Link durable detail when it matters; temporary notes must not be the only home of understanding needed to continue.
+
+### Optional shared context
+
+Use an existing `SYSTEM_MODEL.md` or equivalent architecture record when available; read its scope, evidence limits, and relevant entries, then check them against actual code and decisions. When responsibilities, relationship contracts, or governing intentions materially change, reconcile affected entries, evidence, and the diagram together within the authorized work. Preserve identifiers, principle status, and unresolved questions; distinguish proposed changes from implemented behavior. For review-only work, recommend precise model updates. Without a model, reason from available code and documentation; do not require discovery or create a model merely to proceed.
+
+Where Product Memory is practiced, the owning issue supplies source context for broader decisions, releases, updates, and learning. For example, a Linear automation can watch issue changes and maintain a Decision Log from explicit choices and reasons. Keep key decisions visible there without creating duplicate logs, requiring automation, or assuming downstream capture succeeded. Consult relevant existing product records when they inform the work. During integration or delivery, identify changes worth communicating and their audience; prepare or update shared records only within existing authorization, with actual release state and evidence. Neither supporting practice adds a stage or requires new fields, documents, or approval steps.
 
 ## Judge scope and completion
 

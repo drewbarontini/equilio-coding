@@ -9,6 +9,8 @@ Use the [work-artifact contract](references/work-artifact.md) throughout; keep t
 
 Establish the current problem, system, and direction from the request, work artifact, prototype, and actual code. Earlier skills are optional; enough understanding for a responsible change is required, not certainty. Apply the [Development Principles](references/development-principles.md) throughout.
 
+Before changing a component, trace affected relationships and check governing principles under [Understand First](references/development-principles.md#understand-first), even when Map has not run. A System Model is optional context; its absence does not block implementation.
+
 Judge the change against the [requested scope and sufficient evidence](references/work-artifact.md#judge-scope-and-completion). Respect known time or effort limits while preserving the functioning outcome and required contracts; surface a concrete trade-off when they cannot fit rather than silently dropping necessary work.
 
 Build the smallest coherent functioning delivery slice through every product and technical layer needed for someone to experience and evaluate it. Use the shared problem and exploration evidence to choose the fewest changes; reuse existing behavior and remove unnecessary prototype machinery. Iterate in the running product when feasible so behavior, design, and UX work together. Basic usefulness must not need future follow-ups; build tasks can be staged separately within the slice. Read the [delivery-slicing guidance](references/delivery-slices.md) when broader work needs decomposition. Avoid unrelated cleanup and speculative abstractions.

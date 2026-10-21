@@ -20,6 +20,10 @@ Use these to change decisions, not decorate output. Frame builds shared problem 
 
 Understand the problem and existing system before prescribing or changing a solution. Inspect the product's actual behavior and relevant code paths. Understand the state, data, interfaces, dependencies, tests, and conventions that matter to the change. Distinguish verified facts from assumptions. Follow existing patterns unless there is a meaningful reason to change them; do not redesign surrounding systems merely because another design appears cleaner.
 
+Reason through **Component Change → Relationship Impact → Principle Check** in proportion to the change: what responsibility or owned state changes, which interactions and contracts it affects, and what should remain true. Components are conceptual responsibilities and may cross repository boundaries. Trace relevant callers, consumers, authority, and failure behavior through accessible evidence; identify uninspected dependencies when they affect judgment.
+
+An existing System Model is [optional shared context](work-artifact.md#optional-shared-context). Compare relevant model claims with implementation and recorded decisions; surface contradictions rather than silently favoring either. Preserve architectural principle status: **Documented** intentions have a recorded basis, **Inferred** intentions need confirmation, and **Proposed** rules remain open. These system-specific principles are distinct from the five Development Principles. Do not turn repeated behavior into settled intent or silently revise a principle to justify a patch; surface consequential changes for human judgment without adding routine approval gates.
+
 ## Fewest Changes
 
 Make the smallest coherent change that solves the problem. This does not mean minimizing lines, files, or layers. A functioning vertical slice may cross UI, backend, persistence, infrastructure, or other boundaries. Prefer the minimum connected set of changes needed to create functioning software someone can evaluate.
@@ -45,6 +49,8 @@ Leave the affected system at least as understandable and maintainable as before,
 **Tests should add confidence, not count.** Inspect existing coverage and run appropriate checks; add tests where evidence is weak for behavior, contracts, boundaries, regressions, failures, or integration. Code changing does not automatically require another test. Honor repository requirements without mechanically chasing coverage percentages.
 
 Ask **what behavior must remain true** and **what is the smallest useful evidence?** Choose focused, integration, or end-to-end checks for the actual risk. Prefer tests that survive reasonable refactoring; avoid redundant layers, incidental private structure, uncertain requirements, or tests that exercise mocks more than real behavior. A misleading test creates false confidence.
+
+Include affected relationship contracts and governing principles in that judgment; a locally passing check may leave system consequences untested. Record evidence gaps honestly and reconcile material changes to an existing model under the [shared-context guidance](work-artifact.md#optional-shared-context).
 
 When a check fails, reconcile both implementation and test with intended behavior: the code, requirement, or test assumption may be wrong. Do not blindly change or delete failing tests to make the suite pass, or preserve stale behavior solely because a test expects it.
 

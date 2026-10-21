@@ -41,7 +41,9 @@ People keep getting weekly digests after turning them off. Add an unsubscribe bu
 
 ## Map
 
-Inspection and reproduction show that Settings saves correctly. The batch snapshots recipients on Sunday, and the worker sends Monday without checking the latest preference. Detailed code paths stay in working notes. The agent replaces #143's body:
+Inspection and reproduction show that Settings saves correctly. The batch snapshots recipients on Sunday, and the worker sends Monday without checking the latest preference. Detailed code paths stay in working notes.
+
+If this project maintains a System Model, the agent checks the preference-owning component, its relationship to delivery, and any governing principle about honoring saved intent before provider acceptance. A documented intention would expose a contradiction with the stale snapshot; an inferred intention would still need human confirmation. Without a model, the same investigation proceeds from code and available decisions. The agent replaces #143's body:
 
 ```markdown
 # #143 — Turning the digest off stops future sends
@@ -120,6 +122,8 @@ Final eligibility would move from the batch snapshot to the worker. The snapshot
 People keep getting weekly digests after turning them off. Add an unsubscribe button.
 ```
 
+The agent calls out the chosen send-time check and the evidence for retaining Settings when the direction is established. Those choices are explicit in #143's Decisions, so a team's existing Linear automation can detect them for its Decision Log; the agent does not create another log or claim that capture occurred. If earlier work had chosen a different approach, Decisions would preserve the material change and its reason within the same limits.
+
 The team shapes the work using [Surface → Structure → Slice → Simplify → Sequence](../references/delivery-slices.md#shape-delivery-slices), keeping the detailed map in working notes:
 
 - **Surface:** Preference persistence, queued sends, provider acceptance, timing copy, and direct access are the relevant concerns.
@@ -181,6 +185,8 @@ People keep getting weekly digests after turning them off. Add an unsubscribe bu
 ## Integrate
 
 Review checks the whole slice and asks whether it can solve the same problem more simply. A redundant eligibility wrapper left from the prototype is removed; the worker retains the send-time check, and the regression test still passes. Impact preserves the distinction between batch candidates and the worker's final eligibility decision.
+
+If an existing System Model describes snapshot-based eligibility, its affected responsibilities, relationship contract, evidence, and diagram are reconciled with the implemented check; the prevention principle can remain unchanged. The agent identifies reliable opt-out as worth explaining to digest users after release, with provider acceptance as the limit. That communication draws on #143's current understanding and actual release state; it does not imply an update was published or that customer outcomes were observed.
 
 The requested outcome is reliable stopping before provider acceptance with understandable timing; it does not require the unproven email route or provider recall. The regression test and integrated walkthrough support review readiness, and no concrete gap justifies another refinement pass. Delivery and live verification remain separate work under the team's authorization. All five sections are reconciled against the refined behavior before the PR follows [the canonical guidance](../references/pull-request.md):
 

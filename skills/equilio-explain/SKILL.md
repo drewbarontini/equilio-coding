@@ -13,6 +13,8 @@ When an associated work artifact is available, read its latest state and apply t
 
 Read the supplied branch, PR, work artifact, implementation, and relevant repository context. Establish a comparison baseline from available history; inspect actual code, callers, and tests rather than inferring behavior from the diff alone. With partial evidence, name what could not be checked. For unfamiliar code without a before-state, teach the current model and its comparison limits instead of inventing an old model.
 
+Use an existing System Model as [optional shared context](references/work-artifact.md#optional-shared-context), relating changed responsibilities to affected interactions and governing principles. Identify stale entries for reconciliation without assuming a model exists or creating one for the explanation.
+
 Apply the [Development Principles](references/development-principles.md) proportionately. Distinguish verified behavior, inferred intent, and documented reasoning; do not manufacture rationale or validation.
 
 Look selectively for concepts and relationships that change future reasoning: responsibilities moving across boundaries, new invariants, changed data or user flows, removed assumptions, durable decisions, meaningful coupling, or extension points. Explain what must now be understood and why it matters. These are inspection lenses, not required output sections. Omit mechanical refactors, file or function inventories, routine test additions, and obvious code narration unless they alter the system model.

@@ -26,6 +26,8 @@ The five Core Skills apply [Equilio](https://equilio.dev), whose engine is **Int
 
 The shared [Development Principles](references/development-principles.md) guide judgment: **Understand First → Fewest Changes → Optimize for the Reader → Better Than Before → Close the Loop**. Fewest Changes means the smallest coherent functioning slice, including every layer it needs.
 
+Reason through **Component Change → Relationship Impact → Principle Check** in proportion to the work. An existing [System Model](https://github.com/drewbarontini/system-model) provides shared architectural context; without one, use available code and documentation. Where [Product Memory](https://drewbarontini.com/newsletter/108-product-memory/) is practiced, make consequential choices and reasons explicit in the owning issue so humans and existing automation, such as a Linear Decision Log, can retain them. Both are [optional supporting context](references/work-artifact.md#optional-shared-context); Equilio Coding requires neither setup nor additional stages.
+
 ## Core Skills
 
 **Follow the understanding, not the sequence.** Frame → Map → Explore → Build → Integrate is the canonical progression of concerns, not a mandatory pipeline. Enter anywhere appropriate, skip satisfied concerns, and revisit only when material evidence requires it. Honor explicit skill requests.

@@ -39,5 +39,7 @@ Keep this judgment outside the skill instructions. Record the tested snapshot, a
 | `map-export` | Map | Real product/code boundary and useful delivery scope |
 | `explain-model` | Explain | Changed responsibility, stale artifact reconciliation, limits of supplied state |
 | `explain-trivial` | Explain | No invented mental-model change or unnecessary durable artifact |
+| `integrate-system-model` | Integrate | Relationship consequences despite passing local checks, documented versus inferred intent, review-only model recommendations |
+| `build-decision-memory` | Build | Responsible work without a model, consequential decision revision visible in the owning issue, no duplicate memory records |
 
 These deliberately invoked skills do not measure automatic discovery. They also do not cover browser interaction, real remote artifacts, provider contracts, concurrent writers, or a substantial standalone Integrate pass. Add cases when a real gap warrants them, rather than expanding the suite for completeness alone.

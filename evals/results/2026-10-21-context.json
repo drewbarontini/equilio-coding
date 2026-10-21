@@ -1,0 +1,23 @@
+{
+  "source_commit": "fb256b7ba854e2020355c924c1ec7dd48aa9796d",
+  "source_dirty": true,
+  "skill_fingerprints": {
+    "equilio-build": "2878c81c71c5048aaa028e351ff58af6f47dc2e8e84df432fdece1cc678fee61",
+    "equilio-explain": "f358058b2bddd5385cc7b4d284d5356cd42763d174f895fec30e9213e2dd4ca6",
+    "equilio-explore": "dbb1f1174ed8925fd97618b8e191297619e4d4a41bcce85d012b4da1b56988ae",
+    "equilio-frame": "bfc9d1880b1a6bf1ff4dfbde78d21770453f5700135aa75a429fac4971be62a0",
+    "equilio-integrate": "d8ee0d7f56b50d6f7983987969ca21bc3da87b76fb002776f38109bf89173025",
+    "equilio-loop": "b411c17382df21c3ce8fa6b9b2fe0abffcb5e94da16289c89fa9f5d3ddb33556",
+    "equilio-map": "c19d0d516b33966ea04c5e471e6608ffd5748fe84819c01c48368c6c56d46816"
+  },
+  "cases": [
+    "integrate-system-model",
+    "build-decision-memory",
+    "loop-small-fix"
+  ],
+  "baseline_heads": {
+    "integrate-system-model": "8ef61490917b69148b7c0f274b24e833c627793b",
+    "build-decision-memory": "69d3c8102bba45364db607a5c8019eb9e3c216ad",
+    "loop-small-fix": "5afc8c6e28a0e1719402499da8189689a88a4d93"
+  }
+}
