@@ -1,0 +1,1 @@
+Use equilio-review to help me evaluate the existing PR snapshot in pr.md, including the previous review discussion. Guide me through what still deserves attention before I decide. You have only the exported snapshot, no remote access. Do not change code or records or submit anything.

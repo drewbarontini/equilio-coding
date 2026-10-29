@@ -94,6 +94,8 @@ Enforce the [information budget](#information-budget) before each update, then r
 
 Loop uses the same reconciliation contract for orchestration learning. Explain conditionally reconciles durable insight into an existing artifact: mental-model changes generally belong in Impact, reasoning in Decisions, and unresolved invariants, trade-offs, limits, or observation needs in Reality. Leave it unchanged if nothing durable is missing; do not copy the teaching response or require a new artifact for standalone Explain. **Explain teaches the model. Impact preserves the model change.**
 
+Review interprets the existing artifact to support a human acceptance decision. It remains read-only by default: recommend where durable decisions, model changes, or evidence gaps belong without automatically reconciling the artifact, System Model, or Product Memory. Apply write-back only when explicitly requested.
+
 ### Continue across agents
 
 For a handoff to another agent or authorized multi-agent work, read the [agent-handoff guidance](agent-handoffs.md).
@@ -118,6 +120,7 @@ An ordinary change can use one artifact without a hierarchy. For broader work, r
 | **PR** | [Summary → Changes → Callouts](pull-request.md): fast orientation for implementation review. |
 | **Code + tests** | Implementation, behavior, contracts, and executable evidence. |
 | **Explain** | Teaching that updates the human maintainer's mental model. |
+| **Review** | Collaborative evaluation of an existing PR for human acceptance judgment; read-only by default. |
 
 Transform information between these artifacts instead of copying it blindly. Link durable detail when it matters; temporary notes must not be the only home of understanding needed to continue.
 
@@ -151,6 +154,7 @@ Use the five coordinates as judgment lenses: Is the **Problem** understood enoug
 | Build | The problem, system, and direction are understood enough for a responsible change; certainty is unnecessary. |
 | Integrate | Functioning implementation needs coherence review, verification, and handoff. Return to earlier concerns if material problems emerge. |
 | Explain | Coherent work meaningfully changes the maintainer's mental model; skip it for trivial changes. |
+| Review | An existing PR needs independent evaluation and collaborative human acceptance judgment, rather than implementation refinement. |
 | Human judgment or stop / complete | A consequential unresolved choice needs a human, or no further operation is useful given the requested scope and actual state. |
 
 Before finishing, reconcile and re-read the artifact. Each Core Skill and Loop gives one concise **Recommended next:** `<skill or action>` and **Why:** `<reason>`. Keep material reasons and evidence in the artifact, so routing does not depend on hidden conversation state. A recommendation neither requires an installed skill nor invokes it automatically; Loop owns adaptive orchestration.

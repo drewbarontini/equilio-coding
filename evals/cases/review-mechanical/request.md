@@ -1,0 +1,1 @@
+Use equilio-review to walk me through the existing PR snapshot in pr.md. The diff looks large, and I need help deciding where to spend my review attention. Use the local evidence only and leave source and records unchanged.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Equilio Review"
+  short_description: "Understand a PR and exercise informed review judgment"
+  default_prompt: "Use $equilio-review to walk me through this pull request's consequential changes and help me judge whether to accept them."

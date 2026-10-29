@@ -1,0 +1,10 @@
+def handle(event, seen, notify, log):
+    event_id = event.get("event_id")
+    if not event_id:
+        return 400
+    log({"event_id": event_id})
+    if event_id in seen:
+        return 200
+    seen.add(event_id)
+    notify(event)
+    return 200

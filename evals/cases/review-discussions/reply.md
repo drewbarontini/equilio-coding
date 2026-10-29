@@ -1,0 +1,1 @@
+Investigate the outstanding delivery concern with a local failure check. The choice in the issue still stands. Then recommend a review outcome, separating blocking concerns from optional improvements and missing evidence. Show what I could ask the author, but do not send it.

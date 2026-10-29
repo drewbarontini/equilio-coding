@@ -1,0 +1,1 @@
+Use equilio-review to help me review the existing PR represented by pr.md and change.patch. I did not write it and do not know this part of the product. Walk me through the decisions that matter before I decide whether to accept it. Use only this local snapshot; leave the implementation and records unchanged.

@@ -38,6 +38,26 @@ class PrepareEvalTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             MODULE.prepare(ROOT, ["missing-case"])
 
+    def test_review_snapshots_preserve_comparison_and_hide_reviewer_reply(self):
+        cases = ["review-authority", "review-mechanical", "review-discussions"]
+        run = MODULE.prepare(ROOT, cases)
+        self.addCleanup(shutil.rmtree, run)
+        manifest = json.loads((run / "run.json").read_text())
+        self.assertEqual(manifest["cases"], cases)
+        for case in cases:
+            source = ROOT / "evals/cases" / case / "workspace"
+            workspace = run / case
+            self.assertFalse((workspace / "reply.md").exists())
+            self.assertEqual(MODULE.git(workspace, "remote"), "")
+            self.assertEqual(MODULE.git(workspace, "status", "--porcelain"), "")
+            for path in source.rglob("*"):
+                if path.is_file():
+                    self.assertEqual((workspace / path.relative_to(source)).read_bytes(),
+                                     path.read_bytes())
+            (workspace / "pr.md").write_text("Changed isolated snapshot\n")
+            self.assertNotEqual((workspace / "pr.md").read_bytes(),
+                                (source / "pr.md").read_bytes())
+
 
 if __name__ == "__main__":
     unittest.main()

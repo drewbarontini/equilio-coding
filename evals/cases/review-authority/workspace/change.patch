@@ -1,0 +1,17 @@
+--- base/api.py
++++ head/api.py
+@@ -1,5 +1,3 @@
+ def create_task(tasks, title):
+-    if not title.strip():
+-        return {"status": 422, "error": "Title required"}
+     tasks.append({"title": title})
+     return {"status": 201}
+--- base/form.py
++++ head/form.py
+@@ -2,4 +2,6 @@
+ 
+ 
+ def submit(tasks, title):
++    if not title.strip():
++        return {"status": 422, "field": "title", "error": "Title required"}
+     return create_task(tasks, title)

@@ -1,0 +1,24 @@
+{
+  "source_commit": "816b09521867bf9344dcd786bbfc7e47d7568ab8",
+  "source_dirty": true,
+  "skill_fingerprints": {
+    "equilio-build": "6177229aa1931b92b4441ae9aa9508fd4c0e71e67b0239cc48fe1c9bdee66f02",
+    "equilio-explain": "c6ffc3d09c091180b5e120ea22eeea6ee6fbd5daec1b903a04f42376ca36ab33",
+    "equilio-explore": "22ac5291c7698f578f23e2ae820f6903f1ca8f85f3757d8308565aa5e85a7c15",
+    "equilio-frame": "29ff0ac35621e14a871babe758a9f3d82ef374e2fd6c8ef7875aebc9a3da1756",
+    "equilio-integrate": "2580368fd5b52758186d748b7e31076b55b1918fe765822ec7d382211a9a0841",
+    "equilio-loop": "169d82d496179bb9f9db38adc2d27a8f14ff41e0af6f38c946170dcf6ca1dbc6",
+    "equilio-map": "784a93cfc040e0c320b5a37c869fbcf778bcb72ee91080c72f5e814cc6024884",
+    "equilio-review": "c12c7f9b4b4c9c21be137dbf78660f831902ceb4d7be1425e08b229358d6639b"
+  },
+  "cases": [
+    "review-authority",
+    "review-mechanical",
+    "review-discussions"
+  ],
+  "baseline_heads": {
+    "review-authority": "afdc7910220cc73a28b44788095b121795eb758d",
+    "review-mechanical": "d7191deb0a6b53e6385103f7b68de7ab69625e06",
+    "review-discussions": "e1c7c053e53fc100a9d9bdb962cc53c2ebd0ce66"
+  }
+}

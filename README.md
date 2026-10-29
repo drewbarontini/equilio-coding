@@ -2,7 +2,7 @@
 
 **Core:** Frame → Map → Explore → Build → Integrate
 
-**Supporting:** Loop — orchestrate · Explain — understand
+**Supporting:** Loop — orchestrate · Explain — understand · Review — judge
 
 Equilio Coding helps a person and an agent create coherent software while retaining what they learn. Three commitments distinguish the method:
 
@@ -50,6 +50,8 @@ Supporting Skills compose, inspect, or extend the workflow without adding stages
 
 **[Explain — understand](skills/equilio-explain/)** teaches: **What should a maintainer understand differently because this changed?** Use it independently for AI-generated or human-written code, a branch, PR, completed work, or an unfamiliar implementation. Integrate checks coherence; Explain teaches the model. Durable insight missing from the work artifact belongs in Impact, Decisions, or Reality as appropriate. **Explain teaches the model. Impact preserves the model change.**
 
+**[Review — judge](skills/equilio-review/)** asks: **Should we accept these changes into the system?** Point it at an existing PR, local PR branch, or review snapshot. It independently inspects intent, system impact, verification, and previous discussions, separates meaningful changes from mechanical churn, and guides the human through consequential questions one checkpoint at a time. It concludes with an evidence-backed recommendation while leaving acceptance to the reviewer. **Preserve human judgment by improving human understanding.** Review is read-only by default; Integrate refines implementation and readiness, while Explain teaches the maintainer’s model beyond an approval decision.
+
 ## Shared artifacts
 
 Use **Problem → Solution → Decisions → Impact → Reality** for delivery issues, broader projects, and local Markdown work artifacts. **Same questions. Different resolution.** Projects preserve understanding of the coordinated effort; delivery issues preserve their own functioning slice. Link them without copying delivery-level detail into the parent. No hierarchy is required for ordinary work.
@@ -69,8 +71,9 @@ When rewriting an existing issue, preserve its initial description verbatim bene
 | PR | Fast orientation for reviewing implementation; **100 words maximum**. |
 | Code + tests | Implementation, behavior, contracts, and executable evidence. |
 | Explain | Teaching that updates the human maintainer's mental model. |
+| Review | Collaborative evaluation that supports a human PR acceptance decision. |
 
-Transform information between these artifacts rather than copying it blindly. The [canonical reconciliation contract](references/work-artifact.md#reconcile-current-understanding) governs write-back, including Explain's conditional updates. Use the project's destination in GitHub, Linear, or Markdown; draft locally when preparing remote work and reuse existing records. A skill invocation alone is no reason to create a remote issue.
+Transform information between these artifacts rather than copying it blindly. The [canonical reconciliation contract](references/work-artifact.md#reconcile-current-understanding) governs write-back, including Explain's conditional updates. Review interprets these artifacts and recommends destinations for durable learning without automatically writing back. Use the project's destination in GitHub, Linear, or Markdown; draft locally when preparing remote work and reuse existing records. A skill invocation alone is no reason to create a remote issue.
 
 For [agent handoffs and authorized collaboration](references/agent-handoffs.md), continue from the latest issue and accessible evidence. Bound assignments, agree on one active writer per shared artifact, and reconcile returned findings before verifying the combined behavior.
 
@@ -86,9 +89,9 @@ Choose Core Skills and optional Supporting Skills interactively:
 npx skills add drewbarontini/equilio-coding
 ```
 
-Install all skills non-interactively with `npx skills add drewbarontini/equilio-coding --skill '*' --yes`, select one with `--skill equilio-explore`, or list them with `--list`. Your agent's invocation syntax may vary; ask it to use a skill by name or describe the job. Invoke `equilio-loop` with a goal or work artifact, or `equilio-explain` for maintainer understanding.
+Install all skills non-interactively with `npx skills add drewbarontini/equilio-coding --skill '*' --yes`, select one with `--skill equilio-explore`, or list them with `--list`. Your agent's invocation syntax may vary; ask it to use a skill by name or describe the job. Invoke `equilio-loop` with a goal or work artifact, or `equilio-explain` for maintainer understanding. Install Review alone with `--skill equilio-review`; use `/equilio-review https://github.com/owner/repository/pull/123` where slash commands are supported, or ask your agent to use `equilio-review` with a PR identifier. It uses available authenticated GitHub tools, with local branch or supplied snapshot fallback when remote access is unavailable.
 
-Each skill includes a matching local copy of the shared guidance and PR template, so standalone installs can read them without fetching GitHub files. Loop requires all five Core Skills from the same source revision; Explain remains optional. Reinstall the same selection to refresh its instructions and references together.
+Each skill includes a matching local copy of the shared guidance and PR template, so standalone installs can read them without fetching GitHub files. Loop requires all five Core Skills from the same source revision; Explain and Review remain optional and independently installable in Codex, Claude Code, and other compatible coding agents; Review requires neither Explain nor Integrate. Reinstall the same selection to refresh its instructions and references together.
 
 From a local checkout, check whether installed copies match that checkout:
 
