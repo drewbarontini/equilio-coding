@@ -43,7 +43,7 @@ For independent, reusable jobs beyond this software-delivery method, see the [po
 | Skill | Distinct job | Natural contribution to understanding |
 | --- | --- | --- |
 | [Frame](skills/equilio-frame/) | Interview until person and agent share the problem, purpose, and desired outcome. | Problem, with unknown direction or impact left provisional. |
-| [Map](skills/equilio-map/) | Connect the affected product experience to actual code and system relationships. | Problem + Impact, correcting framing when needed. |
+| [Map](skills/equilio-map/) | Connect the affected product experience to actual code, system relationships, and domain language. | Problem + Impact, correcting framing when needed. |
 | [Explore](skills/equilio-explore/) | Build and test working prototypes where evidence could change the direction. | Solution + Decisions + Reality grounded in evidence. |
 | [Build](skills/equilio-build/) | Execute the fewest changes needed for a coherent functioning solution. | Implemented Solution and Impact, consequential Decisions, and verification in Reality. |
 | [Integrate](skills/equilio-integrate/) | Refine toward simpler solutions, verify coherence, and preserve system understanding. | All five coordinates reconciled with actual code and evidence. |
