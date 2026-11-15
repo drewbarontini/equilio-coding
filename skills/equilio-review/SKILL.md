@@ -33,6 +33,12 @@ Apply the [Development Principles](references/development-principles.md) proport
 
 Use an existing System Model as [optional shared context](references/work-artifact.md#optional-shared-context): **Components — Capabilities; Relationships — Interactions; Principles — Governing guidelines**, including Architecture and Product Models where present. Compare its claims with code; distinguish documented, inferred, and proposed principles and surface contradictions for judgment. Without a model, reason from accessible evidence without requiring or creating one.
 
+## Assess repository standards and drift
+
+Discover repository-owned coding standards (`CODING_STANDARDS.md` or an established equivalent), relevant architectural decisions, and enforced tooling; do not require a dedicated file. Compare applicable guidance with the changed code and surrounding intentional practice. Distinguish **code drift** (a change conflicts with a still-valid convention) from **guidance drift** (a documented convention is stale or contradicted by deliberate current practice). Do not treat frequency alone as proof that a convention should change, or a written rule as proof that code is wrong. Cite specific examples, their impact, and the evidence or uncertainty behind the judgment.
+
+For a recurring, consequential convention, propose a narrowly scoped addition, revision, or removal to the repository's existing guidance, or an optional minimal document when none exists. Prefer formatter, linter, or tests for deterministic mechanical rules; do not codify isolated review findings or duplicate enforced rules. Present any standards proposal separately from code acceptance findings, with rationale and proposed destination. **Never create or edit standards automatically**: Review remains read-only unless the user explicitly authorizes the specific change. Missing standards are not a review blocker by themselves.
+
 ## Walk through consequential checkpoints
 
 Open with compact orientation: purpose, approximate size and composition, meaningful behavior or system changes, the few consequential questions, and critical evidence gaps. Prioritize by consequence, uncertainty, and relevance to acceptance. Avoid exhaustive file inventories, trivial findings, and a full report before the reviewer has participated.
