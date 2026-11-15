@@ -28,6 +28,12 @@ The shared [Development Principles](references/development-principles.md) guide 
 
 Reason through **Component Change → Relationship Impact → Principle Check** in proportion to the work. An existing [System Model](https://github.com/drewbarontini/system-model) provides shared architectural context; without one, use available code and documentation. Where [Product Memory](https://drewbarontini.com/newsletter/108-product-memory/) is practiced, make consequential choices and reasons explicit in the owning issue so humans and existing automation, such as a Linear Decision Log, can retain them. Both are [optional supporting context](references/work-artifact.md#optional-shared-context); Equilio Coding requires neither setup nor additional stages.
 
+## How the Method Fits Together
+
+Equilio Coding is **one context-preserving software method**, not a general-purpose skill catalog or a rigid sequence of agents. The five Core Skills handle distinct kinds of understanding; Supporting Skills route work, teach maintainers, or support acceptance decisions. All Core Skills can read and reconcile the **same** Problem → Solution → Decisions → Impact → Reality artifact, so a handoff does not depend on chat history. **Loop** chooses the next useful skill from the current evidence, skips already-satisfied concerns, and stops when human judgment or completion is appropriate. A person can also invoke any Core Skill directly; Loop is optional.
+
+For independent, reusable jobs beyond this software-delivery method, see the [portable Skills repository](https://github.com/drewbarontini/skills). The **Notion Toolkit** is the canonical inventory of methods and their maturity; neither repository replaces it. Portable Skills are optional complements, not installation prerequisites.
+
 ## Core Skills
 
 **Follow the understanding, not the sequence.** Frame → Map → Explore → Build → Integrate is the canonical progression of concerns, not a mandatory pipeline. Enter anywhere appropriate, skip satisfied concerns, and revisit only when material evidence requires it. Honor explicit skill requests.
@@ -83,13 +89,15 @@ Before PR creation, reconcile the work artifact against implemented behavior and
 
 ## Install
 
-Choose Core Skills and optional Supporting Skills interactively:
+Choose Core Skills and optional Supporting Skills interactively using the third-party `skills` CLI (requires Node.js/npm and network access):
 
 ```sh
 npx skills add drewbarontini/equilio-coding
 ```
 
 Install all skills non-interactively with `npx skills add drewbarontini/equilio-coding --skill '*' --yes`, select one with `--skill equilio-explore`, or list them with `--list`. Your agent's invocation syntax may vary; ask it to use a skill by name or describe the job. Invoke `equilio-loop` with a goal or work artifact, or `equilio-explain` for maintainer understanding. Install Review alone with `--skill equilio-review`; use `/equilio-review https://github.com/owner/repository/pull/123` where slash commands are supported, or ask your agent to use `equilio-review` with a PR identifier. It uses available authenticated GitHub tools, with local branch or supplied snapshot fallback when remote access is unavailable.
+
+Alternatively, copy the chosen `skills/equilio-*/` directories from a checkout into a skills directory supported by your agent, preserving each directory's `SKILL.md` and bundled references. Follow your client's discovery rules; copying a Core Skill does not require installing Loop or portable Skills. For Loop, install all five Core Skills together from the same revision.
 
 Each skill includes a matching local copy of the shared guidance and PR template, so standalone installs can read them without fetching GitHub files. Loop requires all five Core Skills from the same source revision; Explain and Review remain optional and independently installable in Codex, Claude Code, and other compatible coding agents; Review requires neither Explain nor Integrate. Reinstall the same selection to refresh its instructions and references together.
 
