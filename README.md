@@ -2,7 +2,7 @@
 
 **Core:** Frame → Map → Explore → Build → Integrate
 
-**Supporting:** Loop — orchestrate · Diagnose — investigate · Explain — understand · Review — judge
+**Supporting:** Loop — orchestrate · Diagnose — investigate · Explain — understand · Review — judge · Retro — improve environment
 
 Equilio Coding helps a person and an agent create coherent software while retaining what they learn. Three commitments distinguish the method:
 
@@ -62,6 +62,8 @@ Supporting Skills compose, inspect, or extend the workflow without adding stages
 
 **[Diagnose — investigate](skills/equilio-diagnose/)** reproduces and isolates difficult bugs before implementation. Establish a safe failing signal, test competing explanations, and hand off the evidence-backed cause and proposed correction to Build. It is standalone and optional; straightforward known fixes can go directly to Build.
 
+**[Retro — improve environment](skills/equilio-retro/)** inspects evidence from actual coding sessions to recommend up to three high-leverage improvements to navigation, context, tooling, checks, or instructions. It evaluates the working environment, not product quality. Recommendations remain proposals until explicitly approved; no new retrospective artifact is required.
+
 ## Shared artifacts
 
 Use **Problem → Solution → Decisions → Impact → Reality** for delivery issues, broader projects, and local Markdown work artifacts. **Same questions. Different resolution.** Projects preserve understanding of the coordinated effort; delivery issues preserve their own functioning slice. Link them without copying delivery-level detail into the parent. No hierarchy is required for ordinary work.
@@ -99,11 +101,11 @@ Choose Core Skills and optional Supporting Skills interactively using the third-
 npx skills add drewbarontini/equilio-coding
 ```
 
-Install all skills non-interactively with `npx skills add drewbarontini/equilio-coding --skill '*' --yes`, select one with `--skill equilio-explore`, or list them with `--list`. Your agent's invocation syntax may vary; ask it to use a skill by name or describe the job. Invoke `equilio-loop` with a goal or work artifact, or `equilio-explain` for maintainer understanding. Install Diagnose alone with `--skill equilio-diagnose` when a failure needs investigation. Install Review alone with `--skill equilio-review`; use `/equilio-review https://github.com/owner/repository/pull/123` where slash commands are supported, or ask your agent to use `equilio-review` with a PR identifier. It uses available authenticated GitHub tools, with local branch or supplied snapshot fallback when remote access is unavailable.
+Install all skills non-interactively with `npx skills add drewbarontini/equilio-coding --skill '*' --yes`, select one with `--skill equilio-explore`, or list them with `--list`. Your agent's invocation syntax may vary; ask it to use a skill by name or describe the job. Invoke `equilio-loop` with a goal or work artifact, or `equilio-explain` for maintainer understanding. Install Diagnose alone with `--skill equilio-diagnose` when a failure needs investigation. Install Retro alone with `--skill equilio-retro` after a coding session. Install Review alone with `--skill equilio-review`; use `/equilio-review https://github.com/owner/repository/pull/123` where slash commands are supported, or ask your agent to use `equilio-review` with a PR identifier. It uses available authenticated GitHub tools, with local branch or supplied snapshot fallback when remote access is unavailable.
 
 Alternatively, copy the chosen `skills/equilio-*/` directories from a checkout into a skills directory supported by your agent, preserving each directory's `SKILL.md` and bundled references. Follow your client's discovery rules; copying a Core Skill does not require installing Loop or portable Skills. For Loop, install all five Core Skills together from the same revision.
 
-Each skill includes a matching local copy of the shared guidance and PR template, so standalone installs can read them without fetching GitHub files. Loop requires all five Core Skills from the same source revision; Diagnose, Explain, and Review remain optional and independently installable in Codex, Claude Code, and other compatible coding agents; Review requires neither Explain nor Integrate. Reinstall the same selection to refresh its instructions and references together.
+Each skill includes a matching local copy of the shared guidance and PR template, so standalone installs can read them without fetching GitHub files. Loop requires all five Core Skills from the same source revision; Diagnose, Explain, Review, and Retro remain optional and independently installable in Codex, Claude Code, and other compatible coding agents; Review requires neither Explain nor Integrate. Reinstall the same selection to refresh its instructions and references together.
 
 From a local checkout, check whether installed copies match that checkout:
 
