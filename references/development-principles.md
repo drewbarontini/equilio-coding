@@ -28,6 +28,8 @@ Make the smallest coherent change that solves the problem. This does not mean mi
 
 Avoid unrelated cleanup, speculative features, premature abstractions, and “while we’re here” expansion. Apply YAGNI where useful. Use the [delivery-slicing guidance](delivery-slices.md#shape-delivery-slices) when broader work needs decomposition; separate build tasks do not necessarily provide separate useful outcomes. Separate genuinely independent prerequisite work when it creates a useful, verifiable change. Favor changes that can be independently understood, reviewed, reverted, released, and learned from.
 
+During Build, when the branch reaches the large-change threshold (400+ changed lines of code, excluding tests and generated files, unless overridden by the repository), call it out and suggest cutting a PR at an independently deployable seam using the [PR guidance](pull-request.md). Splitting is cheapest before a PR opens; do not split into broken or half-wired states.
+
 ## Optimize for the Reader
 
 Use American English spelling in newly written prose, including product copy, comments, documentation, work artifacts, and PRs: **favorite**, **color**, **behavior**, and **organize**. Preserve exact quotations, proper names, and existing code identifiers or external contracts.
