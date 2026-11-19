@@ -86,6 +86,8 @@ Every Core Skill can rewrite all five coordinates while preserving the Original 
 
 Make key decisions explicit in the owning issue as they happen, including choices that change product behavior, system boundaries, compatibility, or delivery scope. Briefly call out consequential changes in direction to the person as well; chat alone does not preserve the decision. An agent recommendation is a proposal until chosen through the task's existing authority. Keep the current choice and material reasoning in Decisions within its limits, linking durable detail when needed rather than retaining a chronological log.
 
+During Frame, when work sets a direction the team should agree on (pricing, a new product behavior, a new service or dependency, a data model), record it in Decisions as **Decide first:** followed by the unresolved choice. Settle whether the direction is wise before building rather than asking code review to settle it.
+
 Enforce the [information budget](#information-budget) before each update, then re-read the result to ensure the invariant holds. Comments, appended stage notes, and working notes alone do not satisfy reconciliation. Once a remote artifact owns the work, a local draft cannot replace its update; if blocked, preserve a destination-ready synthesis and report the incomplete reconciliation. Continue independent work where useful, but do not claim the owning issue is current until its update is verified.
 
 **Frame → Map → Explore → Build → Integrate** is a progression of concerns, not a mandatory pipeline or a set of artifact sections. Each skill describes its own contribution; all five coordinates remain available for revision.
